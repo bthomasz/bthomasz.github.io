@@ -1,0 +1,419 @@
+/* ============================================================
+   style.css - Academic personal/research site
+   Matches the look of the previous Squarespace site:
+   serif headings, generous whitespace, image+text rows,
+   simple carousel, clean publication list.
+   ============================================================ */
+
+:root {
+  --color-text: #2b2b2b;
+  --color-muted: #6b6b6b;
+  --color-link: #1a4f8b;
+  --color-link-hover: #0d2c4f;
+  --color-bg: #ffffff;
+  --color-border: #e3e3e3;
+  --font-serif: Georgia, 'Times New Roman', Times, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --max-width: 920px;
+  --gutter: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------------- Layout shells ---------------- */
+
+.page-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  padding: 28px 0;
+}
+
+.site-header .page-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.site-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.site-title a {
+  color: var(--color-text);
+}
+
+.site-title a:hover {
+  text-decoration: none;
+}
+
+.site-nav a {
+  margin-left: 24px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.site-nav a:hover {
+  color: var(--color-link);
+}
+
+.site-footer {
+  margin-top: 64px;
+  padding: 32px 0;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+/* ---------------- Carousel ---------------- */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px var(--gutter);
+  background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0));
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.carousel-caption a {
+  color: #fff;
+}
+
+.carousel-caption em {
+  font-style: italic;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+  pointer-events: none;
+}
+
+.carousel-controls button {
+  pointer-events: auto;
+  background: rgba(0,0,0,0.35);
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.carousel-controls button:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+  display: flex;
+  gap: 6px;
+}
+
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.45);
+  cursor: pointer;
+  padding: 0;
+}
+
+.carousel-dots button.active {
+  background: #fff;
+}
+
+/* ---------------- Bio / Welcome section ---------------- */
+
+.bio-section {
+  display: flex;
+  gap: 32px;
+  padding: 48px 0;
+  align-items: flex-start;
+}
+
+.bio-photo {
+  flex: 0 0 200px;
+}
+
+.bio-photo img {
+  border-radius: 4px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.bio-text h1 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.bio-text p {
+  margin: 0 0 14px;
+}
+
+@media (max-width: 640px) {
+  .bio-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .bio-photo img {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* ---------------- Publication entries ---------------- */
+
+.pub-section h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 8px;
+  margin-top: 48px;
+}
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 24px 0 48px;
+}
+
+.pub-entry {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.pub-entry .pub-thumb img {
+  width: 140px;
+  height: 105px;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+}
+
+.pub-title {
+  font-weight: 600;
+  font-size: 1.02rem;
+  margin: 0 0 4px;
+}
+
+.pub-title a {
+  color: var(--color-text);
+}
+
+.pub-title a:hover {
+  color: var(--color-link);
+}
+
+.pub-authors {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  margin: 0 0 2px;
+}
+
+.pub-venue {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin: 0 0 6px;
+}
+
+.pub-links a {
+  font-size: 0.88rem;
+  margin-right: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 640px) {
+  .pub-entry {
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+  }
+  .pub-entry .pub-thumb img {
+    width: 100px;
+    height: 75px;
+  }
+}
+
+/* ---------------- Project page ---------------- */
+
+.project-header {
+  padding: 48px 0 24px;
+  text-align: center;
+}
+
+.project-header h1 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin: 0 0 12px;
+}
+
+.project-header .pub-authors,
+.project-header .pub-venue {
+  font-size: 1rem;
+  justify-content: center;
+}
+
+.project-links {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  border: 1px solid var(--color-link);
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.project-links a:hover {
+  background: var(--color-link);
+  color: #fff;
+  text-decoration: none;
+}
+
+.project-video {
+  margin: 32px 0;
+}
+
+.project-video .video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.project-video .video-wrapper iframe,
+.project-video .video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.project-abstract h2,
+.project-bibtex h2 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 6px;
+  margin-top: 40px;
+}
+
+.project-abstract p {
+  text-align: justify;
+}
+
+.project-bibtex pre {
+  background: #f7f7f7;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 16px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ---------------- Publications page filter/group ---------------- */
+
+.year-heading {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  margin-top: 40px;
+  color: var(--color-muted);
+}

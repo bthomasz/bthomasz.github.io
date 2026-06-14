@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Bernhard Thomaszewski - Publications{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <section class="pub-section">
+    <h1>Publications</h1>
+
+    {% for year, pubs in pubs_by_year %}
+    <h2 class="year-heading">{{ year }}</h2>
+    <div class="pub-list">
+      {% for pub in pubs %}
+      <article class="pub-entry" id="{{ pub.id }}">
+        <div class="pub-thumb">
+          <img src="{{ root }}{{ pub.thumbnail }}" alt="">
+        </div>
+        <div class="pub-info">
+          <p class="pub-title">
+            {% if pub.project %}
+            <a href="{{ root }}projects/{{ pub.id }}/index.html">{{ pub.title }}</a>
+            {% else %}
+            {{ pub.title }}
+            {% endif %}
+          </p>
+          <p class="pub-authors">{{ pub.authors_joined }}</p>
+          <p class="pub-venue">{{ pub.venue }}</p>
+          <p class="pub-links">
+            {% if pub.links.pdf %}<a href="{{ pub.links.pdf if pub.links.pdf.startswith('http') else root + pub.links.pdf }}">PDF</a>{% endif %}
+            {% if pub.links.video %}<a href="{{ pub.links.video }}">Video</a>{% endif %}
+            {% if pub.project %}<a href="{{ root }}projects/{{ pub.id }}/index.html">Project</a>
+            {% elif pub.links.project %}<a href="{{ pub.links.project }}">Project</a>{% endif %}
+            {% if pub.links.code %}<a href="{{ pub.links.code }}">Code</a>{% endif %}
+            {% if pub.links.supplemental %}<a href="{{ pub.links.supplemental }}">Supplemental</a>{% endif %}
+          </p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% endfor %}
+
+  </section>
+</div>
+{% endblock %}

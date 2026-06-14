@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}Bernhard Thomaszewski - Home{% endblock %}
+
+{% block content %}
+
+{% if highlights %}
+<section class="carousel" id="carousel">
+  <div class="carousel-track">
+    {% for pub in highlights %}
+    <div class="carousel-slide">
+      {% if pub.project %}
+      <a href="{{ root }}projects/{{ pub.id }}/index.html">
+        <img src="{{ root }}{{ pub.carousel_image }}" alt="{{ pub.title }}">
+      </a>
+      {% else %}
+      <a href="{{ root }}publications.html#{{ pub.id }}">
+        <img src="{{ root }}{{ pub.carousel_image }}" alt="{{ pub.title }}">
+      </a>
+      {% endif %}
+      <div class="carousel-caption">
+        {{ pub.authors_short }} &mdash; <em>{{ pub.title }}</em>. {{ pub.venue }}.
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="carousel-controls">
+    <button id="carousel-prev" aria-label="Previous slide">&#8249;</button>
+    <button id="carousel-next" aria-label="Next slide">&#8250;</button>
+  </div>
+  <div class="carousel-dots" id="carousel-dots"></div>
+</section>
+{% endif %}
+
+<div class="page-container">
+
+  <section class="bio-section">
+    <div class="bio-photo">
+      <img src="{{ root }}assets/images/PicBT.png" alt="Bernhard Thomaszewski">
+    </div>
+    <div class="bio-text">
+      <h1>Welcome</h1>
+      <p>
+        My research lies at the intersection of computer graphics, computational
+        mechanics, and digital manufacturing, where I develop computational methods
+        for modeling and design of complex physical systems. I am particularly
+        interested in applications to mechanical metamaterials, robotics, and
+        digital humans, leveraging physics-based simulation, optimization-driven
+        design, and neural representations to bridge the gap between virtual models
+        and real-world performance.
+      </p>
+      <p>
+        I obtained my PhD from the University of T&uuml;bingen in 2010, followed by a
+        postdoctoral stay at the Computer Graphics Laboratory at ETH Zurich. I joined
+        Disney Research Zurich in 2011, where I spent six years as a researcher and
+        group leader. In 2017, I moved to the University of Montreal, where I was a
+        tenured professor in the Computer Science department until 2020. I am
+        currently a Senior Research Scientist at the Computational Robotics
+        Laboratory (CRL).
+      </p>
+      <p>
+        I received the Outstanding Young Researcher Award from the Canadian
+        Computer Science Association in 2018 and was named NSERC Canada Research
+        Chair in 2019.
+      </p>
+    </div>
+  </section>
+
+  <section class="pub-section">
+    <h2>Recent Publications</h2>
+    <div class="pub-list">
+      {% for pub in recent %}
+      <article class="pub-entry" id="{{ pub.id }}">
+        <div class="pub-thumb">
+          <img src="{{ root }}{{ pub.thumbnail }}" alt="">
+        </div>
+        <div class="pub-info">
+          <p class="pub-title">
+            {% if pub.project %}
+            <a href="{{ root }}projects/{{ pub.id }}/index.html">{{ pub.title }}</a>
+            {% else %}
+            {{ pub.title }}
+            {% endif %}
+          </p>
+          <p class="pub-authors">{{ pub.authors_joined }}</p>
+          <p class="pub-venue">{{ pub.venue }}</p>
+          <p class="pub-links">
+            {% if pub.links.pdf %}<a href="{{ pub.links.pdf if pub.links.pdf.startswith('http') else root + pub.links.pdf }}">PDF</a>{% endif %}
+            {% if pub.links.video %}<a href="{{ pub.links.video }}">Video</a>{% endif %}
+            {% if pub.project %}<a href="{{ root }}projects/{{ pub.id }}/index.html">Project</a>
+            {% elif pub.links.project %}<a href="{{ pub.links.project }}">Project</a>{% endif %}
+            {% if pub.links.code %}<a href="{{ pub.links.code }}">Code</a>{% endif %}
+          </p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <p><a href="{{ root }}publications.html">View all publications &rarr;</a></p>
+  </section>
+
+</div>
+
+<script src="{{ root }}assets/js/carousel.js"></script>
+{% endblock %}

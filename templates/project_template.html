@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ pub.title }}</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-container">
+      <p class="site-title"><a href="../../index.html">Bernhard Thomaszewski</a></p>
+      <nav class="site-nav">
+        <a href="../../index.html">Home</a>
+        <a href="../../publications.html">Publications</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-container">
+
+      <section class="project-header">
+        <h1>{{ pub.title }}</h1>
+        <p class="pub-authors" style="display:flex; justify-content:center;">{{ pub.authors_joined }}</p>
+        <p class="pub-venue" style="display:flex; justify-content:center;">{{ pub.venue }}</p>
+
+        <div class="project-links">
+          {% if pub.links.pdf %}
+          <a href="{{ pub.links.pdf if pub.links.pdf.startswith('http') else '../../' + pub.links.pdf }}">Paper (PDF)</a>
+          {% endif %}
+          {% if pub.links.video %}<a href="{{ pub.links.video }}">Video</a>{% endif %}
+          {% if pub.links.code %}<a href="{{ pub.links.code }}">Code</a>{% endif %}
+          {% if pub.links.supplemental %}<a href="{{ pub.links.supplemental }}">Supplemental</a>{% endif %}
+        </div>
+      </section>
+
+      {% if pub.video_embed %}
+      <section class="project-video">
+        <div class="video-wrapper">
+          {{ pub.video_embed | safe }}
+        </div>
+      </section>
+      {% else %}
+      <section class="project-video">
+        <div class="video-wrapper" style="position:relative; background:#eee;">
+          <img src="../../{{ pub.thumbnail }}" alt="{{ pub.title }}"
+               style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
+        </div>
+      </section>
+      {% endif %}
+
+      {% if pub.abstract %}
+      <section class="project-abstract">
+        <h2>Abstract</h2>
+        <p>{{ pub.abstract }}</p>
+      </section>
+      {% endif %}
+
+      {% if pub.bibtex %}
+      <section class="project-bibtex">
+        <h2>BibTeX</h2>
+        <pre>{{ pub.bibtex }}</pre>
+      </section>
+      {% endif %}
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-container">
+      <p>&copy; {{ year }} Bernhard Thomaszewski</p>
+    </div>
+  </footer>
+</body>
+</html>

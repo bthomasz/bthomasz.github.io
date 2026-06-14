@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Bernhard Thomaszewski{% endblock %}</title>
+  <link rel="stylesheet" href="{{ root }}assets/css/style.css">
+  {% block head_extra %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-container">
+      <p class="site-title"><a href="{{ root }}index.html">Bernhard Thomaszewski</a></p>
+      <nav class="site-nav">
+        <a href="{{ root }}index.html">Home</a>
+        <a href="{{ root }}publications.html">Publications</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-container">
+      <p>&copy; {{ year }} Bernhard Thomaszewski</p>
+    </div>
+  </footer>
+</body>
+</html>
