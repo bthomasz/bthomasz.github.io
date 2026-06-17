@@ -142,3 +142,6 @@
     - subtitle: Physics-Enhanced Facial Animation
       image: assets/images/research/PhysicalBlendshapes.png
       pub_id: enriching-facial-blendshape-rigs-with-physical-simulation
+    - subtitle: Neural Baking of Facial Physics
+      image: assets/images/publications/neuriphy-neural-baking-of-physics-based-deformations-for-fac.jpg
+      pub_id: neuriphy-neural-baking-of-physics-based-deformations-for-fac

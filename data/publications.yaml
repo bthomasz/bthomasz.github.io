@@ -15,7 +15,7 @@
     code: https://github.com/guo-han/Isogami
     video: https://youtu.be/6FhFU2Vlgk8
   project: true
-  highlight: false
+  highlight: true
   teaser: assets/images/publications/isogami-teaser.jpg
   bibtex: "@article{Han26Isogami,\n  title   = {IsoGami: Rigid-Deployable Kirigami Materials From Isohedral Tilings},\n  author  = {Han, Guo and Montes Maestre, Juan Sebastian and Numerow, Logan and Hinchet, Ronan and Coros, Stelian and Thomaszewski, Bernhard},\n  journal = {ACM SIGGRAPH 2026 Conference Papers},\n  year    = {2026}\n}"
   abstract: Rigid-deployable Kirigami sheets are unique mechanical structures, enabling extreme expansion with minimal elastic deformation. Furthermore, they unfold in fluid and coordinated motions which reveal interesting geometric patterns. Thanks to their tunable expansion behaviour, Kirigami-like structures have found a wide range of applications at various scales. However, finding the right geometry for a given application remains a significant challenge due to the complex relationship between cut patterns and deployment behavior. In this work, we introduce a computational approach to explore the design space of rigid-deployable Kirigami sheets defined over isohedral tilings, a class of periodic patterns constructed from identical polygonal tiles. Our method explores the mixed discrete-continuous design space formed by joint topologies and tile shape parameters. Leveraging tools from linkage analysis, we identify self-deployable designs with a single kinematic degree of freedom. To
@@ -25,6 +25,7 @@
   - assets/video/Kirigami2.mp4
   - assets/video/Kirigami3.mp4
   - assets/video/KirigamiPrototypes.mp4
+  carousel_image: assets/images/carousel/KirigamiSlider.jpg
 - id: origami-materials
   title: A Unified Homogenization Framework for Straight- and Curved-Crease Origami Materials
   authors:
@@ -41,12 +42,13 @@
     pdf: assets/pdf/OrigamiMaterials.pdf
     video: https://youtu.be/99tWdPK9NP8
   project: true
-  highlight: false
+  highlight: true
   teaser: assets/images/publications/origami-materials-teaser.jpg
   abstract: We present a computational framework for numerical homogenization of origami materials---thin sheets structured with periodic crease patterns that, once folded, exhibit diverse and often unusual mechanical properties. Whereas the in-plane stiffness of conventional sheet materials is typically orders of magnitude larger than their resistance to bending, origami-based folding introduces geometric structure that can drastically reshape both bending and stretching behavior. However, predicting how a particular crease pattern gives rise to effective macroscopic properties remains challenging due to the complex coupling of crease geometry, folding kinematics, and surface deformations. In this work, we introduce a computational framework that integrates simulation-based folding and numerical homogenization to explore the relationship between crease pattern and effective material behavior. To describe the macromechanical response of origami materials, we employ a quadratic energy model
     based on Classical Laminate Theory, together with a simplified treatment of crease plasticity. Our unified representation accommodates both straight- and curved-crease designs, revealing a rich space of origami materials with diverse behavior. In particular, we examine how pattern symmetry governs material symmetries, demonstrating examples that span the full spectrum from perfectly isotropic to highly anisotropic membrane and bending responses. Our framework further enables controlled exploration of parameter variations, illustrating how geometric features such as crease curvature shape macroscopic mechanical behavior. We showcase the potential of this approach through a broad set of examples, ranging from canonical straight-crease patterns such as Miura-ori to complex curved-crease tessellations. While a quantitative analysis is left for future work, we validate our homogenized descriptions against native-scale simulations and qualitatively compare deformation behaviors with real-world
     prototypes.
   bibtex: "@article{Li26AUnified,\n  title = {A Unified Homogenization Framework for Straight- and Curved-Crease Origami Materials},\n  author = {Li, Mingjie and Montes Maestre, Juan Sebastian and Ganier, Emilien and Mundilova, Klara and Pauly, Mark and Thomaszewski, Bernhard},\n  journal = {ACM Transactions on Graphics (SIGGRAPH '26)},\n  year = {2026}\n}\n"
+  carousel_image: assets/images/carousel/OrigamiSlider.jpg
 - id: shell-homogenization
   title: Taking a Moment to Characterize the Bending Response of Thin Sheet Materials
   authors:
@@ -407,11 +409,12 @@
     project: https://tangpengbin.github.io/publications/InverseDIM/index.html
     video: https://youtu.be/RR-lyQ-8Bqs
   project: true
-  highlight: false
+  highlight: true
   bibtex: "@article{Zhou2025ClosedForm,\n  title   = {Closed-Form Construction of Voronoi Diagrams with Star-Shaped Metrics},\n  author  = {Haoyang Zhou and Logan Numerow and Stelian Coros and Bernhard Thomaszewski},\n  journal = {ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2025)},\n  year    = {2025}\n}"
   abstract: Cellular patterns, from planar ornaments to architectural surfaces and mechanical metamaterials, blend aesthetics with functionality. Homogeneous patterns like isohedral tilings offer simplicity and symmetry but lack flexibility, particularly for heterogeneous designs. They cannot smoothly interpolate between tilings or adapt to double-curved surfaces without distortion. Voronoi diagrams provide a more adaptable patterning solution. They can be generalized to star-shaped metrics, enabling diverse cell shapes and continuous grading by interpolating metric parameters. We introduce a novel, closed-form, fully differentiable formulation for Voronoi diagrams with piecewise linear star-shaped metrics, enabling optimization of site positions and metric parameters to meet aesthetic and functional goals. It naturally extends to arbitrary dimensions, including curved 3D surfaces. For improved on-surface patterning, we propose a per-sector parameterization of star-shaped metrics, ensuring
     uniform cell shapes in non-regular neighbourhoods. We demonstrate our approach by generating diverse patterns, from homogeneous to continuously graded designs, with applications in decorative surfaces and metamaterials.
   teaser: assets/images/publications/closed-form-construction-of-voronoi-diagrams-with-star-shape-teaser.jpg
+  carousel_image: assets/images/carousel/ClosedFormVoronoiSlider.jpg
 - id: inverse-design-of-discrete-interlocking-materials-with-desir
   title: Inverse Design of Discrete Interlocking Materials with Desired Mechanical Behavior
   authors:
@@ -442,7 +445,8 @@
     pdf: https://cgl.ethz.ch/Downloads/Publications/Papers/2025/Cor25a/Cor25a.pdf
     project: https://cgl.ethz.ch/publications/papers/paperCor25a.php
   project: false
-  highlight: false
+  highlight: true
+  carousel_image: assets/images/carousel/NeuriphySlider.jpg
 - id: self-supervised-learning-of-latent-space-dynamics
   title: Self-supervised Learning of Latent Space Dynamics
   authors:
