@@ -4,6 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Computational Design and Automated Fabrication of Kirchhoff-Plateau Surfaces</title>
+  <meta name="author" content="Bernhard Thomaszewski">
+<meta name="description" content="We present a computational pipeline for the design and fabrication of Kirchhoff-Plateau surfaces -- thin elastic rods bent into shape by soap film tension --">
+  <!-- Google Scholar -->
+  <meta name="citation_title" content="Computational Design and Automated Fabrication of Kirchhoff-Plateau Surfaces">
+<meta name="citation_author" content="J. Perez">
+<meta name="citation_author" content="M. Otaduy">
+<meta name="citation_author" content="B. Thomaszewski">
+<meta name="citation_publication_date" content="2017">
+  <meta name="citation_journal_title" content="ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2017)">
+  <meta name="citation_pdf_url" content="https://thomaszewski.com/assets/pdf/Perez17KPS.pdf">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Bernhard Thomaszewski">
+  <meta property="og:title" content="Computational Design and Automated Fabrication of Kirchhoff-Plateau Surfaces">
+<meta property="og:description" content="We present a computational pipeline for the design and fabrication of Kirchhoff-Plateau surfaces -- thin elastic rods bent into shape by soap film tension -- enabling new classes of self-supporting">  <meta property="og:url" content="https://thomaszewski.com/projects/kps/index.html">
+  <meta property="og:image" content="https://thomaszewski.com/assets/images/publications/kps-teaser.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "Computational Design and Automated Fabrication of Kirchhoff-Plateau Surfaces",
+    "author": [{"@type": "Person", "name": "J. Perez"}, {"@type": "Person", "name": "M. Otaduy"}, {"@type": "Person", "name": "B. Thomaszewski"}],
+    "datePublished": "2017",
+    "isPartOf": {"@type": "Periodical", "name": "ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2017)"},
+    "url": "https://thomaszewski.com/assets/pdf/Perez17KPS.pdf",
+    "abstract": "We present a computational pipeline for the design and fabrication of Kirchhoff-Plateau surfaces -- thin elastic rods bent into shape by soap film tension -- enabling new classes of self-supporting curved structures.\n"  }
+  </script>
+
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -13,6 +44,16 @@
       <nav class="site-nav">
         <a href="../../index.html">Home</a>
         <a href="../../publications.html">Publications</a>
+        <div class="nav-dropdown">
+          <a href="../../research/index.html">Research</a>
+          <div class="nav-dropdown-menu">
+            <a href="../../research/neural-simulation/index.html">Neural Simulation</a>
+            <a href="../../research/structured-materials/index.html">Structured Materials</a>
+            <a href="../../research/robotics/index.html">Robotics</a>
+            <a href="../../research/smart-simulation/index.html">Smart Simulation</a>
+            <a href="../../research/digital-humans-biomechanics/index.html">Digital Humans &amp; Biomechanics</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -30,6 +71,11 @@
 <a href="https://youtu.be/a2fst73hA2A">Video</a>        </div>
       </section>
 
+      <section class="project-teaser">
+        <img src="../../assets/images/publications/kps-teaser.jpg" alt="Computational Design and Automated Fabrication of Kirchhoff-Plateau Surfaces">
+      </section>
+
+
       <section class="project-video">
         <div class="video-wrapper">
           <iframe src="https://www.youtube.com/embed/a2fst73hA2A" title="Project video" allowfullscreen></iframe>
@@ -46,9 +92,28 @@
     </div>
   </main>
 
+  <script>
+  function copyBibtex(btn) {
+    var text = document.getElementById('bibtex-text').innerText;
+    navigator.clipboard.writeText(text).then(function() {
+      btn.textContent = 'Copied!';
+      setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+    });
+  }
+  </script>
+
   <footer class="site-footer">
     <div class="page-container">
-      <p>&copy; 2026 Bernhard Thomaszewski</p>
+      <div class="footer-inner">
+        <a href="https://www.ethz.ch/" class="footer-logo"><img src="../../assets/images/ethz_logo_black.svg" alt="ETH Zürich"></a>
+        <div class="footer-info">
+          <p>Bernhard Thomaszewski &mdash; <a href="mailto:bthomasz@ethz.ch">bthomasz@ethz.ch</a></p>
+          <p><a href="https://www.ethz.ch/">ETH Zürich</a>, Department of Computer Science</p>
+          <p><a href="https://crl.ethz.ch/">Computational Robotics Lab</a></p>
+          <p>&copy; 2026 Bernhard Thomaszewski</p>
+        </div>
+        <a href="https://crl.ethz.ch/" class="footer-logo"><img src="../../assets/images/CRL-Logo.svg" alt="CRL"></a>
+      </div>
     </div>
   </footer>
 </body>

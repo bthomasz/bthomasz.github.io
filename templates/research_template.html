@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Bernhard Thomaszewski - {{ area.title }}{% endblock %}
+
+{% block head_extra %}
+<meta name="description" content="{{ area.intro | striptags | truncate(160, False, '') }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bernhard Thomaszewski">
+<meta property="og:title" content="Bernhard Thomaszewski - {{ area.title }}">
+<meta property="og:description" content="{{ area.intro | striptags | truncate(200, False, '') }}">
+<meta property="og:url" content="{{ site_url }}/research/{{ area.id }}/index.html">
+{% if area.card_image %}<meta property="og:image" content="{{ site_url }}/{{ area.card_image }}">{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <section class="research-intro">
+    <h1>{{ area.title }}</h1>
+    <p>{{ area.intro }}</p>
+  </section>
+
+  <section class="research-highlights">
+    {% for h in area.highlights %}
+    <article class="research-highlight">
+      <h3>{{ h.subtitle }}</h3>
+      <img class="research-banner" src="{{ root }}{{ h.image }}" alt="{{ h.subtitle }}">
+      {% if h.pub %}
+      <div class="research-citation">
+        <p class="pub-title">
+          {% if h.pub.project %}
+          <a href="{{ root }}projects/{{ h.pub.id }}/index.html">{{ h.pub.title }}</a>
+          {% else %}
+          {{ h.pub.title }}
+          {% endif %}
+        </p>
+        <p class="pub-authors">{{ h.pub.authors_joined }}</p>
+        <p class="pub-venue">{{ h.pub.venue }}</p>
+        <p class="pub-links">
+          {% if h.pub.links.pdf %}<a href="{{ h.pub.links.pdf if h.pub.links.pdf.startswith('http') else root + h.pub.links.pdf }}">PDF</a>{% endif %}
+          {% if h.pub.links.video %}<a href="{{ h.pub.links.video }}">Video</a>{% endif %}
+          {% if h.pub.project %}<a href="{{ root }}projects/{{ h.pub.id }}/index.html">Project</a>
+          {% elif h.pub.links.project %}<a href="{{ h.pub.links.project }}">Project</a>{% endif %}
+          {% if h.pub.links.code %}<a href="{{ h.pub.links.code }}">Code</a>{% endif %}
+        </p>
+      </div>
+      {% if h.pub.abstract %}
+      <p class="research-abstract">{{ h.pub.abstract }}</p>
+      {% endif %}
+      {% endif %}
+    </article>
+    {% endfor %}
+  </section>
+</div>
+{% endblock %}

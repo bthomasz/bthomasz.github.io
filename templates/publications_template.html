@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Bernhard Thomaszewski - Publications{% endblock %}
 
+{% block head_extra %}
+<meta name="description" content="Full list of publications by Bernhard Thomaszewski covering computer graphics, computational mechanics, mechanical metamaterials, robotics, and digital humans.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bernhard Thomaszewski">
+<meta property="og:title" content="Bernhard Thomaszewski - Publications">
+<meta property="og:description" content="Full list of publications by Bernhard Thomaszewski covering computer graphics, computational mechanics, mechanical metamaterials, robotics, and digital humans.">
+<meta property="og:url" content="{{ site_url }}/publications.html">
+{% endblock %}
+
 {% block content %}
 <div class="page-container">
   <section class="pub-section">

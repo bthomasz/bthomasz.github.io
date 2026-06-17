@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}Bernhard Thomaszewski{% endblock %}</title>
+  <meta name="author" content="Bernhard Thomaszewski">
   <link rel="stylesheet" href="{{ root }}assets/css/style.css">
   {% block head_extra %}{% endblock %}
 </head>
@@ -14,6 +15,16 @@
       <nav class="site-nav">
         <a href="{{ root }}index.html">Home</a>
         <a href="{{ root }}publications.html">Publications</a>
+        <div class="nav-dropdown">
+          <a href="{{ root }}research/index.html">Research</a>
+          <div class="nav-dropdown-menu">
+            <a href="{{ root }}research/neural-simulation/index.html">Neural Simulation</a>
+            <a href="{{ root }}research/structured-materials/index.html">Structured Materials</a>
+            <a href="{{ root }}research/robotics/index.html">Robotics</a>
+            <a href="{{ root }}research/smart-simulation/index.html">Smart Simulation</a>
+            <a href="{{ root }}research/digital-humans-biomechanics/index.html">Digital Humans &amp; Biomechanics</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -24,7 +35,16 @@
 
   <footer class="site-footer">
     <div class="page-container">
-      <p>&copy; {{ year }} Bernhard Thomaszewski</p>
+      <div class="footer-inner">
+        <a href="https://www.ethz.ch/" class="footer-logo"><img src="{{ root }}assets/images/ethz_logo_black.svg" alt="ETH Zürich"></a>
+        <div class="footer-info">
+          <p>Bernhard Thomaszewski &mdash; <a href="mailto:bthomasz@ethz.ch">bthomasz@ethz.ch</a></p>
+          <p><a href="https://www.ethz.ch/">ETH Zürich</a>, Department of Computer Science</p>
+          <p><a href="https://crl.ethz.ch/">Computational Robotics Lab</a></p>
+          <p>&copy; {{ year }} Bernhard Thomaszewski</p>
+        </div>
+        <a href="https://crl.ethz.ch/" class="footer-logo"><img src="{{ root }}assets/images/CRL-Logo.svg" alt="CRL"></a>
+      </div>
     </div>
   </footer>
 </body>

@@ -12,6 +12,8 @@ Usage:
 
     python generate.py path/to/paper.pdf --video local_video.mp4 --project
 
+    python generate.py path/to/paper.pdf --teaser teaser.jpg --project
+
 Workflow:
     1. Extracts title and abstract from the PDF's first page
        (best-effort heuristic - REVIEW THE RESULT, edit publications.yaml if needed).
@@ -35,6 +37,8 @@ import sys
 from pathlib import Path
 
 import fitz  # PyMuPDF
+from PIL import Image as _PILImage
+import io as _io
 import yaml
 
 ROOT = Path(__file__).resolve().parent
@@ -91,32 +95,135 @@ def extract_metadata(pdf_path):
     }
 
 
-def extract_thumbnail(pdf_path, out_path):
-    """Save the first embedded image on page 1 as the thumbnail.
+def _extract_largest_image(doc, pages):
+    """Return (img_bytes, smask_bytes) for the largest embedded image across the given page indices."""
+    best = None  # (area, img_bytes, smask_xref)
+    for page_num in pages:
+        for img in doc[page_num].get_images(full=True):
+            xref = img[0]
+            try:
+                base_image = doc.extract_image(xref)
+            except Exception:
+                continue
+            area = base_image.get("width", 0) * base_image.get("height", 0)
+            if area < 10_000:
+                continue
+            if best is None or area > best[0]:
+                best = (area, base_image["image"], base_image.get("smask", 0))
+    if best is None:
+        return None, None
+    _, img_bytes, smask_xref = best
+    smask_bytes = None
+    if smask_xref:
+        try:
+            smask_bytes = doc.extract_image(smask_xref)["image"]
+        except Exception:
+            pass
+    return img_bytes, smask_bytes
 
-    Returns the actual path written (with correct extension), or the
-    rendered-page fallback path.
+
+def extract_thumbnail(pdf_path, out_path):
+    """Largest embedded image across pages 1-4, composited onto white. Falls back to rendering page 1."""
+    doc = fitz.open(pdf_path)
+    n_pages = min(4, len(doc))
+    img_bytes, smask_bytes = _extract_largest_image(doc, range(n_pages))
+    if img_bytes is None:
+        pix = doc[0].get_pixmap(dpi=150)
+        doc.close()
+        actual = out_path.with_suffix(".jpg")
+        _save_resized(pix.tobytes("png"), actual)
+        return actual
+    doc.close()
+    actual = out_path.with_suffix(".jpg")
+    _save_resized(img_bytes, actual, smask_bytes=smask_bytes)
+    return actual
+
+
+def extract_teaser(pdf_path, out_path):
+    """Crop the teaser figure from page 1: the band between author names and the figure caption / abstract.
+
+    Strategy:
+    - header_end: bottom of the last WIDE text block (>40% of page width) in the top 40% of the page.
+      Using width filters out narrow figure-label text ("Fig. 1A", "Linear", etc.) that sits inside
+      the teaser region but is part of the figure, not the header.
+    - teaser_bottom: top of the first wide text block below header_end that looks like a figure
+      caption ("Fig. 1", "Figure 1") or an abstract heading ("Abstract"). Falls back to 55% page height.
+    - If the resulting crop is thinner than 10% of the page (no teaser on page 1, e.g. CGF/arXiv
+      two-column format), falls back to rendering the middle 20%–75% band of the page.
     """
     doc = fitz.open(pdf_path)
     page = doc[0]
-    images = page.get_images(full=True)
+    page_h = page.rect.height
+    page_w = page.rect.width
 
-    if not images:
-        # fall back: render the first page itself
-        out_path_with_ext = out_path.with_suffix(".png")
-        pix = page.get_pixmap(dpi=150)
-        pix.save(str(out_path_with_ext))
-        doc.close()
-        return out_path_with_ext
+    blocks = page.get_text("blocks")
+    text_blocks = [(b[0], b[1], b[2], b[3], b[4]) for b in blocks if b[6] == 0]
 
-    xref = images[0][0]
-    base_image = doc.extract_image(xref)
-    img_bytes = base_image["image"]
-    ext = base_image["ext"]
-    out_path_with_ext = out_path.with_suffix(f".{ext}")
-    out_path_with_ext.write_bytes(img_bytes)
+    MIN_WIDE = page_w * 0.40   # block must span at least 40% of page width
+
+    # --- header_end: bottom of the last wide non-caption block in the top 40% of page ---
+    # Exclude figure captions ("Fig. 1", "Figure 1") which are wide but belong to the teaser.
+    header_end_y = 0
+    for x0, y0, x1, y1, text in text_blocks:
+        if y0 < page_h * 0.40 and (x1 - x0) >= MIN_WIDE:
+            if not re.match(r'^Fig(ure)?\.?\s*\d', text[:30].strip(), re.IGNORECASE):
+                header_end_y = max(header_end_y, y1)
+    if header_end_y == 0:
+        header_end_y = page_h * 0.25   # nothing wide found (unusual)
+
+    # --- teaser_bottom: first wide block below header that is a caption or abstract heading ---
+    teaser_bottom_y = None
+    for x0, y0, x1, y1, text in sorted(text_blocks, key=lambda b: b[1]):
+        if y0 <= header_end_y:
+            continue
+        if (x1 - x0) < MIN_WIDE:
+            continue
+        snippet = text[:50].strip()
+        if re.match(r'^Fig(ure)?\.?\s*\d', snippet, re.IGNORECASE) or \
+           re.match(r'^Abstract', snippet, re.IGNORECASE):
+            teaser_bottom_y = y0
+            break
+    # Fallback: first wide block below header regardless of content
+    if teaser_bottom_y is None:
+        for x0, y0, x1, y1, _ in sorted(text_blocks, key=lambda b: b[1]):
+            if y0 > header_end_y and (x1 - x0) >= MIN_WIDE:
+                teaser_bottom_y = y0
+                break
+    if teaser_bottom_y is None:
+        teaser_bottom_y = page_h * 0.55
+
+    teaser_height = teaser_bottom_y - header_end_y
+
+    if teaser_height < page_h * 0.10:
+        # No dedicated teaser slot on page 1 — render middle band
+        clip = fitz.Rect(0, page_h * 0.20, page_w, page_h * 0.75)
+    else:
+        margin = page_h * 0.005
+        clip = fitz.Rect(0, header_end_y + margin, page_w, teaser_bottom_y - margin)
+
+    pix = page.get_pixmap(matrix=fitz.Matrix(2, 2), clip=clip, colorspace=fitz.csRGB)
     doc.close()
-    return out_path_with_ext
+
+    actual = out_path.with_suffix(".jpg")
+    _save_resized(pix.tobytes("png"), actual, max_width=1200, quality=88)
+    return actual
+
+
+def _save_resized(img_bytes, out_path, max_width=800, quality=85, smask_bytes=None):
+    """Resize to max_width and save as JPEG, compositing onto white if a soft mask is given."""
+    img = _PILImage.open(_io.BytesIO(img_bytes)).convert("RGB")
+    if smask_bytes:
+        try:
+            alpha = _PILImage.open(_io.BytesIO(smask_bytes)).convert("L")
+            bg = _PILImage.new("RGB", img.size, (255, 255, 255))
+            bg.paste(img, mask=alpha)
+            img = bg
+        except Exception:
+            pass
+    if img.width > max_width:
+        ratio = max_width / img.width
+        img = img.resize((max_width, int(img.height * ratio)), _PILImage.LANCZOS)
+    img.save(str(out_path), "JPEG", quality=quality, optimize=True)
 
 
 def make_bibtex(entry):
@@ -142,6 +249,9 @@ def main():
     parser.add_argument("--venue", required=True, help="Venue string, e.g. 'Proc. ACM SIGGRAPH 2026'")
     parser.add_argument("--year", type=int, required=True, help="Publication year")
     parser.add_argument("--video", help="Video URL (YouTube/Vimeo) or path to a local .mp4")
+    parser.add_argument("--teaser", type=Path,
+                         help="Path to a teaser/hero image for the project page "
+                              "(used instead of the auto-extracted thumbnail)")
     parser.add_argument("--code", help="Code repository URL")
     parser.add_argument("--project", action="store_true",
                          help="Generate a standalone project page for this paper")
@@ -179,6 +289,23 @@ def main():
     thumb_rel = f"assets/images/publications/{thumb_path.name}"
     print(f"  Thumbnail: {thumb_rel}")
 
+    # --- teaser image ---
+    teaser_rel = None
+    if args.teaser:
+        if not args.teaser.exists():
+            sys.exit(f"Teaser image not found: {args.teaser}")
+        THUMB_DIR.mkdir(parents=True, exist_ok=True)
+        teaser_dest = THUMB_DIR / f"{entry_id}-teaser{args.teaser.suffix.lower()}"
+        shutil.copy(args.teaser, teaser_dest)
+        teaser_rel = f"assets/images/publications/{teaser_dest.name}"
+        print(f"  Teaser: {teaser_rel}")
+    elif args.project:
+        # Auto-extract page-1 teaser figure for project pages
+        THUMB_DIR.mkdir(parents=True, exist_ok=True)
+        teaser_path = extract_teaser(args.pdf, THUMB_DIR / f"{entry_id}-teaser")
+        teaser_rel = f"assets/images/publications/{teaser_path.name}"
+        print(f"  Teaser (auto from page 1): {teaser_rel}")
+
     # --- copy PDF into assets/pdf/ ---
     PDF_DIR.mkdir(parents=True, exist_ok=True)
     pdf_dest = PDF_DIR / args.pdf.name
@@ -213,6 +340,8 @@ def main():
     }
     if video_link:
         entry["links"]["video"] = video_link
+    if teaser_rel:
+        entry["teaser"] = teaser_rel
     if args.code:
         entry["links"]["code"] = args.code
     if abstract:

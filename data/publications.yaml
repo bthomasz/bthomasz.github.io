@@ -1,304 +1,1395 @@
-# publications.yaml
-# Single source of truth for all publications.
-# Each entry generates a list item on publications.html, and (if `project: true`)
-# a standalone page under projects/<id>/index.html
-#
-# Fields:
-#   id          - unique slug, used for project page folder name (required if project: true)
-#   title       - paper title
-#   authors     - list of author names, in order
-#   venue       - venue string (e.g. "Proc. ACM SIGGRAPH 2024")
-#   year        - integer year, used for sorting and grouping
-#   thumbnail   - path to thumbnail image, relative to site root
-#   abstract    - paper abstract (used on project page; optional for list-only entries)
-#   bibtex      - bibtex entry as a literal block (optional)
-#   links:
-#     pdf       - URL to PDF
-#     video     - URL to video (YouTube/Vimeo link or local .mp4 path)
-#     project   - URL to project page (external OR auto-filled if `project: true`)
-#     code      - URL to code repo
-#     supplemental - URL to supplemental material
-#   project     - bool, if true a project page is generated at projects/<id>/
-#   highlight   - bool, if true this entry appears in the homepage carousel
-#   carousel_image - path to wide carousel image (only needed if highlight: true)
-
-- id: q3t-prisms
-  title: "Q3T Prisms: A Linear-Quadratic Solid Shell Element for Elastoplastic Surfaces"
+- id: isogami
+  title: 'IsoGami: Rigid-Deployable Kirigami Materials From Isohedral Tilings'
   authors:
-    - "J. Montes Maestre"
-    - "S. Coros"
-    - "B. Thomaszewski"
-  venue: "Proc. ACM SIGGRAPH 2024"
-  year: 2024
-  thumbnail: "assets/images/publications/Q3T.png"
+  - Guo Han
+  - Juan Sebastian Montes Maestre
+  - Logan Numerow
+  - Ronan Hinchet
+  - Stelian Coros
+  - Bernhard Thomaszewski
+  venue: ACM SIGGRAPH 2026 Conference Papers
+  year: 2026
+  thumbnail: assets/images/publications/isogami.jpg
   links:
-    pdf: "https://crl.ethz.ch/papers/q3t.pdf"
-  project: false
-  highlight: false
-
-- id: contourcraft
-  title: "ContourCraft: Learning to Resolve Intersections in Neural Multi-Garment Simulations"
-  authors:
-    - "A. Grigorev"
-    - "G. Becherini"
-    - "M. J. Black"
-    - "O. Hilliges"
-    - "B. Thomaszewski"
-  venue: "Proc. ACM SIGGRAPH 2024"
-  year: 2024
-  thumbnail: "assets/images/publications/contourCraft.png"
-  links:
-    pdf: "https://arxiv.org/abs/2405.09522"
-  project: false
-  highlight: true
-  carousel_image: "assets/images/carousel/ContourCraftSlider.jpg"
-
-- id: modal-folding
-  title: "Modal Folding: Discovering Smooth Folding Patterns for Sheet Materials using Strain-Space Modes"
-  authors:
-    - "P. Tang"
-    - "R. Hinchet"
-    - "R. Poranne"
-    - "B. Thomaszewski"
-    - "S. Coros"
-  venue: "Proc. ACM SIGGRAPH 2024"
-  year: 2024
-  thumbnail: "assets/images/publications/modal_folding.jpeg"
-  links:
-    pdf: "https://arxiv.org/abs/2405.04280"
-    video: "https://www.youtube.com/watch?v=L-JB8Totg8A&feature=youtu.be"
-  project: false
-  highlight: false
-
-- id: differentiable-voronoi
-  title: "Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems"
-  authors:
-    - "L. Numerow"
-    - "Y. Li"
-    - "S. Coros"
-    - "B. Thomaszewski"
-  venue: "ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)"
-  year: 2024
-  thumbnail: "assets/images/publications/DiffVoronoi.png"
-  links:
-    pdf: "https://arxiv.org/abs/2404.18629"
-    video: "https://crl.ethz.ch/videos/VoronoiFoam_video.mp4"
-  project: false
-  highlight: true
-  carousel_image: "assets/images/carousel/DiffVoronoiSlider.jpg"
-
-- id: flexscale
-  title: "FlexScale: Modeling and Characterization of Flexible Scaled Sheets"
-  authors:
-    - "J. Montes Maestre"
-    - "Y. Du"
-    - "R. Hinchet"
-    - "S. Coros"
-    - "B. Thomaszewski"
-  venue: "ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)"
-  year: 2024
-  thumbnail: "assets/images/publications/flexscales.png"
-  links:
-    pdf: "https://crl.ethz.ch/papers/ScalesSiggraphToG.pdf"
-    video: "https://crl.ethz.ch/videos/ScalesVideo.mp4"
-  project: false
-  highlight: true
-  carousel_image: "assets/images/carousel/ScalesSlider.jpg"
-
-- id: differentiable-geodesic-distance
-  title: "Differentiable Geodesic Distance for Intrinsic Minimization on Triangle Meshes"
-  authors:
-    - "Yue Li"
-    - "Logan Numerow"
-    - "Bernhard Thomaszewski"
-    - "Stelian Coros"
-  venue: "ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)"
-  year: 2024
-  thumbnail: "assets/images/publications/DiffGD.png"
-  links:
-    pdf: "https://arxiv.org/abs/2404.18610"
-  project: false
-  highlight: false
-
-- id: deformable-contact
-  title: "Robust and Artefact-Free Deformable Contact with Smooth Surface Representations"
-  authors:
-    - "Y. Du"
-    - "Y. Li"
-    - "S. Coros"
-    - "B. Thomaszewski"
-  venue: "Computer Graphics Forum (Proc. ACM/Eurographics Symposium on Computer Animation, SCA '24), 2024"
-  year: 2024
-  thumbnail: "assets/images/publications/DeformableContact.jpg"
-  links:
-    pdf: "https://crl.ethz.ch/papers/DeformableContact_SCA%20(3).pdf"
-    video: "https://youtu.be/FSUcIOnfdLI"
-  project: false
-  highlight: false
-
-- id: neural-modes
-  title: "Neural Modes: Self-supervised Learning of Nonlinear Modal Subspaces"
-  authors:
-    - "J. Wang"
-    - "Y. Du"
-    - "S. Coros"
-    - "B. Thomaszewski"
-  venue: "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2024"
-  year: 2024
-  thumbnail: "assets/images/publications/NeuralMode.png"
-  links:
-    pdf: "https://arxiv.org/abs/2404.17620"
-    video: "https://www.youtube.com/watch?v=e4eWEqHSiSU&feature=youtu.be"
-  project: false
-  highlight: false
-
-- id: toros
-  title: "ToRoS: A Topology Optimization Approach for Designing Robotic Skins"
-  authors:
-    - "J. Montes"
-    - "R. Hinchet"
-    - "S. Coros"
-    - "B. Thomaszewski"
-  venue: "ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2023)"
-  year: 2023
-  thumbnail: "assets/images/publications/ToRoS.png"
-  links:
-    pdf: "assets/pdf/Montes23ToRoS.pdf"
-  project: false
-  highlight: true
-  carousel_image: "assets/images/carousel/TorosSlider.jpg"
-
-- id: neural-metamaterial-networks
-  title: "Neural Metamaterial Networks"
-  authors:
-    - "Y. Li"
-    - "S. Coros"
-    - "B. Thomaszewski"
-  venue: "ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2023)"
-  year: 2023
-  thumbnail: "assets/images/publications/nmn.png"
-  links:
-    pdf: "https://arxiv.org/abs/2309.10600"
-  project: false
-  highlight: true
-  carousel_image: "assets/images/carousel/NMFSlider.jpg"
-
-- id: differentiable-stripe-patterns
-  title: "Differentiable Stripe Patterns for Inverse Design of Structured Surfaces"
-  authors:
-    - "J. Montes"
-    - "Y. Du"
-    - "R. Hinchet"
-    - "S. Coros"
-    - "B. Thomaszewski"
-  venue: "ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2023)"
-  year: 2023
-  thumbnail: "assets/images/publications/DifferentiableStripes.jpeg"
-  links:
-    pdf: "assets/pdf/Montes23Differentiable.pdf"
-  project: false
-  highlight: false
-
-- id: beyond-chainmail-dim
-  title: "Beyond Chainmail: Computational Modeling of Discrete Interlocking Materials"
-  authors:
-    - "P. Tang"
-    - "S. Coros"
-    - "B. Thomaszewski"
-  venue: "ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2023)"
-  year: 2023
-  thumbnail: "assets/images/publications/DIM.jpeg"
-  links:
-    pdf: "assets/pdf/Tang23DIM.pdf"
-    video: "https://www.youtube.com/watch?v=e1h2C8uk6SU&ab_channel=PengbinTang"
-  project: false
-  highlight: true
-  carousel_image: "assets/images/carousel/DIMSlider.jpg"
-
-- id: tcto-bespoke-frames
-  title: "A Temporal Coherent Topology Optimization Approach for Assembly Planning of Bespoke Frame Structures"
-  authors:
-    - "Z. Wang"
-    - "F. Kennel-Maushart"
-    - "Y. Huang"
-    - "B. Thomaszewski"
-    - "S. Coros"
-  venue: "ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2023)"
-  year: 2023
-  thumbnail: "assets/images/publications/TCTO.png"
-  links:
-    pdf: "assets/pdf/Wang23TCTO.pdf"
-    video: "https://www.youtube.com/watch?v=VTFGXlluv04&ab_channel=ZIQIWANG"
-  project: false
-  highlight: false
-
-- id: hood
-  title: "HOOD: Hierarchical Graphs for Generalized Modelling of Clothing Dynamics"
-  authors:
-    - "A. Grigorev"
-    - "B. Thomaszewski"
-    - "M. Black"
-    - "O. Hilliges"
-  venue: "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2023"
-  year: 2023
-  thumbnail: "assets/images/publications/Hood.jpg"
-  links:
-    pdf: "https://arxiv.org/abs/2212.07242"
-    video: "https://dolorousrtur.github.io/hood/"
-  project: false
-  highlight: false
-
-# --- Older publications (abbreviated; extend as needed) ---
-
-- id: ncm-nonlinear-compliant-modes
-  title: "Nonlinear Compliant Modes for Large-Deformation Analysis of Flexible Structures"
-  authors:
-    - "S. Dünser"
-    - "B. Thomaszewski"
-    - "R. Poranne"
-    - "S. Coros"
-  venue: "ACM Transactions on Graphics, 2022"
-  year: 2022
-  thumbnail: "assets/images/publications/NCM.png"
-  links:
-    pdf: "assets/pdf/Duenser22NCM.pdf"
-  project: false
-  highlight: false
-
-- id: cdakg
-  title: "Computational Design of Active Kinesthetic Garments"
-  authors:
-    - "V. Vechev"
-    - "R. Hinchet"
-    - "S. Coros"
-    - "B. Thomaszewski"
-    - "O. Hilliges"
-  venue: "ACM UIST, 2022"
-  year: 2022
-  thumbnail: "assets/images/publications/CDAKG.png"
-  links:
-    pdf: "assets/pdf/Vechev22CDAKG.pdf"
-    video: "https://www.youtube.com/watch?v=FC_VGT2wGk8"
-    project: "https://ait.ethz.ch/projects/2022/cdakg/"
-  project: false
-  highlight: false
-
-- id: kps
-  title: "Computational Design and Automated Fabrication of Kirchhoff-Plateau Surfaces"
-  authors:
-    - "J. Perez"
-    - "M. Otaduy"
-    - "B. Thomaszewski"
-  venue: "ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2017)"
-  year: 2017
-  thumbnail: "assets/images/publications/KPS.png"
-  links:
-    pdf: "assets/pdf/Perez17KPS.pdf"
-    video: "https://youtu.be/a2fst73hA2A"
+    pdf: assets/pdf/Isogami.pdf
+    code: https://github.com/guo-han/Isogami
+    video: https://youtu.be/6FhFU2Vlgk8
   project: true
   highlight: false
-  abstract: >
-    We present a computational pipeline for the design and fabrication
-    of Kirchhoff-Plateau surfaces -- thin elastic rods bent into shape
-    by soap film tension -- enabling new classes of self-supporting
-    curved structures.
+  teaser: assets/images/publications/isogami-teaser.jpg
+  bibtex: "@article{Han26Isogami,\n  title   = {IsoGami: Rigid-Deployable Kirigami Materials From Isohedral Tilings},\n  author  = {Han, Guo and Montes Maestre, Juan Sebastian and Numerow, Logan and Hinchet, Ronan and Coros, Stelian and Thomaszewski, Bernhard},\n  journal = {ACM SIGGRAPH 2026 Conference Papers},\n  year    = {2026}\n}"
+  abstract: Rigid-deployable Kirigami sheets are unique mechanical structures, enabling extreme expansion with minimal elastic deformation. Furthermore, they unfold in fluid and coordinated motions which reveal interesting geometric patterns. Thanks to their tunable expansion behaviour, Kirigami-like structures have found a wide range of applications at various scales. However, finding the right geometry for a given application remains a significant challenge due to the complex relationship between cut patterns and deployment behavior. In this work, we introduce a computational approach to explore the design space of rigid-deployable Kirigami sheets defined over isohedral tilings, a class of periodic patterns constructed from identical polygonal tiles. Our method explores the mixed discrete-continuous design space formed by joint topologies and tile shape parameters. Leveraging tools from linkage analysis, we identify self-deployable designs with a single kinematic degree of freedom. To
+    compute the corresponding deployment motions, we extend the concept of nonlinear compliant modes to the multi-body setting, incorporating collision handling to ensure feasible designs. Our approach enables the discovery of diverse isohedral Kirigami sheets with varying topologies, tile shapes, and expansion behavior. We showcase our results through an interactive material browser and validate selected designs with 3D-printed prototypes.
+  videos:
+  - assets/video/Kirigami1.mp4
+  - assets/video/Kirigami2.mp4
+  - assets/video/Kirigami3.mp4
+  - assets/video/KirigamiPrototypes.mp4
+- id: origami-materials
+  title: A Unified Homogenization Framework for Straight- and Curved-Crease Origami Materials
+  authors:
+  - M. Li
+  - J. S. Montes Maestre
+  - E. Ganier
+  - K. Mundilova
+  - M. Pauly
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2026)
+  year: 2026
+  thumbnail: assets/images/publications/origami-materials-teaser.jpg
+  links:
+    pdf: assets/pdf/OrigamiMaterials.pdf
+    video: https://youtu.be/99tWdPK9NP8
+  project: true
+  highlight: false
+  teaser: assets/images/publications/origami-materials-teaser.jpg
+  abstract: We present a computational framework for numerical homogenization of origami materials---thin sheets structured with periodic crease patterns that, once folded, exhibit diverse and often unusual mechanical properties. Whereas the in-plane stiffness of conventional sheet materials is typically orders of magnitude larger than their resistance to bending, origami-based folding introduces geometric structure that can drastically reshape both bending and stretching behavior. However, predicting how a particular crease pattern gives rise to effective macroscopic properties remains challenging due to the complex coupling of crease geometry, folding kinematics, and surface deformations. In this work, we introduce a computational framework that integrates simulation-based folding and numerical homogenization to explore the relationship between crease pattern and effective material behavior. To describe the macromechanical response of origami materials, we employ a quadratic energy model
+    based on Classical Laminate Theory, together with a simplified treatment of crease plasticity. Our unified representation accommodates both straight- and curved-crease designs, revealing a rich space of origami materials with diverse behavior. In particular, we examine how pattern symmetry governs material symmetries, demonstrating examples that span the full spectrum from perfectly isotropic to highly anisotropic membrane and bending responses. Our framework further enables controlled exploration of parameter variations, illustrating how geometric features such as crease curvature shape macroscopic mechanical behavior. We showcase the potential of this approach through a broad set of examples, ranging from canonical straight-crease patterns such as Miura-ori to complex curved-crease tessellations. While a quantitative analysis is left for future work, we validate our homogenized descriptions against native-scale simulations and qualitatively compare deformation behaviors with real-world
+    prototypes.
+  bibtex: "@article{Li26AUnified,\n  title = {A Unified Homogenization Framework for Straight- and Curved-Crease Origami Materials},\n  author = {Li, Mingjie and Montes Maestre, Juan Sebastian and Ganier, Emilien and Mundilova, Klara and Pauly, Mark and Thomaszewski, Bernhard},\n  journal = {ACM Transactions on Graphics (SIGGRAPH '26)},\n  year = {2026}\n}\n"
+- id: shell-homogenization
+  title: Taking a Moment to Characterize the Bending Response of Thin Sheet Materials
+  authors:
+  - P. Xie
+  - J. S. Montes Maestre
+  - S. Coros
+  - B. Thomaszewski
+  venue: Computer Graphics Forum (Proc. Eurographics Symposium on Geometry Processing, SGP 2026), Vol. 45, No. 5
+  year: 2026
+  thumbnail: assets/images/publications/shell-homogenization-teaser.jpg
+  links:
+    pdf: assets/pdf/ShellHomogenization.pdf
+    video: https://youtu.be/YxvFebgKd38
+  project: true
+  highlight: false
+  teaser: assets/images/publications/shell-homogenization-teaser.jpg
+  abstract: Structured sheet materials such as rod networks, multi-material shells, and laminates exhibit complex mechanical behavior. We present a moment-based homogenization method that infers curvature coupling using only uniaxial bending tests. Our approach computes macroscopic bending moments from native-scale simulations and enables accurate modeling of double-curvature behavior.
+  bibtex: "@article{Xie2026MomentHomogenization,\n  title   = {Taking a Moment to Characterize the Bending Response of Thin Sheet Materials},\n  author  = {Xie, P. and Montes Maestre, Juan Sebastian and Coros, Stelian and Thomaszewski, Bernhard},\n  journal = {Computer Graphics Forum},\n  volume  = {45},\n  number  = {5},\n  year    = {2026}\n}\n"
+- id: momentum-gnn
+  title: Momentum-Conserving Graph Neural Networks for Deformable Objects
+  authors:
+  - Jiahong Wang
+  - Logan Numerow
+  - Stelian Coros
+  - Christian Theobalt
+  - Vahid Babaei
+  - Bernhard Thomaszewski
+  venue: International Conference on 3D Vision 2026
+  year: 2026
+  thumbnail: assets/images/publications/momentum-gnn.jpg
+  links:
+    pdf: assets/pdf/MomentumGNN.pdf
+    video: https://youtu.be/FOpoQxbjEW0
+    supplemental: assets/pdf/MomentumGNN-appendix.pdf
+  project: true
+  highlight: false
+  teaser: assets/images/publications/momentum-gnn-teaser.jpg
+  abstract: Graph neural networks (GNNs) have emerged as a versatile and efficient option for modeling the dynamic behavior of deformable materials. While GNNs generalize readily to arbitrary shapes, mesh topologies, and material parameters, existing architectures struggle to correctly predict the temporal evolution of key physical quantities such as linear and angular momentum. In this work, we propose MomentumGNN — a novel architecture designed to accurately track momentum by construction. Unlike existing GNNs that output unconstrained nodal accelerations, our model predicts per-edge stretching and bending impulses which guarantee the preservation of linear and angular momentum. We train our network in an unsupervised fashion using a physics-based loss, and we show that our method outperforms baselines in a number of common scenarios where momentum plays a pivotal role.
+  bibtex: "@article{Wang2026,\n  title   = {Momentum-Conserving Graph Neural Networks for Deformable Objects},\n  author  = {Jiahong Wang and Logan Numerow and Stelian Coros and Christian Theobalt and Vahid Babaei and Bernhard Thomaszewski},\n  journal = {arXiv:2604.26097},\n  year    = {2026}\n}"
+- id: q3t-prisms
+  title: 'Q3T Prisms: A Linear-Quadratic Solid Shell Element for Elastoplastic Surfaces'
+  authors:
+  - J. Montes Maestre
+  - S. Coros
+  - B. Thomaszewski
+  venue: Proc. ACM SIGGRAPH 2024
+  year: 2024
+  thumbnail: assets/images/publications/Q3T.png
+  links:
+    pdf: https://crl.ethz.ch/papers/q3t.pdf
+    video: https://youtu.be/5LMjHe756WM
+  project: true
+  highlight: false
+  abstract: We introduce an approach for simulating elastoplastic surfaces using quadratic through-the-thickness (Q3T) solid shell elements. Modeling the mechanics of deformable surfaces has been a cornerstone of graphics research for decades. Although thin shell models are suitable for many materials and applications, simulation-based planning of plastic forming processes requires attention to deformation in the thickness direction. Building on recent advances in the graphics community, we explore solid shell elements for modeling elastoplastic surfaces. Linear prism elements perform well for compressible materials such as thick cloth and foam mats. However, due to their inability to capture non-constant strain in the thickness direction, they suffer from severe locking artifacts when applied to incompressible and plastic materials. Q3T elements address this limitation with a minimal yet effective modification to linear prisms, resulting in significantly improved performance with only a
+    moderate increase in computational cost. Through various examples, we demonstrate that Q3T elements closely match the qualitative behavior of reference simulations and provide accurate quantitative results compared to real-world deep drawing experiments.
+  bibtex: "@article{MontesMaestre2024Q3T,\n  title   = {Q3T Prisms: A Linear-Quadratic Solid Shell Element for Elastoplastic Surfaces},\n  author  = {Juan Sebastian Montes Maestre and Stelian Coros and Bernhard Thomaszewski},\n  journal = {Proc. ACM SIGGRAPH Asia 2024},\n  year    = {2024}\n}"
+  teaser: assets/images/publications/q3t-prisms-teaser.jpg
+- id: contourcraft
+  title: 'ContourCraft: Learning to Resolve Intersections in Neural Multi-Garment Simulations'
+  authors:
+  - A. Grigorev
+  - G. Becherini
+  - M. J. Black
+  - O. Hilliges
+  - B. Thomaszewski
+  venue: Proc. ACM SIGGRAPH 2024
+  year: 2024
+  thumbnail: assets/images/publications/contourCraft.png
+  links:
+    pdf: https://arxiv.org/abs/2405.09522
+    video: https://www.youtube.com/watch?v=5i9DXhPMEow
+    project: https://dolorousrtur.github.io/contourcraft/
+  project: false
+  highlight: true
+  carousel_image: assets/images/carousel/ContourCraftSlider.jpg
+- id: modal-folding
+  title: 'Modal Folding: Discovering Smooth Folding Patterns for Sheet Materials using Strain-Space Modes'
+  authors:
+  - P. Tang
+  - R. Hinchet
+  - R. Poranne
+  - B. Thomaszewski
+  - S. Coros
+  venue: Proc. ACM SIGGRAPH 2024
+  year: 2024
+  thumbnail: assets/images/publications/modal_folding.jpg
+  links:
+    pdf: https://arxiv.org/abs/2405.04280
+    video: https://www.youtube.com/watch?v=L-JB8Totg8A&feature=youtu.be
+  project: false
+  highlight: false
+- id: differentiable-voronoi
+  title: Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems
+  authors:
+  - L. Numerow
+  - Y. Li
+  - S. Coros
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)
+  year: 2024
+  thumbnail: assets/images/publications/DiffVoronoi.jpg
+  links:
+    pdf: https://arxiv.org/abs/2404.18629
+    video: https://crl.ethz.ch/videos/VoronoiFoam_video.mp4
+  project: true
+  highlight: true
+  carousel_image: assets/images/carousel/DiffVoronoiSlider.jpg
+  abstract: Navigating topological transitions in cellular mechanical systems is a significant challenge for existing simulation methods. While abstract models lack predictive capabilities at the cellular level, explicit network representations struggle with topology changes, and per-cell representations are computationally too demanding for large-scale simulations. To address these challenges, we propose a novel cell-centered approach based on differentiable Voronoi diagrams. Representing each cell with a Voronoi site, our method defines shape and topology of the interface network implicitly. In this way, we substantially reduce the number of problem variables, eliminate the need for explicit contact handling, and ensure continuous geometry changes during topological transitions. Closed-form derivatives of network positions facilitate simulation with Newton-type methods for a wide range of per-cell energies. Finally, we extend our differentiable Voronoi diagrams to enable coupling with
+    arbitrary rigid and deformable boundaries. We apply our approach to a diverse set of examples, highlighting splitting and merging of cells as well as neighborhood changes. We illustrate applications to inverse problems by matching soap foam simulations to real-world images. Comparative analysis with explicit cell models reveals that our method achieves qualitatively comparable results at significantly faster computation times.
+  bibtex: "@article{Numerow2024DiffVoronoi,\n  title   = {Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems},\n  author  = {Logan Numerow and Yue Li and Stelian Coros and Bernhard Thomaszewski},\n  journal = {ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)},\n  year    = {2024}\n}"
+  teaser: assets/images/publications/differentiable-voronoi-teaser.jpg
+- id: flexscale
+  title: 'FlexScale: Modeling and Characterization of Flexible Scaled Sheets'
+  authors:
+  - Juan Montes Maestre
+  - Yinwei Du
+  - Ronan Hinchet
+  - Stelian Coros
+  - Bernhard Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)
+  year: 2024
+  thumbnail: assets/images/publications/flexscales.png
+  links:
+    pdf: https://crl.ethz.ch/papers/ScalesSiggraphToG.pdf
+    video: https://crl.ethz.ch/videos/ScalesVideo.mp4
+  project: true
+  highlight: true
+  carousel_image: assets/images/carousel/ScalesSlider.jpg
+  abstract: We present a computational approach for modeling the mechanical behavior of flexible scaled sheet materials — 3D-printed hard scales embedded in a soft substrate. Balancing strength and flexibility, these structured materials find applications in protective gear, soft robotics, and 3D-printed fashion. To unlock their full potential, however, we must unravel the complex relation between scale pattern and mechanical properties. To address this problem, we propose a contact-aware homogenization approach that distills native-level simulation data into a novel macromechanical model. This macro-model combines piecewise-quadratic uniaxial fits with polar interpolation using circular harmonics, allowing for efficient simulation of large-scale patterns. We apply our approach to explore the space of isohedral scale patterns, revealing a diverse range of anisotropic and nonlinear material behaviors. Through an extensive set of experiments, we show that our models reproduce various scale-level
+    effects while offering good qualitative agreement with physical prototypes on the macro-level.
+  teaser: assets/images/publications/flexscale-teaser.jpg
+  bibtex: "@article{MontesMaestre2024FlexScale,\n  title   = {FlexScale: Modeling and Characterization of Flexible Scaled Sheets},\n  author  = {Juan Montes Maestre and Yinwei Du and Ronan Hinchet and Stelian Coros and Bernhard Thomaszewski},\n  journal = {ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)},\n  year    = {2024}\n}"
+- id: differentiable-geodesic-distance
+  title: Differentiable Geodesic Distance for Intrinsic Minimization on Triangle Meshes
+  authors:
+  - Yue Li
+  - Logan Numerow
+  - Bernhard Thomaszewski
+  - Stelian Coros
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)
+  year: 2024
+  thumbnail: assets/images/publications/DiffGD.jpg
+  links:
+    pdf: https://arxiv.org/abs/2404.18610
+  project: true
+  highlight: false
+  abstract: Computing intrinsic distances on discrete surfaces is at the heart of many minimization problems in geometry processing and beyond. Solving these problems is extremely challenging as it demands the computation of on-surface distances along with their derivatives. We present a novel approach for intrinsic minimization of distance-based objectives defined on triangle meshes. Using a variational formulation of shortest-path geodesics, we compute first and second-order distance derivatives based on the implicit function theorem, thus opening the door to efficient Newton-type minimization solvers. We demonstrate our differentiable geodesic distance framework on a wide range of examples, including geodesic networks and membranes on surfaces of arbitrary genus, two-way coupling between hosting surface and embedded system, differentiable geodesic Voronoi diagrams, and efficient computation of Karcher means on complex shapes. Our analysis shows that second-order descent methods based
+    on our differentiable geodesics outperform existing first-order and quasi-Newton methods by large margins.
+  bibtex: "@article{Li2024DiffGeodesic,\n  title   = {Differentiable Geodesic Distance for Intrinsic Minimization on Triangle Meshes},\n  author  = {Yue Li and Logan Numerow and Bernhard Thomaszewski and Stelian Coros},\n  journal = {ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)},\n  year    = {2024}\n}"
+  teaser: assets/images/publications/differentiable-geodesic-distance-teaser.jpg
+- id: deformable-contact
+  title: Robust and Artefact-Free Deformable Contact with Smooth Surface Representations
+  authors:
+  - Y. Du
+  - Y. Li
+  - S. Coros
+  - B. Thomaszewski
+  venue: Computer Graphics Forum (Proc. ACM/Eurographics Symposium on Computer Animation, SCA '24), 2024
+  year: 2024
+  thumbnail: assets/images/publications/DeformableContact.jpg
+  links:
+    pdf: https://crl.ethz.ch/papers/DeformableContact_SCA%20(3).pdf
+    video: https://youtu.be/FSUcIOnfdLI
+  project: true
+  highlight: false
+  abstract: Modeling contact between deformable solids is a fundamental problem in computer animation, mechanical design, and robotics. Existing methods based on C0-discretizations—piece-wise linear or polynomial surfaces—suffer from discontinuities and irregularities in tangential contact forces, which can significantly affect simulation outcomes and even prevent convergence. In this work, we show that these limitations can be overcome with a smooth surface representation based on Implicit Moving Least Squares (IMLS). In particular, we propose a self collision detection scheme tailored to IMLS surfaces that enables robust and efficient handling of challenging self contacts. Through a series of test cases, we show that our approach offers advantages over existing methods in terms of accuracy and robustness for both forward and inverse problems.
+  bibtex: "@article{Du2024Contact,\n  title   = {Robust and Artefact-Free Deformable Contact with Smooth Surface Representations},\n  author  = {Y. Du and Yue Li and Stelian Coros and Bernhard Thomaszewski},\n  journal = {Computer Graphics Forum (Proc. ACM/Eurographics Symposium on Computer Animation 2024)},\n  year    = {2024}\n}"
+  teaser: assets/images/publications/deformable-contact-teaser.jpg
+- id: neural-modes
+  title: 'Neural Modes: Self-supervised Learning of Nonlinear Modal Subspaces'
+  authors:
+  - J. Wang
+  - Y. Du
+  - S. Coros
+  - B. Thomaszewski
+  venue: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2024
+  year: 2024
+  thumbnail: assets/images/publications/NeuralMode.jpg
+  links:
+    pdf: https://arxiv.org/abs/2404.17620
+    video: https://www.youtube.com/watch?v=e4eWEqHSiSU&feature=youtu.be
+  project: true
+  highlight: false
+  abstract: We propose a self-supervised approach for learning physics-based subspaces for real-time simulation. Existing learning-based methods construct subspaces by approximating pre-defined simulation data in a purely geometric way. However, this approach tends to produce high-energy configurations, leads to entangled latent space dimensions, and generalizes poorly beyond the training set. To overcome these limitations, we propose a self-supervised approach that directly minimizes the system's mechanical energy during training. We show that our method leads to learned subspaces that reflect physical equilibrium constraints, resolve overfitting issues of previous methods, and offer interpretable latent space parameters.
+  bibtex: "@article{Wang2024NeuralModes,\n  title   = {Neural Modes: Self-supervised Learning of Nonlinear Modal Subspaces},\n  author  = {Jiahong Wang and Yinwei Du and Stelian Coros and Bernhard Thomaszewski},\n  journal = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2024},\n  year    = {2024}\n}"
+  teaser: assets/images/publications/neural-modes-teaser.jpg
+- id: toros
+  title: 'ToRoS: A Topology Optimization Approach for Designing Robotic Skins'
+  authors:
+  - J. Montes
+  - R. Hinchet
+  - S. Coros
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2023)
+  year: 2023
+  thumbnail: assets/images/publications/ToRoS.jpg
+  links:
+    pdf: assets/pdf/Montes23ToRoS.pdf
+  project: false
+  highlight: true
+  carousel_image: assets/images/carousel/TorosSlider.jpg
+- id: neural-metamaterial-networks
+  title: Neural Metamaterial Networks
+  authors:
+  - Y. Li
+  - S. Coros
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2023)
+  year: 2023
+  thumbnail: assets/images/publications/nmn.jpg
+  links:
+    pdf: https://arxiv.org/abs/2309.10600
+  project: false
+  highlight: true
+  carousel_image: assets/images/carousel/NMFSlider.jpg
+- id: differentiable-stripe-patterns
+  title: Differentiable Stripe Patterns for Inverse Design of Structured Surfaces
+  authors:
+  - J. Montes
+  - Y. Du
+  - R. Hinchet
+  - S. Coros
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2023)
+  year: 2023
+  thumbnail: assets/images/publications/DifferentiableStripes.jpg
+  links:
+    pdf: assets/pdf/Montes23Differentiable.pdf
+  project: false
+  highlight: false
+- id: beyond-chainmail-dim
+  title: 'Beyond Chainmail: Computational Modeling of Discrete Interlocking Materials'
+  authors:
+  - P. Tang
+  - S. Coros
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2023)
+  year: 2023
+  thumbnail: assets/images/publications/DIM.jpg
+  links:
+    pdf: assets/pdf/Tang23DIM.pdf
+    video: https://www.youtube.com/watch?v=e1h2C8uk6SU&ab_channel=PengbinTang
+    project: https://tangpengbin.github.io/publications/DIM/DIM.html
+  project: false
+  highlight: true
+  carousel_image: assets/images/carousel/DIMSlider.jpg
+- id: tcto-bespoke-frames
+  title: A Temporal Coherent Topology Optimization Approach for Assembly Planning of Bespoke Frame Structures
+  authors:
+  - Z. Wang
+  - F. Kennel-Maushart
+  - Y. Huang
+  - B. Thomaszewski
+  - S. Coros
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2023)
+  year: 2023
+  thumbnail: assets/images/publications/TCTO.png
+  links:
+    pdf: assets/pdf/Wang23TCTO.pdf
+    video: https://www.youtube.com/watch?v=VTFGXlluv04&ab_channel=ZIQIWANG
+  project: false
+  highlight: false
+- id: hood
+  title: 'HOOD: Hierarchical Graphs for Generalized Modelling of Clothing Dynamics'
+  authors:
+  - A. Grigorev
+  - B. Thomaszewski
+  - M. Black
+  - O. Hilliges
+  venue: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2023
+  year: 2023
+  thumbnail: assets/images/publications/Hood.jpg
+  links:
+    pdf: https://arxiv.org/abs/2212.07242
+    video: https://dolorousrtur.github.io/hood/
+  project: false
+  highlight: false
+- id: ncm-nonlinear-compliant-modes
+  title: Nonlinear Compliant Modes for Large-Deformation Analysis of Flexible Structures
+  authors:
+  - S. Dünser
+  - B. Thomaszewski
+  - R. Poranne
+  - S. Coros
+  venue: ACM Transactions on Graphics, 2022
+  year: 2022
+  thumbnail: assets/images/publications/NCM.jpg
+  links:
+    pdf: assets/pdf/Duenser22NCM.pdf
+  project: false
+  highlight: false
+- id: cdakg
+  title: Computational Design of Active Kinesthetic Garments
+  authors:
+  - V. Vechev
+  - R. Hinchet
+  - S. Coros
+  - B. Thomaszewski
+  - O. Hilliges
+  venue: ACM UIST, 2022
+  year: 2022
+  thumbnail: assets/images/publications/CDAKG.png
+  links:
+    pdf: assets/pdf/Vechev22CDAKG.pdf
+    video: https://www.youtube.com/watch?v=FC_VGT2wGk8
+    project: https://ait.ethz.ch/projects/2022/cdakg/
+  project: false
+  highlight: false
+- id: kps
+  title: Computational Design and Automated Fabrication of Kirchhoff-Plateau Surfaces
+  authors:
+  - J. Perez
+  - M. Otaduy
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2017)
+  year: 2017
+  thumbnail: assets/images/publications/KPS.png
+  links:
+    pdf: assets/pdf/Perez17KPS.pdf
+    video: https://youtu.be/a2fst73hA2A
+  project: true
+  highlight: false
+  abstract: 'We present a computational pipeline for the design and fabrication of Kirchhoff-Plateau surfaces -- thin elastic rods bent into shape by soap film tension -- enabling new classes of self-supporting curved structures.
+
+    '
+  teaser: assets/images/publications/kps-teaser.jpg
+- id: star-shaped-distance-voronoi-diagrams-for-3d-metamaterial-de
+  title: Star-Shaped Distance Voronoi Diagrams for 3D Metamaterial Design
+  authors:
+  - L. Numerow
+  - S. Coros
+  - B. Thomaszewski
+  venue: Proc. ACM SIGGRAPH Asia, 2025
+  year: 2025
+  thumbnail: assets/images/publications/star-shaped-distance-voronoi-diagrams-for-3d-metamaterial-de.jpg
+  links:
+    pdf: https://crl.ethz.ch/papers/SSVDMetamaterials.pdf
+    project: https://tangpengbin.github.io/publications/InverseDIM/index.html
+    video: https://youtu.be/fsDP1iw5o94
+  project: true
+  highlight: false
+  abstract: 3D cellular metamaterials are valued for many unique and useful mechanical properties. They enable lightweight, high-strength structures, with a wide range of directional stiffness profiles and possible auxetic behaviour. Infill patterns based on triply-periodic minimal surfaces (TPMS) are commonly used in additive manufacturing due to their high strength-to-weight ratio and near-isotropic mechanical behaviour. While existing work provides a wide range of cellular metamaterials to choose from, optimization of these patterns remains a significant challenge due to the diverse space of possible surface topologies and the lack of a unified parameterization. As a promising alternative, Voronoi diagrams with star-shaped distance metrics have been shown to provide a continuous parameterization of 2D cellular metamaterials, opening a rich space of possible designs. Extending the work of Zhou et al. 2025, we provide a novel, differentiable construction of 3D volumetric Voronoi diagrams
+    with star-shaped metrics. We integrate our formulation into a complete pipeline for mechanical metamaterial optimization, demonstrating the flexibility of star-shaped metric Voronoi diagrams to create periodic structures with a diverse range of directional stiffness profiles and stress-strain curves. Furthermore, we demonstrate the applicability of this framework to heterogeneous, smoothly graded cellular structures.
+  bibtex: "@article{Numerow2025StarShaped,\n  title   = {Star-Shaped Distance Voronoi Diagrams for 3D Metamaterial Design},\n  author  = {Logan Numerow and Stelian Coros and Bernhard Thomaszewski},\n  journal = {Proc. ACM SIGGRAPH Asia 2025},\n  year    = {2025}\n}"
+  teaser: assets/images/publications/star-shaped-distance-voronoi-diagrams-for-3d-metamaterial-de-teaser.jpg
+- id: closed-form-construction-of-voronoi-diagrams-with-star-shape
+  title: Closed-Form Construction of Voronoi Diagrams with Star-Shaped Metrics
+  authors:
+  - Haoyang Zhou
+  - Logan Numerow
+  - Stelian Coros
+  - Bernhard Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2025)
+  year: 2025
+  thumbnail: assets/images/publications/closed-form-construction-of-voronoi-diagrams-with-star-shape.jpg
+  links:
+    pdf: assets/pdf/closed-form-construction-of-voronoi-diagrams-with-star-shape.pdf
+    project: https://tangpengbin.github.io/publications/InverseDIM/index.html
+    video: https://youtu.be/RR-lyQ-8Bqs
+  project: true
+  highlight: false
+  bibtex: "@article{Zhou2025ClosedForm,\n  title   = {Closed-Form Construction of Voronoi Diagrams with Star-Shaped Metrics},\n  author  = {Haoyang Zhou and Logan Numerow and Stelian Coros and Bernhard Thomaszewski},\n  journal = {ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2025)},\n  year    = {2025}\n}"
+  abstract: Cellular patterns, from planar ornaments to architectural surfaces and mechanical metamaterials, blend aesthetics with functionality. Homogeneous patterns like isohedral tilings offer simplicity and symmetry but lack flexibility, particularly for heterogeneous designs. They cannot smoothly interpolate between tilings or adapt to double-curved surfaces without distortion. Voronoi diagrams provide a more adaptable patterning solution. They can be generalized to star-shaped metrics, enabling diverse cell shapes and continuous grading by interpolating metric parameters. We introduce a novel, closed-form, fully differentiable formulation for Voronoi diagrams with piecewise linear star-shaped metrics, enabling optimization of site positions and metric parameters to meet aesthetic and functional goals. It naturally extends to arbitrary dimensions, including curved 3D surfaces. For improved on-surface patterning, we propose a per-sector parameterization of star-shaped metrics, ensuring
+    uniform cell shapes in non-regular neighbourhoods. We demonstrate our approach by generating diverse patterns, from homogeneous to continuously graded designs, with applications in decorative surfaces and metamaterials.
+  teaser: assets/images/publications/closed-form-construction-of-voronoi-diagrams-with-star-shape-teaser.jpg
+- id: inverse-design-of-discrete-interlocking-materials-with-desir
+  title: Inverse Design of Discrete Interlocking Materials with Desired Mechanical Behavior
+  authors:
+  - P. Tang
+  - B. Thomaszewski
+  - S. Coros
+  - B. Bickel
+  venue: Proc. ACM SIGGRAPH, 2025
+  year: 2025
+  thumbnail: assets/images/publications/inverse-design-of-discrete-interlocking-materials-with-desir.jpg
+  links:
+    pdf: https://tangpengbin.github.io/publications/InverseDIM/project_files/InverseDIM_SIGGRAPH2025_AuthorVersion.pdf
+    project: https://tangpengbin.github.io/publications/InverseDIM/index.html
+  project: false
+  highlight: false
+- id: neuriphy-neural-baking-of-physics-based-deformations-for-fac
+  title: 'NeuRiPhy: Neural Baking of Physics-Based Deformations for Facial Rigs'
+  authors:
+  - D. Corigliano
+  - D. Peter
+  - N. Huber
+  - B. Thomaszewski
+  - B. Solenthaler
+  venue: Proceedings of the ACM on Computer Graphics and Interactive Techniques, 2025
+  year: 2025
+  thumbnail: assets/images/publications/neuriphy-neural-baking-of-physics-based-deformations-for-fac.jpg
+  links:
+    pdf: https://cgl.ethz.ch/Downloads/Publications/Papers/2025/Cor25a/Cor25a.pdf
+    project: https://cgl.ethz.ch/publications/papers/paperCor25a.php
+  project: false
+  highlight: false
+- id: self-supervised-learning-of-latent-space-dynamics
+  title: Self-supervised Learning of Latent Space Dynamics
+  authors:
+  - Y. Li
+  - G. Lin
+  - E. Larionov
+  - A. Bozic
+  - D. Roble
+  - L. Kavan
+  - S. Coros
+  - B. Thomaszewski
+  - T. Stuyck
+  - H. Chen
+  venue: Proceedings of the ACM on Computer Graphics and Interactive Techniques, 2025
+  year: 2025
+  thumbnail: assets/images/publications/self-supervised-learning-of-latent-space-dynamics.jpg
+  links:
+    pdf: http://arxiv.org/abs/2507.07440
+    video: https://youtu.be/Ud40ayJANWA
+  project: false
+  highlight: false
+- id: viskin-physics-based-simulation-of-virtual-skin-on-personali
+  title: 'ViSkin: Physics-Based Simulation of Virtual Skin on Personalized Avatars'
+  authors:
+  - D. Corigliano
+  - J. Montes Maestre
+  - R. Hinchet
+  - S. Coros
+  - B. Thomaszewski
+  venue: International Conference on 3D Vision (3DV), 2025
+  year: 2025
+  thumbnail: assets/images/publications/viskin-physics-based-simulation-of-virtual-skin-on-personali.jpg
+  links:
+    pdf: https://openreview.net/pdf?id=aS7a89jH3w
+    video: https://youtu.be/hi-SHdvRkVY
+    project: https://eth-ait.github.io/Gaussian-Garments/
+  project: false
+  highlight: false
+- id: gaussian-garments-reconstructing-simulation-ready-clothing-w
+  title: 'Gaussian Garments: Reconstructing Simulation-Ready Clothing with Photo-Realistic Appearance from Multi-View Video'
+  authors:
+  - B. Rong
+  - A. Grigorev
+  - W. Wang
+  - M. J. Black
+  - B. Thomaszewski
+  - C. Tsalicoglou
+  - O. Hilliges
+  venue: International Conference on 3D Vision (3DV), 2025
+  year: 2025
+  thumbnail: assets/images/publications/gaussian-garments-reconstructing-simulation-ready-clothing-w.jpg
+  links:
+    pdf: https://arxiv.org/abs/2409.08189
+    video: https://youtu.be/hi-SHdvRkVY
+    project: https://eth-ait.github.io/Gaussian-Garments/
+  project: false
+  highlight: false
+- id: a-second-order-cone-programming-approach-for-simulating-biph
+  title: A Second Order Cone Programming Approach for Simulating Biphasic Materials
+  authors:
+  - P. Tang
+  - S. Coros
+  - B. Thomaszewski
+  venue: Computer Graphics Forum (Proc. ACM/Eurographics Symposium on Computer Animation, SCA '22), 2022
+  year: 2022
+  thumbnail: assets/images/publications/Tang22SOCP.jpeg
+  links:
+    video: https://youtu.be/gH5ddi2wDJQ
+    pdf: assets/pdf/a-second-order-cone-programming-approach-for-simul.pdf
+  project: false
+  highlight: false
+- id: differentiable-simulation-for-outcome-driven-orthognathic-su
+  title: Differentiable Simulation for Outcome-Driven Orthognathic Surgery Planning
+  authors:
+  - D. Dorda
+  - D. Peter
+  - D. Borer
+  - N. Huber
+  - I. Sailer
+  - M. Gross
+  - B. Solenthaler
+  - B. Thomaszewski
+  venue: Computer Graphics Forum (Proc. ACM/Eurographics Symposium on Computer Animation, SCA '22), 2022
+  year: 2022
+  thumbnail: assets/images/publications/Dorda22Differentiable.jpeg
+  links:
+    pdf: assets/pdf/Dorda22Differentiable.pdf
+    video: https://youtu.be/gH5ddi2wDJQ
+    project: https://cgl.ethz.ch/publications/papers/paperDor22a.php
+  project: false
+  highlight: false
+- id: stability-aware-simplification-of-curve-networks
+  title: Stability-Aware Simplification of Curve Networks
+  authors:
+  - W. Neveu
+  - I. Puhachov
+  - B. Thomaszewski
+  - M. Bessmeltsev
+  venue: ACM SIGGRAPH 2022 Proceedings
+  year: 2022
+  thumbnail: assets/images/publications/william_curves.png
+  links:
+    pdf: assets/pdf/Neveu22CurveNetworks.pdf
+    project: http://www-labs.iro.umontreal.ca/~bmpix/curve_networks/
+  project: false
+  highlight: false
+- id: computational-design-of-kinesthetic-garments
+  title: Computational Design of Kinesthetic Garments
+  authors:
+  - V. Vechev
+  - J. Zarate
+  - B. Thomaszewski
+  - O. Hilliges
+  venue: Computer Graphics Forum (Proc. Eurographics '22), 2022
+  year: 2022
+  thumbnail: assets/images/publications/CDKG.png
+  links:
+    video: https://youtu.be/yGkmTuoKAlU
+    pdf: assets/pdf/computational-design-of-kinesthetic-garments.pdf
+  project: false
+  highlight: false
+- id: programmable-digital-weaves
+  title: Programmable Digital Weaves
+  authors:
+  - Y. Li
+  - J. Montes
+  - B. Thomaszewski
+  - S. Coros
+  venue: IEEE Robotic and Automation Letters (RA-L) 2022
+  year: 2022
+  thumbnail: assets/images/publications/weaves.jpg
+  links:
+    video: https://youtu.be/OQfsXoXeAwg
+    pdf: assets/pdf/programmable-digital-weaves.pdf
+  project: false
+  highlight: false
+- id: coupled-rigid-block-analysis-stability-aware-design-of-compl
+  title: 'Coupled Rigid-Block Analysis: Stability-Aware Design of Complex Discrete-Element Assemblies'
+  authors:
+  - G. Kao
+  - A. Iannuzzo
+  - B. Thomaszewski
+  - S. Coros
+  - T. Van Mele
+  - P. Block
+  venue: Computer Aided Design, 2022
+  year: 2022
+  thumbnail: assets/images/publications/Kao22CRA.png
+  links:
+    pdf: assets/pdf/coupled-rigid-block-analysis-stability-aware-desig.pdf
+  project: false
+  highlight: false
+- id: singularity-aware-design-optimization-for-multi-degree-of-fr
+  title: Singularity-Aware Design Optimization for Multi-Degree-of-Freedom Spatial Linkages
+  authors:
+  - G. Maloisel
+  - E. Knoop
+  - B. Thomaszewski
+  - M. Baecher
+  - S. Coros
+  venue: IEEE Robotics And Automation Letters (RA-L), 2021
+  year: 2021
+  thumbnail: assets/images/publications/multiDOFMechanisms.png
+  links:
+    video: http://crl.ethz.ch/videos/spatial_link_ral21.mp4
+    pdf: assets/pdf/singularity-aware-design-optimization-for-multi-de.pdf
+  project: false
+  highlight: false
+- id: sgn-sparse-gauss-newton-for-accelerated-sensitivity-analysis
+  title: 'SGN: Sparse Gauss-Newton for Accelerated Sensitivity Analysis'
+  authors:
+  - J. Zehnder
+  - S. Coros
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (ToG), 2021
+  year: 2021
+  thumbnail: assets/images/publications/SGN.png
+  links:
+    pdf: assets/pdf/Zehnder21SGN.pdf
+  project: false
+  highlight: false
+- id: ntopo-mesh-free-topology-optimization-using-implicit-neural-
+  title: 'NTopo: Mesh-free Topology Optimization using Implicit Neural Representations'
+  authors:
+  - J. Zehnder
+  - Y. Li
+  - S. Coros
+  - B. Thomaszewski
+  venue: NeurIPS 2021
+  year: 2021
+  thumbnail: assets/images/publications/ntopo.png
+  links:
+    video: https://youtu.be/VXKksuOlCss
+    pdf: assets/pdf/ntopo-mesh-free-topology-optimization-using-implic.pdf
+  project: false
+  highlight: false
+- id: a-density-accurate-tracking-solution-for-smoke-upresolution
+  title: A Density-accurate Tracking Solution for Smoke Upresolution
+  authors:
+  - A. Schoentgen
+  - J. Zehnder
+  - P. Poulin
+  - B. Thomaszewski
+  - P. Meseure
+  - E. Darles
+  venue: The Visual Computer, 2021
+  year: 2021
+  thumbnail: assets/images/publications/Schoentgen21SmokeTracking.png
+  links:
+    video: https://youtu.be/XSdWS649-0Q
+  project: false
+  highlight: false
+- id: deep-physics-aware-inference-of-cloth-deformation-for-monocu
+  title: Deep Physics-aware Inference of Cloth Deformation for Monocular Human Performance Capture
+  authors:
+  - Y. Li
+  - M. Habermann
+  - B. Thomaszewski
+  - S. Coros
+  - T. Beeler
+  - C. Theobalt
+  venue: International Conference on 3D Vision (3DV), 2021
+  year: 2021
+  thumbnail: assets/images/publications/deepCloth.jpeg
+  links:
+    pdf: assets/pdf/Li21DeepCloth.pdf
+    video: https://people.mpi-inf.mpg.de/~mhaberma/projects/2021-deepphyscloth/data/video.mp4
+    project: https://people.mpi-inf.mpg.de/~mhaberma/projects/2021-deepphyscloth/
+  project: false
+  highlight: false
+- id: a-harmonic-balance-approach-for-designing-compliant-mechanic
+  title: A Harmonic Balance Approach for Designing Compliant Mechanical Systems with Nonlinear Periodic Motions
+  authors:
+  - P. Tang
+  - J. Zehnder
+  - S. Coros
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2020)
+  year: 2020
+  thumbnail: assets/images/publications/HBM.jpg
+  links:
+    pdf: assets/pdf/Tang20HBM.pdf
+    video: https://youtu.be/Ll4nRi87-hE
+    project: https://tangpengbin.github.io/publications/NonlinearVibration/NonlinearVibration.html
+  project: false
+  highlight: false
+- id: add-analytically-differentiable-dynamics-for-multi-body-syst
+  title: 'ADD: Analytically Differentiable Dynamics for Multi-Body Systems with Frictional Contact'
+  authors:
+  - M. Geilinger
+  - D. Hahn
+  - J. Zehnder
+  - M. Bächer
+  - B. Thomaszewski
+  - S. Coros
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2020)
+  year: 2020
+  thumbnail: assets/images/publications/ADD.png
+  links:
+    pdf: assets/pdf/add-analytically-differentiable-dynamics-for-multi.pdf
+  project: false
+  highlight: false
+- id: computational-design-of-skintight-clothing
+  title: Computational Design of Skintight Clothing
+  authors:
+  - J. Montes
+  - B. Thomaszewski
+  - S. Mudur
+  - T. Popa
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2020)
+  year: 2020
+  thumbnail: assets/images/publications/Skintight.jpg
+  links:
+    video: https://youtu.be/TGIbf56UbE8
+    pdf: assets/pdf/computational-design-of-skintight-clothing.pdf
+  project: false
+  highlight: false
+- id: robocut-hot-wire-cutting-with-robot-controlled-flexible-rods
+  title: 'RoboCut: Hot-wire Cutting with Robot-controlled Flexible Rods'
+  authors:
+  - S. Dünser
+  - R. Poranne
+  - B. Thomaszewski
+  - S. Coros
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2020)
+  year: 2020
+  thumbnail: assets/images/publications/robocut.jpg
+  links:
+    pdf: http://crl.ethz.ch/papers/hotwirecutter.pdf
+    video: https://www.youtube.com/watch?v=lLKI0HWV3dc
+  project: false
+  highlight: false
+- id: computational-design-of-balanced-open-link-planar-mechanisms
+  title: Computational Design of Balanced Open Link Planar Mechanisms with Counterweights from User Sketches
+  authors:
+  - T. Takahashi
+  - H. G. Okuno
+  - S. Sugano
+  - S. Coros
+  - B. Thomaszewski
+  venue: IEEE International Conference on Intelligent Robots and Systems (IROS), 2020
+  year: 2020
+  thumbnail: assets/images/publications/Counterweights.png
+  links:
+    pdf: assets/pdf/Takahashi20Computational.pdf
+  project: false
+  highlight: false
+- id: extrusion-based-ceramics-printing-with-strictly-continuous-d
+  title: Extrusion-Based Ceramics Printing with Strictly-Continuous Deposition
+  authors:
+  - J. Hergel
+  - K. Hinz
+  - S. Lefebvre
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2019)
+  year: 2019
+  thumbnail: assets/images/publications/CeramicsPrinting.png
+  links:
+    video: https://www.youtube.com/watch?v=PH_K2I1aS4o
+    pdf: https://inria.hal.science/hal-02363424/file/Hergel19Extrusion.pdf
+  project: false
+  highlight: false
+- id: computational-design-of-statically-balanced-planar-spring-me
+  title: Computational Design of Statically Balanced Planar Spring Mechanisms
+  authors:
+  - T. Takahashi
+  - J. Zehnder
+  - H. G. Okuno
+  - S. Sugano
+  - S. Coros
+  - B. Thomaszewski
+  venue: IEEE Robotics and Automation Letters (RA-L), 2019
+  year: 2019
+  thumbnail: assets/images/publications/StaticallyBalanced.png
+  links:
+    video: https://youtu.be/Fbqn-swwf-Q
+    pdf: assets/pdf/computational-design-of-statically-balanced-planar.pdf
+  project: false
+  highlight: false
+- id: a-second-order-advection-reflection-solver
+  title: A Second-Order Advection-Reflection Solver
+  authors:
+  - R. Narain
+  - J. Zehnder
+  - B. Thomaszewski
+  venue: PACM-CGIT 2(2), July 2019
+  year: 2019
+  thumbnail: assets/images/publications/AdvectionReflection2.png
+  links:
+    video: https://www.youtube.com/watch?v=7-Z4_Pjy-Ck
+    pdf: assets/pdf/a-second-order-advection-reflection-solver.pdf
+  project: false
+  highlight: false
+- id: star-shaped-metrics-for-mechanical-metamaterial-design
+  title: Star-Shaped Metrics for Mechanical Metamaterial Design
+  authors:
+  - J. Martínez
+  - M. Skouras
+  - C. Schumacher
+  - S. Hornus
+  - S. Lefebvre
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2019)
+  year: 2019
+  thumbnail: assets/images/publications/StarShaped.png
+  links:
+    video: https://youtu.be/Fbqn-swwf-Q
+    project: https://www.disneyresearch.com/publication/structured-sheet-materials/
+    pdf: https://n.ethz.ch/~bthomasz/assets/PDF/Martinez19StarShaped.pdf
+  project: false
+  highlight: false
+- id: mechanical-characterization-of-structured-sheet-materials
+  title: Mechanical Characterization of Structured Sheet Materials
+  authors:
+  - C. Schumacher
+  - S. Marschner
+  - M. Gross
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2018)
+  year: 2018
+  thumbnail: assets/images/publications/StructuredSheets.png
+  links:
+    pdf: assets/pdf/Schumacher18Mechanical.pdf
+    video: https://youtu.be/Fbqn-swwf-Q
+    project: https://www.disneyresearch.com/publication/structured-sheet-materials/
+  project: false
+  highlight: false
+- id: skaterbots-optimization-based-design-and-motion-synthesis-fo
+  title: 'Skaterbots: Optimization-based design and motion synthesis for robotic creatures with legs and wheels'
+  authors:
+  - M. Geilinger
+  - R. Poranne
+  - R. Desai
+  - B. Thomaszewski
+  - S. Coros
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2018)
+  year: 2018
+  thumbnail: assets/images/publications/Skaterbots.PNG
+  links:
+    video: https://youtu.be/zhS4LKqrW5Q
+    pdf: assets/pdf/skaterbots-optimization-based-design-and-motion-sy.pdf
+  project: false
+  highlight: false
+- id: an-advection-reflection-solver-for-detail-preserving-fluid-a
+  title: An Advection-Reflection Solver for Detail-Preserving Fluid Animation
+  authors:
+  - J. Zehnder
+  - R. Narain
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2018)
+  year: 2018
+  thumbnail: assets/images/publications/AdvectionReflection.png
+  links:
+    pdf: assets/pdf/Zehnder18AdvectionReflection.pdf
+    video: https://youtu.be/GmwHFP85Ryc
+    project: https://jzehnder.me/publications/advectionReflection/
+  project: false
+  highlight: false
+- id: fepr-fast-energy-projection-for-real-time-simulation-of-defo
+  title: 'FEPR: Fast Energy Projection for Real-Time Simulation of Deformable Objects'
+  authors:
+  - D. Dinev
+  - T. Liu
+  - J. Li
+  - B. Thomaszewski
+  - L. Kavan
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2018)
+  year: 2018
+  thumbnail: assets/images/publications/FEPR.jpg
+  links:
+    video: https://youtu.be/VyaJVuRaW9E
+    pdf: assets/pdf/fepr-fast-energy-projection-for-real-time-simulati.pdf
+  project: false
+  highlight: false
+- id: haircontrol-a-tracking-solution-for-directable-hair-simulati
+  title: 'HairControl: A Tracking Solution for Directable Hair Simulation'
+  authors:
+  - A. Milliez
+  - R. Sumner
+  - M. Gross
+  - B. Thomaszewski
+  venue: ACM/Eurographics Symposium on Computer Animation (SCA 2018)
+  year: 2018
+  thumbnail: assets/images/publications/HairControl.png
+  links:
+    pdf: assets/pdf/Milliez18HairControl.pdf
+    video: https://youtu.be/YMABKFttrgQ
+    project: https://www.disneyresearch.com/publication/haircontrol-a-tracking-solution-for-directable-hair-simulation/
+  project: false
+  highlight: false
+- id: metasilicone-design-and-fabrication-of-composite-silicone-wi
+  title: 'MetaSilicone: Design and Fabrication of Composite Silicone with Desired Mechanical Properties'
+  authors:
+  - J. Zehnder
+  - E. Knoop
+  - M. Bächer
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2017)
+  year: 2017
+  thumbnail: assets/images/publications/MetaSilicone.png
+  links:
+    video: https://youtu.be/I43pwozguNo
+    project: https://www.disneyresearch.com/publication/metasilicone/
+    pdf: assets/pdf/metasilicone-design-and-fabrication-of-composite-s.pdf
+  project: false
+  highlight: false
+- id: a-computational-design-tool-for-compliant-mechanisms
+  title: A Computational Design Tool for Compliant Mechanisms
+  authors:
+  - V. Megaro
+  - J. Zehnder
+  - M. Bächer
+  - S. Coros
+  - M. Gross
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2017)
+  year: 2017
+  thumbnail: assets/images/publications/CompliantMechanisms.png
+  links:
+    pdf: assets/pdf/Megaro17Compliant.pdf
+    video: https://youtu.be/IUe3mGkngs4
+    project: https://www.disneyresearch.com/publication/a-computational-design-tool-for-compliant-mechanisms/
+  project: false
+  highlight: false
+- id: enriching-facial-blendshape-rigs-with-physical-simulation
+  title: Enriching Facial Blendshape Rigs with Physical Simulation
+  authors:
+  - Y. Kozlov
+  - D. Bradley
+  - M. Bächer
+  - B. Thomaszewski
+  - T. Beeler
+  - M. Gross
+  venue: Computer Graphics Forum (Proc. Eurographics 2017)
+  year: 2017
+  thumbnail: assets/images/publications/Blendshapes.png
+  links:
+    video: https://youtu.be/UPmIUMGRaak
+    project: http://www.disneyresearch.com/publication/enriching-facial-blendshape-rigs-with-physical-simulation/
+    pdf: assets/pdf/enriching-facial-blendshape-rigs-with-physical-sim.pdf
+  project: false
+  highlight: false
+- id: designing-cable-driven-actuation-networks-for-kinematic-chai
+  title: Designing Cable-Driven Actuation Networks for Kinematic Chains and Trees
+  authors:
+  - V. Megaro
+  - E. Knoop
+  - A. Spielberg
+  - D.I.W. Levin
+  - W. Matusik
+  - M. Gross
+  - B. Thomaszewski
+  - M. Bächer
+  venue: ACM/Eurographics Symposium on Computer Animation (SCA) 2017
+  year: 2017
+  thumbnail: assets/images/publications/Cables.png
+  links:
+    pdf: assets/pdf/Megaro17Cables.pdf
+    video: https://youtu.be/MARwhwXEVz8
+    project: https://www.disneyresearch.com/publication/designing-cable-driven-actuation-networks-for-kinematic-chains-and-trees/
+  project: false
+  highlight: false
+- id: designing-structurally-sound-ornamental-curve-networks
+  title: Designing Structurally-Sound Ornamental Curve Networks
+  authors:
+  - J. Zehnder
+  - S. Coros
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2016)
+  year: 2016
+  thumbnail: assets/images/publications/CurveNetworks.png
+  links:
+    video: https://youtu.be/CRvLyQWMPYg
+    project: https://www.disneyresearch.com/publication/designing-structurally-sound-ornamental-curve-networks/
+    pdf: assets/pdf/designing-structurally-sound-ornamental-curve-netw.pdf
+  project: false
+  highlight: false
+- id: stenciling-designing-structurally-sound-surfaces-with-decora
+  title: 'Stenciling: Designing Structurally-Sound Surfaces with Decorative Patterns'
+  authors:
+  - C. Schumacher
+  - B. Thomaszewski
+  - M. Gross
+  venue: Symposium on Geometry Processing (SGP), 2016
+  year: 2016
+  thumbnail: assets/images/publications/stenciling.png
+  links:
+    video: https://www.youtube.com/watch?v=xYhJI_wFXVs
+    pdf: assets/pdf/stenciling-designing-structurally-sound-surfaces-w.pdf
+  project: false
+  highlight: false
+- id: defsense-computational-design-of-customized-deformable-input
+  title: 'DefSense: Computational Design of Customized Deformable Input Devices'
+  authors:
+  - M. Bächer
+  - B. Hepp
+  - F. Pece
+  - P. G. Kry
+  - B. Bickel
+  - B. Thomaszewski
+  - O. Hilliges
+  venue: ACM SIGCHI 2016
+  year: 2016
+  thumbnail: assets/images/publications/DefSense.png
+  links:
+    pdf: assets/pdf/Baecher16Defsense.pdf
+    video: https://youtu.be/ANnrtc4T0V0
+    project: https://www.disneyresearch.com/publication/defsense/
+  project: false
+  highlight: false
+- id: interactive-surface-design-with-interlocking-elements
+  title: Interactive Surface Design with Interlocking Elements
+  authors:
+  - M. Skouras
+  - S. Coros
+  - E. Grinspun
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2015)
+  year: 2015
+  thumbnail: assets/images/publications/InterlockingElements.png
+  links:
+    pdf: assets/pdf/InterlockingElements.pdf
+    video: https://youtu.be/U5NtLNWXmAo
+    project: https://www.disneyresearch.com/publication/interactive-surface-design/
+  project: false
+  highlight: false
+- id: interactive-design-of-3d-printable-robotic-creatures
+  title: Interactive Design of 3D-Printable Robotic Creatures
+  authors:
+  - V. Megaro
+  - B. Thomaszewski
+  - M. Nitti
+  - O. Hilliges
+  - M. Gross
+  - S. Coros
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2015)
+  year: 2015
+  thumbnail: assets/images/publications/RobotDesigner.png
+  links:
+    video: https://youtu.be/xauEexkgYWY
+    project: https://www.disneyresearch.com/publication/interactive-design-of-3d-printable-robotic-creatures/
+    pdf: assets/pdf/interactive-design-of-3d-printable-robotic-creatur.pdf
+  project: false
+  highlight: false
+- id: linkedit-interactive-linkage-editing-using-symbolic-kinemati
+  title: 'LinkEdit: Interactive Linkage Editing using Symbolic Kinematics'
+  authors:
+  - M. Bächer
+  - S. Coros
+  - B. Thomaszewski
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2015)
+  year: 2015
+  thumbnail: assets/images/publications/LinkEdit.png
+  links:
+    pdf: assets/pdf/Baecher15LinkEdit.pdf
+    video: https://youtu.be/cCHuLQt-HSY
+    project: http://www.disneyresearch.com/publication/linkedit/
+  project: false
+  highlight: false
+- id: design-and-fabrication-of-flexible-rod-meshes
+  title: Design and Fabrication of Flexible Rod Meshes
+  authors:
+  - J. Perez
+  - B. Thomaszewski
+  - S. Coros
+  - B. Bickel
+  - J. A. Canabal
+  - R. Sumner
+  - M. A. Otaduy
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2015)
+  year: 2015
+  thumbnail: assets/images/publications/RodDesign.png
+  links:
+    video: https://www.youtube.com/watch?v=h9SOlDaPOaw
+    project: http://www.disneyresearch.com/publication/flexible-rod-meshes/
+    pdf: https://www.gmrv.es/Publications/2015/PTCBCSO15/PerezSIG2015.pdf
+  project: false
+  highlight: false
+- id: computational-design-of-walking-automata
+  title: Computational Design of Walking Automata
+  authors:
+  - G. Bharaj
+  - S. Coros
+  - B. Thomaszewski
+  - J. Tompkin
+  - B. Bickel
+  - H. Pfister
+  venue: ACM/Eurographics Symposium on Computer Animation (SCA), 2015
+  year: 2015
+  thumbnail: assets/images/publications/WalkingMachines.png
+  links:
+    pdf: assets/pdf/computational-design-of-walking-automata.pdf
+  project: false
+  highlight: false
+- id: sketch-abstractions-for-character-posing
+  title: Sketch Abstractions for Character Posing
+  authors:
+  - F. Hahn
+  - F. Mutzel
+  - S. Coros
+  - B. Thomaszewski
+  - M. Nitti
+  - M. Gross
+  - R. Sumner
+  venue: ACM/Eurographics Symposium on Computer Animation (SCA), 2015
+  year: 2015
+  thumbnail: assets/images/publications/SketchAbstractions.png
+  links:
+    pdf: assets/pdf/Hahn15Sketch.pdf
+  project: false
+  highlight: false
+- id: computational-design-of-linkage-based-characters
+  title: Computational Design of Linkage-Based Characters
+  authors:
+  - B. Thomaszewski
+  - S. Coros
+  - D. Gauge
+  - V. Megaro
+  - E. Grinspun
+  - M. Gross
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2014)
+  year: 2014
+  thumbnail: assets/images/publications/linkages.jpg
+  links:
+    pdf: assets/pdf/Linkages.pdf
+    video: https://www.youtube.com/watch?v=XlV-LFozQSc
+  project: false
+  highlight: false
+- id: designing-inflatable-structures
+  title: Designing Inflatable Structures
+  authors:
+  - M. Skouras
+  - B. Thomaszewski
+  - P. Kaufmann
+  - A. Garg
+  - B. Bickel
+  - E. Grinspun
+  - M. Gross
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2014)
+  year: 2014
+  thumbnail: assets/images/publications/foilballoons.png
+  links:
+    video: https://www.youtube.com/watch?v=oz5EDYQCpHU
+    supplemental: assets/pdf/IS_Supplemental.pdf
+    pdf: assets/pdf/designing-inflatable-structures.pdf
+  project: false
+  highlight: false
+- id: subspace-clothing-simulation-using-adaptive-basis
+  title: Subspace Clothing Simulation Using Adaptive Basis
+  authors:
+  - F. Hahn
+  - B. Thomaszewski
+  - S. Coros
+  - R. Sumner
+  - F. Cole
+  - M. Meyer
+  - T. DeRose
+  - M. Gross
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2014)
+  year: 2014
+  thumbnail: assets/images/publications/subspaceCloth.jpg
+  links:
+    video: https://www.youtube.com/watch?v=uADrduZWX74
+    pdf: assets/pdf/subspace-clothing-simulation-using-adaptive-basis.pdf
+  project: false
+  highlight: false
+- id: interactive-design-of-modular-tensegrity-characters
+  title: Interactive Design of Modular Tensegrity Characters
+  authors:
+  - D. Gauge
+  - S. Coros
+  - S. Mani
+  - B. Thomaszewski
+  venue: ACM/Eurographics Symposium on Computer Animation (SCA), 2014
+  year: 2014
+  thumbnail: assets/images/publications/tensegrities.jpg
+  links:
+    video: https://www.youtube.com/watch?v=US18t5Sr0nA
+    pdf: assets/pdf/interactive-design-of-modular-tensegrity-character.pdf
+  project: false
+  highlight: false
+- id: chacra-an-interactive-design-system-for-rapid-character-craf
+  title: 'ChaCra: An Interactive Design System For Rapid Character Crafting'
+  authors:
+  - V. Megaro
+  - B. Thomaszewski
+  - D. Gauge
+  - E. Grinspun
+  - S. Coros
+  - M. Gross
+  venue: ACM/Eurographics Symposium on Computer Animation (SCA), 2014
+  year: 2014
+  thumbnail: assets/images/publications/chacra.jpg
+  links:
+    video: https://www.youtube.com/watch?v=iEb6uRs3OdU
+    pdf: assets/pdf/chacra-an-interactive-design-system-for-rapid-char.pdf
+  project: false
+  highlight: false
+- id: modeling-and-estimation-of-internal-friction-in-cloth
+  title: Modeling and Estimation of Internal Friction in Cloth
+  authors:
+  - E. Miguel
+  - R. Tamstorf
+  - D. Bradley
+  - S. C. Schvartzman
+  - B. Thomaszewski
+  - B. Bickel
+  - W. Matusik
+  - S. Marschner
+  - M. Otaduy
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2013)
+  year: 2013
+  thumbnail: assets/images/publications/clothfriction.png
+  links:
+    video: https://www.youtube.com/watch?v=Sbg9Iakau-0&feature=youtu.be
+    project: http://www.disneyresearch.com/project/internal-friction-in-cloth/
+    pdf: assets/pdf/modeling-and-estimation-of-internal-friction-in-cl.pdf
+  project: false
+  highlight: false
+- id: efficient-simulation-of-secondary-motion-in-rig-space
+  title: Efficient Simulation of Secondary Motion in Rig-Space
+  authors:
+  - F. Hahn
+  - B. Thomaszewski
+  - S. Coros
+  - R. Sumner
+  - M. Gross
+  venue: ACM/Eurographics Symposium on Computer Animation (SCA), 2013
+  year: 2013
+  thumbnail: assets/images/publications/rsppp.png
+  links:
+    pdf: assets/pdf/ESSMRS.pdf
+    video: https://www.youtube.com/watch?v=28qKdybWdDs
+  project: false
+  highlight: false
+- id: computational-design-of-mechanical-characters
+  title: Computational Design of Mechanical Characters
+  authors:
+  - S. Coros
+  - B. Thomaszewski
+  - G. Noris
+  - S. Sueda
+  - M. Forberg
+  - R. Sumner
+  - W. Matusik
+  - B. Bickel
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2013)
+  year: 2013
+  thumbnail: assets/images/publications/CyberTiger.png
+  links:
+    video: http://www.youtube.com/watch?v=DfznnKUwywQ
+    pdf: assets/pdf/computational-design-of-mechanical-characters.pdf
+  project: false
+  highlight: false
+- id: computational-design-of-actuated-deformable-characters
+  title: Computational Design of Actuated Deformable Characters
+  authors:
+  - M. Skouras
+  - B. Thomaszewski
+  - S. Coros
+  - B. Bickel
+  - M. Gross
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2013)
+  year: 2013
+  thumbnail: assets/images/publications/DeformableActuation.jpg
+  links:
+    video: http://www.youtube.com/watch?v=98E0FNOch0w
+    pdf: assets/pdf/computational-design-of-actuated-deformable-charac.pdf
+  project: false
+  highlight: false
+- id: efficient-simulation-of-example-based-materials
+  title: Efficient Simulation of Example-Based Materials
+  authors:
+  - C. Schumacher
+  - B. Thomaszewski
+  - S. Coros
+  - S. Martin
+  - R. Sumner
+  - M. Gross
+  venue: ACM/Eurographics Symposium on Computer Animation (SCA), 2012 (2nd Best Paper Award)
+  year: 2012
+  thumbnail: assets/images/publications/sleeve.png
+  links:
+    pdf: assets/pdf/ESEBM.pdf
+  project: false
+  highlight: false
+- id: deformable-objects-alive
+  title: Deformable Objects Alive!
+  authors:
+  - S. Coros
+  - S. Martin
+  - B. Thomaszewski
+  - C. Schumacher
+  - R. Sumner
+  - M. Gross
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2012)
+  year: 2012
+  thumbnail: assets/images/publications/defObjAlive-thumb.png
+  links:
+    pdf: assets/pdf/deformable-objects-alive.pdf
+  project: false
+  highlight: false
+- id: rig-space-physics
+  title: Rig-Space Physics
+  authors:
+  - F. Hahn
+  - S. Martin
+  - B. Thomaszewski
+  - R. Sumner
+  - S. Coros
+  - M. Gross
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2012)
+  year: 2012
+  thumbnail: assets/images/publications/rsp-thumb.png
+  links:
+    video: https://www.youtube.com/watch?v=8XuwqGdkEWE
+    pdf: assets/pdf/rig-space-physics.pdf
+  project: false
+  highlight: false
+- id: physical-face-cloning
+  title: Physical Face Cloning
+  authors:
+  - B. Bickel
+  - P. Kaufmann
+  - M. Skouras
+  - B. Thomaszewski
+  - D. Bradley
+  - T. Beeler
+  - P. Jackson
+  - S. Marschner
+  - W. Matusik
+  - M. Gross
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2012)
+  year: 2012
+  thumbnail: assets/images/publications/PFC.png
+  links:
+    video: https://www.youtube.com/watch?v=WnE4vcvHxo8&feature=youtu.be
+    project: https://www.disneyresearch.com/publication/physical-face-cloning/
+    pdf: assets/pdf/physical-face-cloning.pdf
+  project: false
+  highlight: false
+- id: computational-design-of-rubber-balloons
+  title: Computational Design of Rubber Balloons
+  authors:
+  - M. Skouras
+  - B. Thomaszewski
+  - B. Bickel
+  - M. Gross
+  venue: Computer Graphics Forum (Eurographics 2012), 31(2), 2012
+  year: 2012
+  thumbnail: assets/images/publications/BunnyGreen.jpg
+  links:
+    video: https://www.youtube.com/watch?v=Kq4g3KpH1cY
+    pdf: assets/pdf/computational-design-of-rubber-balloons.pdf
+  project: false
+  highlight: false
+- id: data-driven-estimation-of-cloth-simulation-models
+  title: Data-Driven Estimation of Cloth Simulation Models
+  authors:
+  - E. Miguel
+  - D. Bradley
+  - B. Thomaszewski
+  - B. Bickel
+  - W. Matusik
+  - M. Otaduy
+  - S. Marschner
+  venue: Computer Graphics Forum (Eurographics 2012), 31(2), 2012
+  year: 2012
+  thumbnail: assets/images/publications/DDC.jpg
+  links:
+    video: https://www.youtube.com/watch?v=eIu3u7dABQs
+    project: http://www.gmrv.es/Publications/2012/MBTBMOM12/
+    pdf: assets/pdf/data-driven-estimation-of-cloth-simulation-models.pdf
+  project: false
+  highlight: false
+- id: example-based-elastic-materials
+  title: Example-Based Elastic Materials
+  authors:
+  - S. Martin
+  - B. Thomaszewski
+  - E. Grinspun
+  - M. Gross
+  venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2011)
+  year: 2011
+  thumbnail: assets/images/publications/Mar11.png
+  links:
+    video: https://www.youtube.com/watch?v=ZfCsO4HdLnI
+    pdf: assets/pdf/example-based-elastic-materials.pdf
+  project: false
+  highlight: false

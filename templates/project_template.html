@@ -4,6 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ pub.title }}</title>
+  <meta name="author" content="Bernhard Thomaszewski">
+  {% if pub.abstract %}<meta name="description" content="{{ pub.abstract | truncate(160, False, '') | e }}">{% endif %}
+
+  <!-- Google Scholar -->
+  <meta name="citation_title" content="{{ pub.title | e }}">
+  {% for author in pub.authors %}<meta name="citation_author" content="{{ author | e }}">
+  {% endfor %}<meta name="citation_publication_date" content="{{ pub.year }}">
+  <meta name="citation_journal_title" content="{{ pub.venue | e }}">
+  {% if pub.links.pdf %}
+  {% set _pdf_url = (site_url + '/' + pub.links.pdf) if not pub.links.pdf.startswith('http') else pub.links.pdf %}
+  <meta name="citation_pdf_url" content="{{ _pdf_url }}">
+  {% endif %}
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Bernhard Thomaszewski">
+  <meta property="og:title" content="{{ pub.title | e }}">
+  {% if pub.abstract %}<meta property="og:description" content="{{ pub.abstract | truncate(200, False, '') | e }}">{% endif %}
+  <meta property="og:url" content="{{ site_url }}/projects/{{ pub.id }}/index.html">
+  <meta property="og:image" content="{{ site_url }}/{{ pub.teaser if pub.teaser else pub.thumbnail }}">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": {{ pub.title | tojson }},
+    "author": [{% for author in pub.authors %}{"@type": "Person", "name": {{ author | tojson }}}{% if not loop.last %}, {% endif %}{% endfor %}],
+    "datePublished": "{{ pub.year }}",
+    "isPartOf": {"@type": "Periodical", "name": {{ pub.venue | tojson }}}{% if pub.links.pdf %},
+    "url": {{ _pdf_url | tojson }}{% endif %}{% if pub.abstract %},
+    "abstract": {{ pub.abstract | tojson }}{% endif %}
+  }
+  </script>
+
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -13,6 +48,16 @@
       <nav class="site-nav">
         <a href="../../index.html">Home</a>
         <a href="../../publications.html">Publications</a>
+        <div class="nav-dropdown">
+          <a href="../../research/index.html">Research</a>
+          <div class="nav-dropdown-menu">
+            <a href="../../research/neural-simulation/index.html">Neural Simulation</a>
+            <a href="../../research/structured-materials/index.html">Structured Materials</a>
+            <a href="../../research/robotics/index.html">Robotics</a>
+            <a href="../../research/smart-simulation/index.html">Smart Simulation</a>
+            <a href="../../research/digital-humans-biomechanics/index.html">Digital Humans &amp; Biomechanics</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -29,19 +74,39 @@
           {% if pub.links.pdf %}
           <a href="{{ pub.links.pdf if pub.links.pdf.startswith('http') else '../../' + pub.links.pdf }}">Paper (PDF)</a>
           {% endif %}
-          {% if pub.links.video %}<a href="{{ pub.links.video }}">Video</a>{% endif %}
+          {% if pub.links.video %}<a href="{{ pub.links.video if pub.links.video.startswith('http') else '../../' + pub.links.video }}">Video</a>{% endif %}
           {% if pub.links.code %}<a href="{{ pub.links.code }}">Code</a>{% endif %}
           {% if pub.links.supplemental %}<a href="{{ pub.links.supplemental }}">Supplemental</a>{% endif %}
         </div>
       </section>
 
+      {% if pub.teaser %}
+      <section class="project-teaser">
+        <img src="../../{{ pub.teaser }}" alt="{{ pub.title }}">
+      </section>
+      {% endif %}
+
+      {% if pub.videos %}
+      <section class="project-video">
+        <h2>Videos</h2>
+        {% for v in pub.videos %}
+        <div class="video-wrapper" style="margin-bottom: 16px;">
+          <video autoplay loop muted playsinline controls style="width:100%; border-radius:4px;">
+            <source src="../../{{ v }}" type="video/mp4">
+          </video>
+        </div>
+        {% endfor %}
+      </section>
+      {% endif %}
+
       {% if pub.video_embed %}
       <section class="project-video">
+        {% if pub.videos %}<h2>Submission Video</h2>{% endif %}
         <div class="video-wrapper">
           {{ pub.video_embed | safe }}
         </div>
       </section>
-      {% else %}
+      {% elif not pub.teaser and not pub.videos %}
       <section class="project-video">
         <div class="video-wrapper" style="position:relative; background:#eee;">
           <img src="../../{{ pub.thumbnail }}" alt="{{ pub.title }}"
@@ -60,16 +125,38 @@
       {% if pub.bibtex %}
       <section class="project-bibtex">
         <h2>BibTeX</h2>
-        <pre>{{ pub.bibtex }}</pre>
+        <div class="bibtex-wrapper">
+          <pre id="bibtex-text">{{ pub.bibtex }}</pre>
+          <button class="bibtex-copy-btn" onclick="copyBibtex(this)">Copy</button>
+        </div>
       </section>
       {% endif %}
 
     </div>
   </main>
 
+  <script>
+  function copyBibtex(btn) {
+    var text = document.getElementById('bibtex-text').innerText;
+    navigator.clipboard.writeText(text).then(function() {
+      btn.textContent = 'Copied!';
+      setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+    });
+  }
+  </script>
+
   <footer class="site-footer">
     <div class="page-container">
-      <p>&copy; {{ year }} Bernhard Thomaszewski</p>
+      <div class="footer-inner">
+        <a href="https://www.ethz.ch/" class="footer-logo"><img src="../../assets/images/ethz_logo_black.svg" alt="ETH Zürich"></a>
+        <div class="footer-info">
+          <p>Bernhard Thomaszewski &mdash; <a href="mailto:bthomasz@ethz.ch">bthomasz@ethz.ch</a></p>
+          <p><a href="https://www.ethz.ch/">ETH Zürich</a>, Department of Computer Science</p>
+          <p><a href="https://crl.ethz.ch/">Computational Robotics Lab</a></p>
+          <p>&copy; {{ year }} Bernhard Thomaszewski</p>
+        </div>
+        <a href="https://crl.ethz.ch/" class="footer-logo"><img src="../../assets/images/CRL-Logo.svg" alt="CRL"></a>
+      </div>
     </div>
   </footer>
 </body>

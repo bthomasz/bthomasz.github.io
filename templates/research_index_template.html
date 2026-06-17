@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Bernhard Thomaszewski - Research{% endblock %}
+
+{% block content %}
+<div class="page-container">
+  <section class="research-intro">
+    <h1>Research</h1>
+    <p>An overview of the main research themes pursued by our group.</p>
+  </section>
+
+  <section class="research-grid">
+    {% for area in areas %}
+    <a class="research-card" href="{{ root }}research/{{ area.id }}/index.html">
+      <img src="{{ root }}{{ area.card_image }}" alt="{{ area.title }}">
+      <h3>{{ area.title }}</h3>
+    </a>
+    {% endfor %}
+  </section>
+</div>
+{% endblock %}

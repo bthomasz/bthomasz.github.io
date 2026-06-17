@@ -1,0 +1,144 @@
+- id: neural-simulation
+  nav_label: Neural Simulation
+  title: Simulation and Machine Learning
+  card_image: assets/images/research/NMFSlider.jpg
+  intro: >
+    From the physics of soft tissues to the mechanics of complex materials,
+    accurate simulation is key to understanding and predicting real-world
+    behavior. However, traditional computational models are often costly,
+    requiring trade-offs between accuracy and efficiency. Our research
+    bridges simulation and machine learning to develop data-driven models
+    that accelerate computations while preserving physical fidelity. By
+    combining physics-based reasoning with modern AI techniques, we aim to
+    push the boundaries of predictive modeling—enabling faster, more
+    scalable, and more intelligent simulations for applications ranging from
+    digital humans to advanced materials.
+  highlights:
+    - subtitle: Neural Metamaterial Families
+      image: assets/images/research/NMFSlider.jpg
+      pub_id: neural-metamaterial-networks
+    - subtitle: Neural Subspaces
+      image: assets/images/research/NeuralModesSlider.jpg
+      pub_id: neural-modes
+    - subtitle: Neural Cloth Simulation
+      image: assets/images/research/HoodSlider.jpg
+      pub_id: hood
+    - subtitle: Neural Topology Optimization
+      image: assets/images/research/NtopoSlider.jpg
+      pub_id: ntopo-mesh-free-topology-optimization-using-implicit-neural-
+
+- id: structured-materials
+  nav_label: Structured Materials
+  title: Structured Materials
+  card_image: assets/images/research/ScalesSlider.jpg
+  intro: >
+    Structured materials exhibit extraordinary mechanical properties,
+    enabling applications in robotics, architecture, and many fields of
+    engineering. Our research focuses on computational modeling,
+    characterization, and inverse design of these materials to achieve
+    tunable stiffness. By integrating physics-based simulation with machine
+    learning and optimization, we develop predictive tools that reveal
+    emergent behaviors and guide the creation of novel structures.
+  highlights:
+    - subtitle: Scaled Sheet Materials
+      image: assets/images/research/ScalesSlider.jpg
+      pub_id: flexscale
+    - subtitle: Structured Sheet Materials
+      image: assets/images/research/StructuredSheets1.jpg
+      pub_id: mechanical-characterization-of-structured-sheet-materials
+    - subtitle: Bi-Material Design with Differentiable Stripe Patterns
+      image: assets/images/research/StripesSlider.jpg
+      pub_id: differentiable-stripe-patterns
+    - subtitle: Discrete Interlocking Materials
+      image: assets/images/research/DIMSlider.jpg
+      pub_id: beyond-chainmail-dim
+    - subtitle: Structured Silicone
+      image: assets/images/research/MetaSilicone1.jpg
+      pub_id: metasilicone-design-and-fabrication-of-composite-silicone-wi
+
+- id: robotics
+  nav_label: Robotics
+  title: Robotics
+  card_image: assets/images/research/TorosSlider.jpg
+  intro: >
+    Robotics is shifting from rigid machines to adaptable, resilient systems
+    capable of safe interaction with humans and complex environments. Soft
+    robotics, robotic materials, and advanced mechanism design enable robots
+    with compliant, tunable, and bio-inspired structures that better
+    integrate with the physical world. By leveraging programmable materials
+    and physics-based modeling, we can create robots with enhanced
+    adaptability and functionality. This research has broad implications for
+    medical devices, wearable assistive systems, and autonomous exploration,
+    pushing the boundaries of how robots interact with and navigate their
+    surroundings.
+  highlights:
+    - subtitle: A Topology Optimization Approach for Designing Robotic Skins
+      image: assets/images/research/TorosSlider.jpg
+      pub_id: toros
+    - subtitle: Compliant Mechanisms
+      image: assets/images/research/CompMech1.jpg
+      pub_id: a-computational-design-tool-for-compliant-mechanisms
+    - subtitle: Optimization-Based Gait Design
+      image: assets/images/research/RobotDesigner1.jpg
+      pub_id: interactive-design-of-3d-printable-robotic-creatures
+    - subtitle: Synergies between Wheels and Legs
+      image: assets/images/research/Skaterbots.jpg
+      pub_id: skaterbots-optimization-based-design-and-motion-synthesis-fo
+
+- id: smart-simulation
+  nav_label: Smart Simulation
+  title: Smart Simulation
+  card_image: assets/images/research/DiffVoronoiSlider.jpg
+  intro: >
+    Balancing accuracy, efficiency, and flexibility is a core challenge in
+    computational modeling, especially for complex physical and mechanical
+    systems. High-fidelity simulations capture rich physical behaviors but
+    are often computationally expensive, while faster methods risk
+    sacrificing realism. Our research focuses on developing computational
+    models that retain essential physical accuracy while remaining scalable
+    and adaptable across different problem domains. By integrating
+    physics-based simulation, data-driven techniques, and differentiable
+    simulation, we aim to create models that efficiently solve a broad range
+    of engineering and scientific challenges, from metamaterials and robotics
+    to biological tissues.
+  highlights:
+    - subtitle: Differentiable Voronoi Diagrams
+      image: assets/images/research/DiffVoronoiSlider.jpg
+      pub_id: differentiable-voronoi
+    - subtitle: Differentiable Contact for Soft Body Simulations
+      image: assets/images/research/DeformableContactSlider.jpg
+      pub_id: deformable-contact
+    - subtitle: Differentiable Geodesic Distance
+      image: assets/images/research/DiffGeoDistSlider.jpg
+      pub_id: differentiable-geodesic-distance
+    - subtitle: Efficient Solid Shell Elements
+      image: assets/images/research/Q3TSlider.jpg
+      pub_id: q3t-prisms
+
+- id: digital-humans-biomechanics
+  nav_label: Digital Humans & Biomechanics
+  title: Digital Humans & Biomechanics
+  card_image: assets/images/research/OrthognathicSlider.jpg
+  intro: >
+    The advancement of digital humans and biomechanical simulation is
+    transforming fields ranging from medicine to robotics and virtual
+    reality. By developing computational models of the human body, we can
+    gain deeper insights into movement, injury mechanics, and personalized
+    healthcare. Simulation enables predictive modeling for surgical planning,
+    ergonomic design, and virtual avatars with realistic motion and
+    deformation. However, accurately capturing the complex interplay of soft
+    tissue mechanics, skeletal dynamics, and neuromuscular control remains a
+    significant challenge. Our research focuses on bridging this gap through
+    physics-based simulations, data-driven modeling, and AI-enhanced
+    techniques, pushing the boundaries of digital human representation for
+    real-world applications.
+  highlights:
+    - subtitle: Differentiable Biomechanical Simulation
+      image: assets/images/research/OrthognathicSlider.jpg
+      pub_id: differentiable-simulation-for-outcome-driven-orthognathic-su
+    - subtitle: Kinesthetic Garments
+      image: assets/images/research/KinestheticSlider.jpg
+      pub_id: computational-design-of-kinesthetic-garments
+    - subtitle: Physics-Enhanced Facial Animation
+      image: assets/images/research/PhysicalBlendshapes.png
+      pub_id: enriching-facial-blendshape-rigs-with-physical-simulation

@@ -4,7 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bernhard Thomaszewski - Home</title>
+  <meta name="author" content="Bernhard Thomaszewski">
   <link rel="stylesheet" href="assets/css/style.css">
+<meta name="description" content="Academic website of Bernhard Thomaszewski, Senior Research Scientist at ETH Zurich. Research in computer graphics, computational mechanics, mechanical metamaterials, robotics, and digital humans.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bernhard Thomaszewski">
+<meta property="og:title" content="Bernhard Thomaszewski">
+<meta property="og:description" content="Academic website of Bernhard Thomaszewski, Senior Research Scientist at ETH Zurich. Research in computer graphics, computational mechanics, mechanical metamaterials, robotics, and digital humans.">
+<meta property="og:url" content="https://thomaszewski.com/">
+<meta property="og:image" content="https://thomaszewski.com/assets/images/PicBT.png">
 </head>
 <body>
   <header class="site-header">
@@ -13,6 +21,16 @@
       <nav class="site-nav">
         <a href="index.html">Home</a>
         <a href="publications.html">Publications</a>
+        <div class="nav-dropdown">
+          <a href="research/index.html">Research</a>
+          <div class="nav-dropdown-menu">
+            <a href="research/neural-simulation/index.html">Neural Simulation</a>
+            <a href="research/structured-materials/index.html">Structured Materials</a>
+            <a href="research/robotics/index.html">Robotics</a>
+            <a href="research/smart-simulation/index.html">Smart Simulation</a>
+            <a href="research/digital-humans-biomechanics/index.html">Digital Humans &amp; Biomechanics</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -30,7 +48,7 @@
       </div>
     </div>
     <div class="carousel-slide">
-      <a href="publications.html#differentiable-voronoi">
+      <a href="projects/differentiable-voronoi/index.html">
         <img src="assets/images/carousel/DiffVoronoiSlider.jpg" alt="Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems">
       </a>
       <div class="carousel-caption">
@@ -38,11 +56,11 @@
       </div>
     </div>
     <div class="carousel-slide">
-      <a href="publications.html#flexscale">
+      <a href="projects/flexscale/index.html">
         <img src="assets/images/carousel/ScalesSlider.jpg" alt="FlexScale: Modeling and Characterization of Flexible Scaled Sheets">
       </a>
       <div class="carousel-caption">
-        J. Montes Maestre et al. &mdash; <em>FlexScale: Modeling and Characterization of Flexible Scaled Sheets</em>. ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024).
+        Juan Montes Maestre et al. &mdash; <em>FlexScale: Modeling and Characterization of Flexible Scaled Sheets</em>. ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024).
       </div>
     </div>
     <div class="carousel-slide">
@@ -114,116 +132,122 @@
   <section class="pub-section">
     <h2>Recent Publications</h2>
     <div class="pub-list">
-      <article class="pub-entry" id="q3t-prisms">
+      <article class="pub-entry" id="isogami">
         <div class="pub-thumb">
-          <img src="assets/images/publications/Q3T.png" alt="">
+          <img src="assets/images/publications/isogami.jpg" alt="">
         </div>
         <div class="pub-info">
           <p class="pub-title">
-            Q3T Prisms: A Linear-Quadratic Solid Shell Element for Elastoplastic Surfaces
+            <a href="projects/isogami/index.html">IsoGami: Rigid-Deployable Kirigami Materials From Isohedral Tilings</a>
           </p>
-          <p class="pub-authors">J. Montes Maestre, S. Coros, B. Thomaszewski</p>
-          <p class="pub-venue">Proc. ACM SIGGRAPH 2024</p>
+          <p class="pub-authors">Guo Han, Juan Sebastian Montes Maestre, Logan Numerow, Ronan Hinchet, Stelian Coros, Bernhard Thomaszewski</p>
+          <p class="pub-venue">ACM SIGGRAPH 2026 Conference Papers</p>
           <p class="pub-links">
-<a href="https://crl.ethz.ch/papers/q3t.pdf">PDF</a>          </p>
+<a href="assets/pdf/Isogami.pdf">PDF</a><a href="https://youtu.be/6FhFU2Vlgk8">Video</a><a href="projects/isogami/index.html">Project</a>
+<a href="https://github.com/guo-han/Isogami">Code</a>          </p>
         </div>
       </article>
-      <article class="pub-entry" id="contourcraft">
+      <article class="pub-entry" id="origami-materials">
         <div class="pub-thumb">
-          <img src="assets/images/publications/contourCraft.png" alt="">
+          <img src="assets/images/publications/origami-materials-teaser.jpg" alt="">
         </div>
         <div class="pub-info">
           <p class="pub-title">
-            ContourCraft: Learning to Resolve Intersections in Neural Multi-Garment Simulations
+            <a href="projects/origami-materials/index.html">A Unified Homogenization Framework for Straight- and Curved-Crease Origami Materials</a>
           </p>
-          <p class="pub-authors">A. Grigorev, G. Becherini, M. J. Black, O. Hilliges, B. Thomaszewski</p>
-          <p class="pub-venue">Proc. ACM SIGGRAPH 2024</p>
+          <p class="pub-authors">M. Li, J. S. Montes Maestre, E. Ganier, K. Mundilova, M. Pauly, B. Thomaszewski</p>
+          <p class="pub-venue">ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2026)</p>
           <p class="pub-links">
-<a href="https://arxiv.org/abs/2405.09522">PDF</a>          </p>
+<a href="assets/pdf/OrigamiMaterials.pdf">PDF</a><a href="https://youtu.be/99tWdPK9NP8">Video</a><a href="projects/origami-materials/index.html">Project</a>
+          </p>
         </div>
       </article>
-      <article class="pub-entry" id="modal-folding">
+      <article class="pub-entry" id="shell-homogenization">
         <div class="pub-thumb">
-          <img src="assets/images/publications/modal_folding.jpeg" alt="">
+          <img src="assets/images/publications/shell-homogenization-teaser.jpg" alt="">
         </div>
         <div class="pub-info">
           <p class="pub-title">
-            Modal Folding: Discovering Smooth Folding Patterns for Sheet Materials using Strain-Space Modes
+            <a href="projects/shell-homogenization/index.html">Taking a Moment to Characterize the Bending Response of Thin Sheet Materials</a>
           </p>
-          <p class="pub-authors">P. Tang, R. Hinchet, R. Poranne, B. Thomaszewski, S. Coros</p>
-          <p class="pub-venue">Proc. ACM SIGGRAPH 2024</p>
+          <p class="pub-authors">P. Xie, J. S. Montes Maestre, S. Coros, B. Thomaszewski</p>
+          <p class="pub-venue">Computer Graphics Forum (Proc. Eurographics Symposium on Geometry Processing, SGP 2026), Vol. 45, No. 5</p>
           <p class="pub-links">
-<a href="https://arxiv.org/abs/2405.04280">PDF</a><a href="https://www.youtube.com/watch?v=L-JB8Totg8A&feature=youtu.be">Video</a>          </p>
+<a href="assets/pdf/ShellHomogenization.pdf">PDF</a><a href="https://youtu.be/YxvFebgKd38">Video</a><a href="projects/shell-homogenization/index.html">Project</a>
+          </p>
         </div>
       </article>
-      <article class="pub-entry" id="differentiable-voronoi">
+      <article class="pub-entry" id="momentum-gnn">
         <div class="pub-thumb">
-          <img src="assets/images/publications/DiffVoronoi.png" alt="">
+          <img src="assets/images/publications/momentum-gnn.jpg" alt="">
         </div>
         <div class="pub-info">
           <p class="pub-title">
-            Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems
+            <a href="projects/momentum-gnn/index.html">Momentum-Conserving Graph Neural Networks for Deformable Objects</a>
           </p>
-          <p class="pub-authors">L. Numerow, Y. Li, S. Coros, B. Thomaszewski</p>
-          <p class="pub-venue">ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)</p>
+          <p class="pub-authors">Jiahong Wang, Logan Numerow, Stelian Coros, Christian Theobalt, Vahid Babaei, Bernhard Thomaszewski</p>
+          <p class="pub-venue">International Conference on 3D Vision 2026</p>
           <p class="pub-links">
-<a href="https://arxiv.org/abs/2404.18629">PDF</a><a href="https://crl.ethz.ch/videos/VoronoiFoam_video.mp4">Video</a>          </p>
+<a href="assets/pdf/MomentumGNN.pdf">PDF</a><a href="https://youtu.be/FOpoQxbjEW0">Video</a><a href="projects/momentum-gnn/index.html">Project</a>
+          </p>
         </div>
       </article>
-      <article class="pub-entry" id="flexscale">
+      <article class="pub-entry" id="star-shaped-distance-voronoi-diagrams-for-3d-metamaterial-de">
         <div class="pub-thumb">
-          <img src="assets/images/publications/flexscales.png" alt="">
+          <img src="assets/images/publications/star-shaped-distance-voronoi-diagrams-for-3d-metamaterial-de.jpg" alt="">
         </div>
         <div class="pub-info">
           <p class="pub-title">
-            FlexScale: Modeling and Characterization of Flexible Scaled Sheets
+            <a href="projects/star-shaped-distance-voronoi-diagrams-for-3d-metamaterial-de/index.html">Star-Shaped Distance Voronoi Diagrams for 3D Metamaterial Design</a>
           </p>
-          <p class="pub-authors">J. Montes Maestre, Y. Du, R. Hinchet, S. Coros, B. Thomaszewski</p>
-          <p class="pub-venue">ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)</p>
+          <p class="pub-authors">L. Numerow, S. Coros, B. Thomaszewski</p>
+          <p class="pub-venue">Proc. ACM SIGGRAPH Asia, 2025</p>
           <p class="pub-links">
-<a href="https://crl.ethz.ch/papers/ScalesSiggraphToG.pdf">PDF</a><a href="https://crl.ethz.ch/videos/ScalesVideo.mp4">Video</a>          </p>
+<a href="https://crl.ethz.ch/papers/SSVDMetamaterials.pdf">PDF</a><a href="https://youtu.be/fsDP1iw5o94">Video</a><a href="projects/star-shaped-distance-voronoi-diagrams-for-3d-metamaterial-de/index.html">Project</a>
+          </p>
         </div>
       </article>
-      <article class="pub-entry" id="differentiable-geodesic-distance">
+      <article class="pub-entry" id="closed-form-construction-of-voronoi-diagrams-with-star-shape">
         <div class="pub-thumb">
-          <img src="assets/images/publications/DiffGD.png" alt="">
+          <img src="assets/images/publications/closed-form-construction-of-voronoi-diagrams-with-star-shape.jpg" alt="">
         </div>
         <div class="pub-info">
           <p class="pub-title">
-            Differentiable Geodesic Distance for Intrinsic Minimization on Triangle Meshes
+            <a href="projects/closed-form-construction-of-voronoi-diagrams-with-star-shape/index.html">Closed-Form Construction of Voronoi Diagrams with Star-Shaped Metrics</a>
           </p>
-          <p class="pub-authors">Yue Li, Logan Numerow, Bernhard Thomaszewski, Stelian Coros</p>
-          <p class="pub-venue">ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)</p>
+          <p class="pub-authors">Haoyang Zhou, Logan Numerow, Stelian Coros, Bernhard Thomaszewski</p>
+          <p class="pub-venue">ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2025)</p>
           <p class="pub-links">
-<a href="https://arxiv.org/abs/2404.18610">PDF</a>          </p>
+<a href="assets/pdf/closed-form-construction-of-voronoi-diagrams-with-star-shape.pdf">PDF</a><a href="https://youtu.be/RR-lyQ-8Bqs">Video</a><a href="projects/closed-form-construction-of-voronoi-diagrams-with-star-shape/index.html">Project</a>
+          </p>
         </div>
       </article>
-      <article class="pub-entry" id="deformable-contact">
+      <article class="pub-entry" id="inverse-design-of-discrete-interlocking-materials-with-desir">
         <div class="pub-thumb">
-          <img src="assets/images/publications/DeformableContact.jpg" alt="">
+          <img src="assets/images/publications/inverse-design-of-discrete-interlocking-materials-with-desir.jpg" alt="">
         </div>
         <div class="pub-info">
           <p class="pub-title">
-            Robust and Artefact-Free Deformable Contact with Smooth Surface Representations
+            Inverse Design of Discrete Interlocking Materials with Desired Mechanical Behavior
           </p>
-          <p class="pub-authors">Y. Du, Y. Li, S. Coros, B. Thomaszewski</p>
-          <p class="pub-venue">Computer Graphics Forum (Proc. ACM/Eurographics Symposium on Computer Animation, SCA '24), 2024</p>
+          <p class="pub-authors">P. Tang, B. Thomaszewski, S. Coros, B. Bickel</p>
+          <p class="pub-venue">Proc. ACM SIGGRAPH, 2025</p>
           <p class="pub-links">
-<a href="https://crl.ethz.ch/papers/DeformableContact_SCA%20(3).pdf">PDF</a><a href="https://youtu.be/FSUcIOnfdLI">Video</a>          </p>
+<a href="https://tangpengbin.github.io/publications/InverseDIM/project_files/InverseDIM_SIGGRAPH2025_AuthorVersion.pdf">PDF</a><a href="https://tangpengbin.github.io/publications/InverseDIM/index.html">Project</a>          </p>
         </div>
       </article>
-      <article class="pub-entry" id="neural-modes">
+      <article class="pub-entry" id="neuriphy-neural-baking-of-physics-based-deformations-for-fac">
         <div class="pub-thumb">
-          <img src="assets/images/publications/NeuralMode.png" alt="">
+          <img src="assets/images/publications/neuriphy-neural-baking-of-physics-based-deformations-for-fac.jpg" alt="">
         </div>
         <div class="pub-info">
           <p class="pub-title">
-            Neural Modes: Self-supervised Learning of Nonlinear Modal Subspaces
+            NeuRiPhy: Neural Baking of Physics-Based Deformations for Facial Rigs
           </p>
-          <p class="pub-authors">J. Wang, Y. Du, S. Coros, B. Thomaszewski</p>
-          <p class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2024</p>
+          <p class="pub-authors">D. Corigliano, D. Peter, N. Huber, B. Thomaszewski, B. Solenthaler</p>
+          <p class="pub-venue">Proceedings of the ACM on Computer Graphics and Interactive Techniques, 2025</p>
           <p class="pub-links">
-<a href="https://arxiv.org/abs/2404.17620">PDF</a><a href="https://www.youtube.com/watch?v=e4eWEqHSiSU&feature=youtu.be">Video</a>          </p>
+<a href="https://cgl.ethz.ch/Downloads/Publications/Papers/2025/Cor25a/Cor25a.pdf">PDF</a><a href="https://cgl.ethz.ch/publications/papers/paperCor25a.php">Project</a>          </p>
         </div>
       </article>
     </div>
@@ -237,7 +261,16 @@
 
   <footer class="site-footer">
     <div class="page-container">
-      <p>&copy; 2026 Bernhard Thomaszewski</p>
+      <div class="footer-inner">
+        <a href="https://www.ethz.ch/" class="footer-logo"><img src="assets/images/ethz_logo_black.svg" alt="ETH Zürich"></a>
+        <div class="footer-info">
+          <p>Bernhard Thomaszewski &mdash; <a href="mailto:bthomasz@ethz.ch">bthomasz@ethz.ch</a></p>
+          <p><a href="https://www.ethz.ch/">ETH Zürich</a>, Department of Computer Science</p>
+          <p><a href="https://crl.ethz.ch/">Computational Robotics Lab</a></p>
+          <p>&copy; 2026 Bernhard Thomaszewski</p>
+        </div>
+        <a href="https://crl.ethz.ch/" class="footer-logo"><img src="assets/images/CRL-Logo.svg" alt="CRL"></a>
+      </div>
     </div>
   </footer>
 </body>

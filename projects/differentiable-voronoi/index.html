@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems</title>
+  <meta name="author" content="Bernhard Thomaszewski">
+<meta name="description" content="Navigating topological transitions in cellular mechanical systems is a significant challenge for existing simulation methods. While abstract models lack">
+  <!-- Google Scholar -->
+  <meta name="citation_title" content="Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems">
+<meta name="citation_author" content="L. Numerow">
+<meta name="citation_author" content="Y. Li">
+<meta name="citation_author" content="S. Coros">
+<meta name="citation_author" content="B. Thomaszewski">
+<meta name="citation_publication_date" content="2024">
+  <meta name="citation_journal_title" content="ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)">
+  <meta name="citation_pdf_url" content="https://arxiv.org/abs/2404.18629">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Bernhard Thomaszewski">
+  <meta property="og:title" content="Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems">
+<meta property="og:description" content="Navigating topological transitions in cellular mechanical systems is a significant challenge for existing simulation methods. While abstract models lack predictive capabilities at the cellular level,">  <meta property="og:url" content="https://thomaszewski.com/projects/differentiable-voronoi/index.html">
+  <meta property="og:image" content="https://thomaszewski.com/assets/images/publications/differentiable-voronoi-teaser.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems",
+    "author": [{"@type": "Person", "name": "L. Numerow"}, {"@type": "Person", "name": "Y. Li"}, {"@type": "Person", "name": "S. Coros"}, {"@type": "Person", "name": "B. Thomaszewski"}],
+    "datePublished": "2024",
+    "isPartOf": {"@type": "Periodical", "name": "ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)"},
+    "url": "https://arxiv.org/abs/2404.18629",
+    "abstract": "Navigating topological transitions in cellular mechanical systems is a significant challenge for existing simulation methods. While abstract models lack predictive capabilities at the cellular level, explicit network representations struggle with topology changes, and per-cell representations are computationally too demanding for large-scale simulations. To address these challenges, we propose a novel cell-centered approach based on differentiable Voronoi diagrams. Representing each cell with a Voronoi site, our method defines shape and topology of the interface network implicitly. In this way, we substantially reduce the number of problem variables, eliminate the need for explicit contact handling, and ensure continuous geometry changes during topological transitions. Closed-form derivatives of network positions facilitate simulation with Newton-type methods for a wide range of per-cell energies. Finally, we extend our differentiable Voronoi diagrams to enable coupling with arbitrary rigid and deformable boundaries. We apply our approach to a diverse set of examples, highlighting splitting and merging of cells as well as neighborhood changes. We illustrate applications to inverse problems by matching soap foam simulations to real-world images. Comparative analysis with explicit cell models reveals that our method achieves qualitatively comparable results at significantly faster computation times."  }
+  </script>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-container">
+      <p class="site-title"><a href="../../index.html">Bernhard Thomaszewski</a></p>
+      <nav class="site-nav">
+        <a href="../../index.html">Home</a>
+        <a href="../../publications.html">Publications</a>
+        <div class="nav-dropdown">
+          <a href="../../research/index.html">Research</a>
+          <div class="nav-dropdown-menu">
+            <a href="../../research/neural-simulation/index.html">Neural Simulation</a>
+            <a href="../../research/structured-materials/index.html">Structured Materials</a>
+            <a href="../../research/robotics/index.html">Robotics</a>
+            <a href="../../research/smart-simulation/index.html">Smart Simulation</a>
+            <a href="../../research/digital-humans-biomechanics/index.html">Digital Humans &amp; Biomechanics</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-container">
+
+      <section class="project-header">
+        <h1>Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems</h1>
+        <p class="pub-authors" style="display:flex; justify-content:center;">L. Numerow, Y. Li, S. Coros, B. Thomaszewski</p>
+        <p class="pub-venue" style="display:flex; justify-content:center;">ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)</p>
+
+        <div class="project-links">
+          <a href="https://arxiv.org/abs/2404.18629">Paper (PDF)</a>
+<a href="https://crl.ethz.ch/videos/VoronoiFoam_video.mp4">Video</a>        </div>
+      </section>
+
+      <section class="project-teaser">
+        <img src="../../assets/images/publications/differentiable-voronoi-teaser.jpg" alt="Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems">
+      </section>
+
+
+      <section class="project-video">
+        <div class="video-wrapper">
+          <video controls src="https://crl.ethz.ch/videos/VoronoiFoam_video.mp4"></video>
+        </div>
+      </section>
+
+      <section class="project-abstract">
+        <h2>Abstract</h2>
+        <p>Navigating topological transitions in cellular mechanical systems is a significant challenge for existing simulation methods. While abstract models lack predictive capabilities at the cellular level, explicit network representations struggle with topology changes, and per-cell representations are computationally too demanding for large-scale simulations. To address these challenges, we propose a novel cell-centered approach based on differentiable Voronoi diagrams. Representing each cell with a Voronoi site, our method defines shape and topology of the interface network implicitly. In this way, we substantially reduce the number of problem variables, eliminate the need for explicit contact handling, and ensure continuous geometry changes during topological transitions. Closed-form derivatives of network positions facilitate simulation with Newton-type methods for a wide range of per-cell energies. Finally, we extend our differentiable Voronoi diagrams to enable coupling with arbitrary rigid and deformable boundaries. We apply our approach to a diverse set of examples, highlighting splitting and merging of cells as well as neighborhood changes. We illustrate applications to inverse problems by matching soap foam simulations to real-world images. Comparative analysis with explicit cell models reveals that our method achieves qualitatively comparable results at significantly faster computation times.</p>
+      </section>
+
+      <section class="project-bibtex">
+        <h2>BibTeX</h2>
+        <div class="bibtex-wrapper">
+          <pre id="bibtex-text">@article{Numerow2024DiffVoronoi,
+  title   = {Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems},
+  author  = {Logan Numerow and Yue Li and Stelian Coros and Bernhard Thomaszewski},
+  journal = {ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)},
+  year    = {2024}
+}</pre>
+          <button class="bibtex-copy-btn" onclick="copyBibtex(this)">Copy</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+  function copyBibtex(btn) {
+    var text = document.getElementById('bibtex-text').innerText;
+    navigator.clipboard.writeText(text).then(function() {
+      btn.textContent = 'Copied!';
+      setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+    });
+  }
+  </script>
+
+  <footer class="site-footer">
+    <div class="page-container">
+      <div class="footer-inner">
+        <a href="https://www.ethz.ch/" class="footer-logo"><img src="../../assets/images/ethz_logo_black.svg" alt="ETH Zürich"></a>
+        <div class="footer-info">
+          <p>Bernhard Thomaszewski &mdash; <a href="mailto:bthomasz@ethz.ch">bthomasz@ethz.ch</a></p>
+          <p><a href="https://www.ethz.ch/">ETH Zürich</a>, Department of Computer Science</p>
+          <p><a href="https://crl.ethz.ch/">Computational Robotics Lab</a></p>
+          <p>&copy; 2026 Bernhard Thomaszewski</p>
+        </div>
+        <a href="https://crl.ethz.ch/" class="footer-logo"><img src="../../assets/images/CRL-Logo.svg" alt="CRL"></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

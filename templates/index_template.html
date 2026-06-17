@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 {% block title %}Bernhard Thomaszewski - Home{% endblock %}
 
+{% block head_extra %}
+<meta name="description" content="Academic website of Bernhard Thomaszewski, Senior Research Scientist at ETH Zurich. Research in computer graphics, computational mechanics, mechanical metamaterials, robotics, and digital humans.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bernhard Thomaszewski">
+<meta property="og:title" content="Bernhard Thomaszewski">
+<meta property="og:description" content="Academic website of Bernhard Thomaszewski, Senior Research Scientist at ETH Zurich. Research in computer graphics, computational mechanics, mechanical metamaterials, robotics, and digital humans.">
+<meta property="og:url" content="{{ site_url }}/">
+<meta property="og:image" content="{{ site_url }}/assets/images/PicBT.png">
+{% endblock %}
+
 {% block content %}
 
 {% if highlights %}

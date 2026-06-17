@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bernhard Thomaszewski - Smart Simulation</title>
+  <meta name="author" content="Bernhard Thomaszewski">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+<meta name="description" content="Balancing accuracy, efficiency, and flexibility is a core challenge in computational modeling, especially for complex physical and mechanical systems.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bernhard Thomaszewski">
+<meta property="og:title" content="Bernhard Thomaszewski - Smart Simulation">
+<meta property="og:description" content="Balancing accuracy, efficiency, and flexibility is a core challenge in computational modeling, especially for complex physical and mechanical systems. High-fidelity simulations capture rich physical">
+<meta property="og:url" content="https://thomaszewski.com/research/smart-simulation/index.html">
+<meta property="og:image" content="https://thomaszewski.com/assets/images/research/DiffVoronoiSlider.jpg"></head>
+<body>
+  <header class="site-header">
+    <div class="page-container">
+      <p class="site-title"><a href="../../index.html">Bernhard Thomaszewski</a></p>
+      <nav class="site-nav">
+        <a href="../../index.html">Home</a>
+        <a href="../../publications.html">Publications</a>
+        <div class="nav-dropdown">
+          <a href="../../research/index.html">Research</a>
+          <div class="nav-dropdown-menu">
+            <a href="../../research/neural-simulation/index.html">Neural Simulation</a>
+            <a href="../../research/structured-materials/index.html">Structured Materials</a>
+            <a href="../../research/robotics/index.html">Robotics</a>
+            <a href="../../research/smart-simulation/index.html">Smart Simulation</a>
+            <a href="../../research/digital-humans-biomechanics/index.html">Digital Humans &amp; Biomechanics</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+<div class="page-container">
+  <section class="research-intro">
+    <h1>Smart Simulation</h1>
+    <p>Balancing accuracy, efficiency, and flexibility is a core challenge in computational modeling, especially for complex physical and mechanical systems. High-fidelity simulations capture rich physical behaviors but are often computationally expensive, while faster methods risk sacrificing realism. Our research focuses on developing computational models that retain essential physical accuracy while remaining scalable and adaptable across different problem domains. By integrating physics-based simulation, data-driven techniques, and differentiable simulation, we aim to create models that efficiently solve a broad range of engineering and scientific challenges, from metamaterials and robotics to biological tissues.
+</p>
+  </section>
+
+  <section class="research-highlights">
+    <article class="research-highlight">
+      <h3>Differentiable Voronoi Diagrams</h3>
+      <img class="research-banner" src="../../assets/images/research/DiffVoronoiSlider.jpg" alt="Differentiable Voronoi Diagrams">
+      <div class="research-citation">
+        <p class="pub-title">
+          <a href="../../projects/differentiable-voronoi/index.html">Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems</a>
+        </p>
+        <p class="pub-authors">L. Numerow, Y. Li, S. Coros, B. Thomaszewski</p>
+        <p class="pub-venue">ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)</p>
+        <p class="pub-links">
+<a href="https://arxiv.org/abs/2404.18629">PDF</a><a href="https://crl.ethz.ch/videos/VoronoiFoam_video.mp4">Video</a><a href="../../projects/differentiable-voronoi/index.html">Project</a>
+        </p>
+      </div>
+      <p class="research-abstract">Navigating topological transitions in cellular mechanical systems is a significant challenge for existing simulation methods. While abstract models lack predictive capabilities at the cellular level, explicit network representations struggle with topology changes, and per-cell representations are computationally too demanding for large-scale simulations. To address these challenges, we propose a novel cell-centered approach based on differentiable Voronoi diagrams. Representing each cell with a Voronoi site, our method defines shape and topology of the interface network implicitly. In this way, we substantially reduce the number of problem variables, eliminate the need for explicit contact handling, and ensure continuous geometry changes during topological transitions. Closed-form derivatives of network positions facilitate simulation with Newton-type methods for a wide range of per-cell energies. Finally, we extend our differentiable Voronoi diagrams to enable coupling with arbitrary rigid and deformable boundaries. We apply our approach to a diverse set of examples, highlighting splitting and merging of cells as well as neighborhood changes. We illustrate applications to inverse problems by matching soap foam simulations to real-world images. Comparative analysis with explicit cell models reveals that our method achieves qualitatively comparable results at significantly faster computation times.</p>
+    </article>
+    <article class="research-highlight">
+      <h3>Differentiable Contact for Soft Body Simulations</h3>
+      <img class="research-banner" src="../../assets/images/research/DeformableContactSlider.jpg" alt="Differentiable Contact for Soft Body Simulations">
+      <div class="research-citation">
+        <p class="pub-title">
+          <a href="../../projects/deformable-contact/index.html">Robust and Artefact-Free Deformable Contact with Smooth Surface Representations</a>
+        </p>
+        <p class="pub-authors">Y. Du, Y. Li, S. Coros, B. Thomaszewski</p>
+        <p class="pub-venue">Computer Graphics Forum (Proc. ACM/Eurographics Symposium on Computer Animation, SCA '24), 2024</p>
+        <p class="pub-links">
+<a href="https://crl.ethz.ch/papers/DeformableContact_SCA%20(3).pdf">PDF</a><a href="https://youtu.be/FSUcIOnfdLI">Video</a><a href="../../projects/deformable-contact/index.html">Project</a>
+        </p>
+      </div>
+      <p class="research-abstract">Modeling contact between deformable solids is a fundamental problem in computer animation, mechanical design, and robotics. Existing methods based on C0-discretizations—piece-wise linear or polynomial surfaces—suffer from discontinuities and irregularities in tangential contact forces, which can significantly affect simulation outcomes and even prevent convergence. In this work, we show that these limitations can be overcome with a smooth surface representation based on Implicit Moving Least Squares (IMLS). In particular, we propose a self collision detection scheme tailored to IMLS surfaces that enables robust and efficient handling of challenging self contacts. Through a series of test cases, we show that our approach offers advantages over existing methods in terms of accuracy and robustness for both forward and inverse problems.</p>
+    </article>
+    <article class="research-highlight">
+      <h3>Differentiable Geodesic Distance</h3>
+      <img class="research-banner" src="../../assets/images/research/DiffGeoDistSlider.jpg" alt="Differentiable Geodesic Distance">
+      <div class="research-citation">
+        <p class="pub-title">
+          <a href="../../projects/differentiable-geodesic-distance/index.html">Differentiable Geodesic Distance for Intrinsic Minimization on Triangle Meshes</a>
+        </p>
+        <p class="pub-authors">Yue Li, Logan Numerow, Bernhard Thomaszewski, Stelian Coros</p>
+        <p class="pub-venue">ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)</p>
+        <p class="pub-links">
+<a href="https://arxiv.org/abs/2404.18610">PDF</a><a href="../../projects/differentiable-geodesic-distance/index.html">Project</a>
+        </p>
+      </div>
+      <p class="research-abstract">Computing intrinsic distances on discrete surfaces is at the heart of many minimization problems in geometry processing and beyond. Solving these problems is extremely challenging as it demands the computation of on-surface distances along with their derivatives. We present a novel approach for intrinsic minimization of distance-based objectives defined on triangle meshes. Using a variational formulation of shortest-path geodesics, we compute first and second-order distance derivatives based on the implicit function theorem, thus opening the door to efficient Newton-type minimization solvers. We demonstrate our differentiable geodesic distance framework on a wide range of examples, including geodesic networks and membranes on surfaces of arbitrary genus, two-way coupling between hosting surface and embedded system, differentiable geodesic Voronoi diagrams, and efficient computation of Karcher means on complex shapes. Our analysis shows that second-order descent methods based on our differentiable geodesics outperform existing first-order and quasi-Newton methods by large margins.</p>
+    </article>
+    <article class="research-highlight">
+      <h3>Efficient Solid Shell Elements</h3>
+      <img class="research-banner" src="../../assets/images/research/Q3TSlider.jpg" alt="Efficient Solid Shell Elements">
+      <div class="research-citation">
+        <p class="pub-title">
+          <a href="../../projects/q3t-prisms/index.html">Q3T Prisms: A Linear-Quadratic Solid Shell Element for Elastoplastic Surfaces</a>
+        </p>
+        <p class="pub-authors">J. Montes Maestre, S. Coros, B. Thomaszewski</p>
+        <p class="pub-venue">Proc. ACM SIGGRAPH 2024</p>
+        <p class="pub-links">
+<a href="https://crl.ethz.ch/papers/q3t.pdf">PDF</a><a href="https://youtu.be/5LMjHe756WM">Video</a><a href="../../projects/q3t-prisms/index.html">Project</a>
+        </p>
+      </div>
+      <p class="research-abstract">We introduce an approach for simulating elastoplastic surfaces using quadratic through-the-thickness (Q3T) solid shell elements. Modeling the mechanics of deformable surfaces has been a cornerstone of graphics research for decades. Although thin shell models are suitable for many materials and applications, simulation-based planning of plastic forming processes requires attention to deformation in the thickness direction. Building on recent advances in the graphics community, we explore solid shell elements for modeling elastoplastic surfaces. Linear prism elements perform well for compressible materials such as thick cloth and foam mats. However, due to their inability to capture non-constant strain in the thickness direction, they suffer from severe locking artifacts when applied to incompressible and plastic materials. Q3T elements address this limitation with a minimal yet effective modification to linear prisms, resulting in significantly improved performance with only a moderate increase in computational cost. Through various examples, we demonstrate that Q3T elements closely match the qualitative behavior of reference simulations and provide accurate quantitative results compared to real-world deep drawing experiments.</p>
+    </article>
+  </section>
+</div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-container">
+      <div class="footer-inner">
+        <a href="https://www.ethz.ch/" class="footer-logo"><img src="../../assets/images/ethz_logo_black.svg" alt="ETH Zürich"></a>
+        <div class="footer-info">
+          <p>Bernhard Thomaszewski &mdash; <a href="mailto:bthomasz@ethz.ch">bthomasz@ethz.ch</a></p>
+          <p><a href="https://www.ethz.ch/">ETH Zürich</a>, Department of Computer Science</p>
+          <p><a href="https://crl.ethz.ch/">Computational Robotics Lab</a></p>
+          <p>&copy; 2026 Bernhard Thomaszewski</p>
+        </div>
+        <a href="https://crl.ethz.ch/" class="footer-logo"><img src="../../assets/images/CRL-Logo.svg" alt="CRL"></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

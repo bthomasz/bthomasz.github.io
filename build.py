@@ -15,6 +15,7 @@ has appended a new entry.
 """
 
 import datetime
+import json
 import re
 import sys
 from pathlib import Path
@@ -24,8 +25,11 @@ from jinja2 import Environment, FileSystemLoader
 
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "data" / "publications.yaml"
+RESEARCH_FILE = ROOT / "data" / "research.yaml"
 TEMPLATES_DIR = ROOT / "templates"
 OUTPUT_ROOT = ROOT
+
+SITE_URL = "https://thomaszewski.com"
 
 YOUTUBE_RE = re.compile(
     r"(?:youtube\.com/watch\?v=|youtu\.be/)([A-Za-z0-9_-]+)"
@@ -57,7 +61,9 @@ def video_embed_html(video_url):
         )
 
     if video_url.lower().endswith(".mp4"):
-        return f'<video controls src="{video_url}"></video>'
+        # Project pages live two levels below the site root.
+        src = video_url if video_url.startswith("http") else f"../../{video_url}"
+        return f'<video controls src="{src}"></video>'
 
     # Unknown / external project-style video link (e.g. a hosted page) -
     # don't try to embed, let the project page fall back to the thumbnail.
@@ -83,6 +89,18 @@ def load_publications():
     return pubs
 
 
+def load_research(pubs_by_id):
+    with open(RESEARCH_FILE, "r", encoding="utf-8") as f:
+        areas = yaml.safe_load(f) or []
+
+    for area in areas:
+        for highlight in area.get("highlights", []):
+            pub_id = highlight.get("pub_id")
+            if pub_id:
+                highlight["pub"] = pubs_by_id.get(pub_id)
+    return areas
+
+
 def group_by_year(pubs):
     grouped = {}
     for pub in pubs:
@@ -97,8 +115,10 @@ def build():
         trim_blocks=True,
         lstrip_blocks=True,
     )
+    env.filters['tojson'] = lambda v: json.dumps(v, ensure_ascii=False)
 
     pubs = load_publications()
+    pubs_by_id = {p["id"]: p for p in pubs}
     current_year = datetime.datetime.now().year
 
     # ---- index.html ----
@@ -112,6 +132,7 @@ def build():
         highlights=highlights,
         recent=recent,
         year=current_year,
+        site_url=SITE_URL,
     )
     (OUTPUT_ROOT / "index.html").write_text(index_html, encoding="utf-8")
     print("Wrote index.html")
@@ -123,6 +144,7 @@ def build():
         root="",
         pubs_by_year=pubs_by_year,
         year=current_year,
+        site_url=SITE_URL,
     )
     (OUTPUT_ROOT / "publications.html").write_text(pubs_html, encoding="utf-8")
     print("Wrote publications.html")
@@ -134,13 +156,61 @@ def build():
             continue
         out_dir = OUTPUT_ROOT / "projects" / pub["id"]
         out_dir.mkdir(parents=True, exist_ok=True)
-        page_html = project_tpl.render(pub=pub, year=current_year)
+        page_html = project_tpl.render(pub=pub, year=current_year, site_url=SITE_URL)
         (out_dir / "index.html").write_text(page_html, encoding="utf-8")
         print(f"Wrote projects/{pub['id']}/index.html")
 
+    # ---- research pages ----
+    areas = load_research(pubs_by_id)
+
+    research_index_tpl = env.get_template("research_index_template.html")
+    research_index_html = research_index_tpl.render(
+        root="../", areas=areas, year=current_year, site_url=SITE_URL,
+    )
+    research_out_dir = OUTPUT_ROOT / "research"
+    research_out_dir.mkdir(parents=True, exist_ok=True)
+    (research_out_dir / "index.html").write_text(research_index_html, encoding="utf-8")
+    print("Wrote research/index.html")
+
+    research_tpl = env.get_template("research_template.html")
+    for area in areas:
+        out_dir = research_out_dir / area["id"]
+        out_dir.mkdir(parents=True, exist_ok=True)
+        area_html = research_tpl.render(root="../../", area=area, year=current_year, site_url=SITE_URL)
+        (out_dir / "index.html").write_text(area_html, encoding="utf-8")
+        print(f"Wrote research/{area['id']}/index.html")
+
+    # ---- sitemap.xml ----
+    sitemap_urls = [
+        f"{SITE_URL}/",
+        f"{SITE_URL}/publications.html",
+        f"{SITE_URL}/research/index.html",
+    ]
+    for area in areas:
+        sitemap_urls.append(f"{SITE_URL}/research/{area['id']}/index.html")
+    for pub in pubs:
+        if pub.get("project"):
+            sitemap_urls.append(f"{SITE_URL}/projects/{pub['id']}/index.html")
+    sitemap_xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "".join(f"  <url><loc>{u}</loc></url>\n" for u in sitemap_urls)
+        + "</urlset>\n"
+    )
+    (OUTPUT_ROOT / "sitemap.xml").write_text(sitemap_xml, encoding="utf-8")
+    print("Wrote sitemap.xml")
+
+    # ---- robots.txt ----
+    (OUTPUT_ROOT / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n",
+        encoding="utf-8",
+    )
+    print("Wrote robots.txt")
+
     print(f"\nDone. {len(pubs)} publications, "
           f"{sum(1 for p in pubs if p.get('project'))} project pages, "
-          f"{len(highlights)} carousel highlights.")
+          f"{len(highlights)} carousel highlights, "
+          f"{len(areas)} research areas.")
 
 
 if __name__ == "__main__":
