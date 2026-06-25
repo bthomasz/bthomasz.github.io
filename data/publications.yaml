@@ -1,3 +1,64 @@
+- id: face-wrinkling
+  title: Physics-Based Simulation of Contact-Induced Facial Wrinkling
+  authors:
+  - Juan Sebastian Montes Maestre
+  - Ladislav Kavan
+  - Edmond Boyer
+  - Ryan Goldade
+  - Stelian Coros
+  - Bernhard Thomaszewski
+  venue: Computer Graphics Forum (Proc. ACM/EG SCA 2026)
+  year: 2026
+  thumbnail: assets/images/publications/face-wrinkling.jpg
+  links:
+    pdf: assets/pdf/FaceWrinkling.pdf
+    video: https://youtu.be/UCOfzeEpu2E
+  project: true
+  highlight: false
+  teaser: assets/images/publications/face-wrinkling-teaser.jpg
+  abstract: >
+    Facial skin dynamics are inherently challenging to simulate due to a combination
+    of geometric, material, and anatomical complexities. Human skin is a nonlinear
+    layered material with spatially heterogeneous attachments to the underlying tissues.
+    During contact events, localized compression and shear induce mechanical instabilities,
+    leading to fine-scale wrinkling patterns governed by a delicate interplay of geometry,
+    boundary conditions, and through-the-thickness stresses.
+    We present a finite element framework to simulate contact-induced wrinkling of facial skin.
+    We model skin as a viscoelastic material with time-dependent relaxation that governs the
+    rate, persistence, and damping of wrinkle formation. We employ high-order prismatic
+    solid-shell elements to resolve through-thickness stresses and high-frequency deformation
+    modes. Central to our approach, we introduce a continuum-based formulation of skin
+    ligaments to model heterogeneous skin attachments and provide anatomically inspired
+    mobility constraints. These skin ligaments control the formation and appearance of facial
+    wrinkles by modulating their amplitude, wavelength, and spatial distribution.
+    We evaluate our method on a set of synthetic examples and compare simulations with
+    real-world footage. These results demonstrate that our skin model produces temporally
+    coherent and visually realistic wrinkle patterns during transient contact.
+  bibtex: "@article{MontesMaestre26FaceWrinkling,\n  title   = {Physics-Based Simulation\
+    \ of Contact-Induced Facial Wrinkling},\n  author  = {Montes Maestre, Juan Sebastian\
+    \ and Kavan, Ladislav and Boyer, Edmond and Goldade, Ryan and Coros, Stelian and\
+    \ Thomaszewski, Bernhard},\n  journal = {Computer Graphics Forum (Proc. ACM/EG SCA 2026)},\n\
+    \  year    = {2026}\n}"
+- id: lorami
+  title: 'LORAMI: Low-Rank Adaptation for Multi-Identity Physics-Based Face Rigs'
+  authors:
+  - Davide Corigliano
+  - Daniel Peter
+  - Barbara Solenthaler
+  - Bernhard Thomaszewski
+  venue: Computer Graphics Forum (Proc. ACM/EG SCA 2026)
+  year: 2026
+  thumbnail: assets/images/publications/lorami.jpg
+  links:
+    pdf: https://youtu.be/UCOfzeEpu2E
+    video: assets/video/LORAMI_camera_ready_v2.mp4
+    supplemental: assets/pdf/LORAMI_Supplemental.pdf
+  project: true
+  highlight: false
+  teaser: assets/images/publications/lorami-teaser.jpg
+  abstract: Physics-based simulation can augment facial rigs with high-quality deformations, but at steep computational costs. While neural surrogates can substantially reduce computation time, existing methods do not generalize across identity variations and instead require expensive per-case retraining. In this work, we present LORAMI—a method for learning physics-based face rigs over a continuous space of identities using low-rank adaptation. LORAMI addresses the challenge of identity variation through a novel architecture that combines a shared neural surrogate with low-rank weight adaptations. Instead of training a dense model across identity space, we modulate a shared base network using low-rank factors. These factors are scaled by diagonal matrices predicted from identity parameters. This design enables efficient modeling of identity-dependent variations while preserving the generic deformation behavior of the underlying physics-based rig. Our experiments show that LORAMI achieves
+    deformation accuracy on par with single-identity models and outperforms fully dense identity-conditioned networks. As a result, our method enables real-time physics-based facial animation with continuous identity control.
+  bibtex: "@article{Corigliano2026LORAMI,\n  title   = {LORAMI: Low-Rank Adaptation for Multi-Identity Physics-Based Face Rigs},\n  author  = {D. Corigliano and D. Peter and B. Solenthaler and B. Thomaszewski},\n  journal = {Computer Graphics Forum (Proc. ACM/EG SCA 2026)},\n  year    = {2026}\n}"
 - id: isogami
   title: 'IsoGami: Rigid-Deployable Kirigami Materials From Isohedral Tilings'
   authors:
@@ -29,12 +90,12 @@
 - id: origami-materials
   title: A Unified Homogenization Framework for Straight- and Curved-Crease Origami Materials
   authors:
-  - M. Li
-  - J. S. Montes Maestre
-  - E. Ganier
-  - K. Mundilova
-  - M. Pauly
-  - B. Thomaszewski
+  - Mingjie Li
+  - Juan Sebastian Montes Maestre
+  - Emilien Ganier
+  - Klara Mundilova
+  - Mark Pauly
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2026)
   year: 2026
   thumbnail: assets/images/publications/origami-materials-teaser.jpg
@@ -52,10 +113,10 @@
 - id: shell-homogenization
   title: Taking a Moment to Characterize the Bending Response of Thin Sheet Materials
   authors:
-  - P. Xie
-  - J. S. Montes Maestre
-  - S. Coros
-  - B. Thomaszewski
+  - Pengbin Xie
+  - Juan Sebastian Montes Maestre
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: Computer Graphics Forum (Proc. Eurographics Symposium on Geometry Processing, SGP 2026), Vol. 45, No. 5
   year: 2026
   thumbnail: assets/images/publications/shell-homogenization-teaser.jpg
@@ -91,9 +152,9 @@
 - id: q3t-prisms
   title: 'Q3T Prisms: A Linear-Quadratic Solid Shell Element for Elastoplastic Surfaces'
   authors:
-  - J. Montes Maestre
-  - S. Coros
-  - B. Thomaszewski
+  - Juan Sebastian Montes Maestre
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: Proc. ACM SIGGRAPH 2024
   year: 2024
   thumbnail: assets/images/publications/Q3T.png
@@ -109,11 +170,11 @@
 - id: contourcraft
   title: 'ContourCraft: Learning to Resolve Intersections in Neural Multi-Garment Simulations'
   authors:
-  - A. Grigorev
-  - G. Becherini
-  - M. J. Black
-  - O. Hilliges
-  - B. Thomaszewski
+  - Artur Grigorev
+  - Giorgio Becherini
+  - Michael J. Black
+  - Otmar Hilliges
+  - Bernhard Thomaszewski
   venue: Proc. ACM SIGGRAPH 2024
   year: 2024
   thumbnail: assets/images/publications/contourCraft.png
@@ -127,11 +188,11 @@
 - id: modal-folding
   title: 'Modal Folding: Discovering Smooth Folding Patterns for Sheet Materials using Strain-Space Modes'
   authors:
-  - P. Tang
-  - R. Hinchet
-  - R. Poranne
-  - B. Thomaszewski
-  - S. Coros
+  - Pengbin Tang
+  - Ronan Hinchet
+  - Roi Poranne
+  - Bernhard Thomaszewski
+  - Stelian Coros
   venue: Proc. ACM SIGGRAPH 2024
   year: 2024
   thumbnail: assets/images/publications/modal_folding.jpg
@@ -143,10 +204,10 @@
 - id: differentiable-voronoi
   title: Differentiable Voronoi Diagrams for Simulation of Cell-Based Mechanical Systems
   authors:
-  - L. Numerow
-  - Y. Li
-  - S. Coros
-  - B. Thomaszewski
+  - Logan Numerow
+  - Yue Li
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2024)
   year: 2024
   thumbnail: assets/images/publications/DiffVoronoi.jpg
@@ -202,10 +263,10 @@
 - id: deformable-contact
   title: Robust and Artefact-Free Deformable Contact with Smooth Surface Representations
   authors:
-  - Y. Du
-  - Y. Li
-  - S. Coros
-  - B. Thomaszewski
+  - Yinwei Du
+  - Yue Li
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: Computer Graphics Forum (Proc. ACM/Eurographics Symposium on Computer Animation, SCA '24), 2024
   year: 2024
   thumbnail: assets/images/publications/DeformableContact.jpg
@@ -220,10 +281,10 @@
 - id: neural-modes
   title: 'Neural Modes: Self-supervised Learning of Nonlinear Modal Subspaces'
   authors:
-  - J. Wang
-  - Y. Du
-  - S. Coros
-  - B. Thomaszewski
+  - Jiahong Wang
+  - Yinwei Du
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2024
   year: 2024
   thumbnail: assets/images/publications/NeuralMode.jpg
@@ -238,10 +299,10 @@
 - id: toros
   title: 'ToRoS: A Topology Optimization Approach for Designing Robotic Skins'
   authors:
-  - J. Montes
-  - R. Hinchet
-  - S. Coros
-  - B. Thomaszewski
+  - Juan Montes
+  - Ronan Hinchet
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2023)
   year: 2023
   thumbnail: assets/images/publications/ToRoS.jpg
@@ -253,9 +314,9 @@
 - id: neural-metamaterial-networks
   title: Neural Metamaterial Networks
   authors:
-  - Y. Li
-  - S. Coros
-  - B. Thomaszewski
+  - Yue Li
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2023)
   year: 2023
   thumbnail: assets/images/publications/nmn.jpg
@@ -267,11 +328,11 @@
 - id: differentiable-stripe-patterns
   title: Differentiable Stripe Patterns for Inverse Design of Structured Surfaces
   authors:
-  - J. Montes
-  - Y. Du
-  - R. Hinchet
-  - S. Coros
-  - B. Thomaszewski
+  - Juan Montes
+  - Yinwei Du
+  - Ronan Hinchet
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2023)
   year: 2023
   thumbnail: assets/images/publications/DifferentiableStripes.jpg
@@ -282,9 +343,9 @@
 - id: beyond-chainmail-dim
   title: 'Beyond Chainmail: Computational Modeling of Discrete Interlocking Materials'
   authors:
-  - P. Tang
-  - S. Coros
-  - B. Thomaszewski
+  - Pengbin Tang
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2023)
   year: 2023
   thumbnail: assets/images/publications/DIM.jpg
@@ -298,11 +359,11 @@
 - id: tcto-bespoke-frames
   title: A Temporal Coherent Topology Optimization Approach for Assembly Planning of Bespoke Frame Structures
   authors:
-  - Z. Wang
-  - F. Kennel-Maushart
-  - Y. Huang
-  - B. Thomaszewski
-  - S. Coros
+  - Ziqi Wang
+  - Florian Kennel-Maushart
+  - Yijiang Huang
+  - Bernhard Thomaszewski
+  - Stelian Coros
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2023)
   year: 2023
   thumbnail: assets/images/publications/TCTO.png
@@ -314,10 +375,10 @@
 - id: hood
   title: 'HOOD: Hierarchical Graphs for Generalized Modelling of Clothing Dynamics'
   authors:
-  - A. Grigorev
-  - B. Thomaszewski
-  - M. Black
-  - O. Hilliges
+  - Artur Grigorev
+  - Bernhard Thomaszewski
+  - Michael J. Black
+  - Otmar Hilliges
   venue: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2023
   year: 2023
   thumbnail: assets/images/publications/Hood.jpg
@@ -329,10 +390,10 @@
 - id: ncm-nonlinear-compliant-modes
   title: Nonlinear Compliant Modes for Large-Deformation Analysis of Flexible Structures
   authors:
-  - S. Dünser
-  - B. Thomaszewski
-  - R. Poranne
-  - S. Coros
+  - Simon Dünser
+  - Bernhard Thomaszewski
+  - Roi Poranne
+  - Stelian Coros
   venue: ACM Transactions on Graphics, 2022
   year: 2022
   thumbnail: assets/images/publications/NCM.jpg
@@ -343,11 +404,11 @@
 - id: cdakg
   title: Computational Design of Active Kinesthetic Garments
   authors:
-  - V. Vechev
-  - R. Hinchet
-  - S. Coros
-  - B. Thomaszewski
-  - O. Hilliges
+  - Velko Vechev
+  - Ronan Hinchet
+  - Stelian Coros
+  - Bernhard Thomaszewski
+  - Otmar Hilliges
   venue: ACM UIST, 2022
   year: 2022
   thumbnail: assets/images/publications/CDAKG.png
@@ -360,9 +421,9 @@
 - id: kps
   title: Computational Design and Automated Fabrication of Kirchhoff-Plateau Surfaces
   authors:
-  - J. Perez
-  - M. Otaduy
-  - B. Thomaszewski
+  - Jesús Pérez
+  - Miguel A. Otaduy
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2017)
   year: 2017
   thumbnail: assets/images/publications/KPS.png
@@ -378,9 +439,9 @@
 - id: star-shaped-distance-voronoi-diagrams-for-3d-metamaterial-de
   title: Star-Shaped Distance Voronoi Diagrams for 3D Metamaterial Design
   authors:
-  - L. Numerow
-  - S. Coros
-  - B. Thomaszewski
+  - Logan Numerow
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: Proc. ACM SIGGRAPH Asia, 2025
   year: 2025
   thumbnail: assets/images/publications/star-shaped-distance-voronoi-diagrams-for-3d-metamaterial-de.jpg
@@ -418,10 +479,10 @@
 - id: inverse-design-of-discrete-interlocking-materials-with-desir
   title: Inverse Design of Discrete Interlocking Materials with Desired Mechanical Behavior
   authors:
-  - P. Tang
-  - B. Thomaszewski
-  - S. Coros
-  - B. Bickel
+  - Pengbin Tang
+  - Bernhard Thomaszewski
+  - Stelian Coros
+  - Bernd Bickel
   venue: Proc. ACM SIGGRAPH, 2025
   year: 2025
   thumbnail: assets/images/publications/inverse-design-of-discrete-interlocking-materials-with-desir.jpg
@@ -433,11 +494,11 @@
 - id: neuriphy-neural-baking-of-physics-based-deformations-for-fac
   title: 'NeuRiPhy: Neural Baking of Physics-Based Deformations for Facial Rigs'
   authors:
-  - D. Corigliano
-  - D. Peter
-  - N. Huber
-  - B. Thomaszewski
-  - B. Solenthaler
+  - Davide Corigliano
+  - Daniel Peter
+  - Niko Huber
+  - Bernhard Thomaszewski
+  - Barbara Solenthaler
   venue: Proceedings of the ACM on Computer Graphics and Interactive Techniques, 2025
   year: 2025
   thumbnail: assets/images/publications/neuriphy-neural-baking-of-physics-based-deformations-for-fac.jpg
@@ -450,16 +511,16 @@
 - id: self-supervised-learning-of-latent-space-dynamics
   title: Self-supervised Learning of Latent Space Dynamics
   authors:
-  - Y. Li
-  - G. Lin
-  - E. Larionov
-  - A. Bozic
-  - D. Roble
-  - L. Kavan
-  - S. Coros
-  - B. Thomaszewski
-  - T. Stuyck
-  - H. Chen
+  - Yue Li
+  - Gene Wei-Chin Lin
+  - Egor Larionov
+  - Aljaž Božić
+  - Doug Roble
+  - Ladislav Kavan
+  - Stelian Coros
+  - Bernhard Thomaszewski
+  - Tuur Stuyck
+  - Hsiao-yu Chen
   venue: Proceedings of the ACM on Computer Graphics and Interactive Techniques, 2025
   year: 2025
   thumbnail: assets/images/publications/self-supervised-learning-of-latent-space-dynamics.jpg
@@ -471,11 +532,11 @@
 - id: viskin-physics-based-simulation-of-virtual-skin-on-personali
   title: 'ViSkin: Physics-Based Simulation of Virtual Skin on Personalized Avatars'
   authors:
-  - D. Corigliano
-  - J. Montes Maestre
-  - R. Hinchet
-  - S. Coros
-  - B. Thomaszewski
+  - Davide Corigliano
+  - Juan Sebastian Montes Maestre
+  - Ronan Hinchet
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: International Conference on 3D Vision (3DV), 2025
   year: 2025
   thumbnail: assets/images/publications/viskin-physics-based-simulation-of-virtual-skin-on-personali.jpg
@@ -488,13 +549,13 @@
 - id: gaussian-garments-reconstructing-simulation-ready-clothing-w
   title: 'Gaussian Garments: Reconstructing Simulation-Ready Clothing with Photo-Realistic Appearance from Multi-View Video'
   authors:
-  - B. Rong
-  - A. Grigorev
-  - W. Wang
-  - M. J. Black
-  - B. Thomaszewski
-  - C. Tsalicoglou
-  - O. Hilliges
+  - Boxiang Rong
+  - Artur Grigorev
+  - Wenbo Wang
+  - Michael J. Black
+  - Bernhard Thomaszewski
+  - Christina Tsalicoglou
+  - Otmar Hilliges
   venue: International Conference on 3D Vision (3DV), 2025
   year: 2025
   thumbnail: assets/images/publications/gaussian-garments-reconstructing-simulation-ready-clothing-w.jpg
@@ -507,9 +568,9 @@
 - id: a-second-order-cone-programming-approach-for-simulating-biph
   title: A Second Order Cone Programming Approach for Simulating Biphasic Materials
   authors:
-  - P. Tang
-  - S. Coros
-  - B. Thomaszewski
+  - Pengbin Tang
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: Computer Graphics Forum (Proc. ACM/Eurographics Symposium on Computer Animation, SCA '22), 2022
   year: 2022
   thumbnail: assets/images/publications/Tang22SOCP.jpeg
@@ -521,14 +582,14 @@
 - id: differentiable-simulation-for-outcome-driven-orthognathic-su
   title: Differentiable Simulation for Outcome-Driven Orthognathic Surgery Planning
   authors:
-  - D. Dorda
-  - D. Peter
-  - D. Borer
-  - N. Huber
-  - I. Sailer
-  - M. Gross
-  - B. Solenthaler
-  - B. Thomaszewski
+  - Daniel Dorda
+  - Daniel Peter
+  - Dominik Borer
+  - Niko Huber
+  - Irena Sailer
+  - Markus Gross
+  - Barbara Solenthaler
+  - Bernhard Thomaszewski
   venue: Computer Graphics Forum (Proc. ACM/Eurographics Symposium on Computer Animation, SCA '22), 2022
   year: 2022
   thumbnail: assets/images/publications/Dorda22Differentiable.jpeg
@@ -541,10 +602,10 @@
 - id: stability-aware-simplification-of-curve-networks
   title: Stability-Aware Simplification of Curve Networks
   authors:
-  - W. Neveu
-  - I. Puhachov
-  - B. Thomaszewski
-  - M. Bessmeltsev
+  - William Neveu
+  - Ivan Puhachov
+  - Bernhard Thomaszewski
+  - Mikhail Bessmeltsev
   venue: ACM SIGGRAPH 2022 Proceedings
   year: 2022
   thumbnail: assets/images/publications/william_curves.png
@@ -556,10 +617,10 @@
 - id: computational-design-of-kinesthetic-garments
   title: Computational Design of Kinesthetic Garments
   authors:
-  - V. Vechev
-  - J. Zarate
-  - B. Thomaszewski
-  - O. Hilliges
+  - Velko Vechev
+  - Juan Zarate
+  - Bernhard Thomaszewski
+  - Otmar Hilliges
   venue: Computer Graphics Forum (Proc. Eurographics '22), 2022
   year: 2022
   thumbnail: assets/images/publications/CDKG.png
@@ -571,10 +632,10 @@
 - id: programmable-digital-weaves
   title: Programmable Digital Weaves
   authors:
-  - Y. Li
-  - J. Montes
-  - B. Thomaszewski
-  - S. Coros
+  - Yue Li
+  - Juan Montes
+  - Bernhard Thomaszewski
+  - Stelian Coros
   venue: IEEE Robotic and Automation Letters (RA-L) 2022
   year: 2022
   thumbnail: assets/images/publications/weaves.jpg
@@ -586,12 +647,12 @@
 - id: coupled-rigid-block-analysis-stability-aware-design-of-compl
   title: 'Coupled Rigid-Block Analysis: Stability-Aware Design of Complex Discrete-Element Assemblies'
   authors:
-  - G. Kao
-  - A. Iannuzzo
-  - B. Thomaszewski
-  - S. Coros
-  - T. Van Mele
-  - P. Block
+  - Gene Ting-Chun Kao
+  - Antonino Iannuzzo
+  - Bernhard Thomaszewski
+  - Stelian Coros
+  - Tom Van Mele
+  - Philippe Block
   venue: Computer Aided Design, 2022
   year: 2022
   thumbnail: assets/images/publications/Kao22CRA.png
@@ -602,11 +663,11 @@
 - id: singularity-aware-design-optimization-for-multi-degree-of-fr
   title: Singularity-Aware Design Optimization for Multi-Degree-of-Freedom Spatial Linkages
   authors:
-  - G. Maloisel
-  - E. Knoop
-  - B. Thomaszewski
-  - M. Baecher
-  - S. Coros
+  - Guirec Maloisel
+  - Espen Knoop
+  - Bernhard Thomaszewski
+  - Moritz Bächer
+  - Stelian Coros
   venue: IEEE Robotics And Automation Letters (RA-L), 2021
   year: 2021
   thumbnail: assets/images/publications/multiDOFMechanisms.png
@@ -618,9 +679,9 @@
 - id: sgn-sparse-gauss-newton-for-accelerated-sensitivity-analysis
   title: 'SGN: Sparse Gauss-Newton for Accelerated Sensitivity Analysis'
   authors:
-  - J. Zehnder
-  - S. Coros
-  - B. Thomaszewski
+  - Jonas Zehnder
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (ToG), 2021
   year: 2021
   thumbnail: assets/images/publications/SGN.png
@@ -631,10 +692,10 @@
 - id: ntopo-mesh-free-topology-optimization-using-implicit-neural-
   title: 'NTopo: Mesh-free Topology Optimization using Implicit Neural Representations'
   authors:
-  - J. Zehnder
-  - Y. Li
-  - S. Coros
-  - B. Thomaszewski
+  - Jonas Zehnder
+  - Yue Li
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: NeurIPS 2021
   year: 2021
   thumbnail: assets/images/publications/ntopo.png
@@ -646,12 +707,12 @@
 - id: a-density-accurate-tracking-solution-for-smoke-upresolution
   title: A Density-accurate Tracking Solution for Smoke Upresolution
   authors:
-  - A. Schoentgen
-  - J. Zehnder
-  - P. Poulin
-  - B. Thomaszewski
-  - P. Meseure
-  - E. Darles
+  - Arnaud Schoentgen
+  - Jonas Zehnder
+  - Pierre Poulin
+  - Bernhard Thomaszewski
+  - Philippe Meseure
+  - Emmanuelle Darles
   venue: The Visual Computer, 2021
   year: 2021
   thumbnail: assets/images/publications/Schoentgen21SmokeTracking.png
@@ -662,12 +723,12 @@
 - id: deep-physics-aware-inference-of-cloth-deformation-for-monocu
   title: Deep Physics-aware Inference of Cloth Deformation for Monocular Human Performance Capture
   authors:
-  - Y. Li
-  - M. Habermann
-  - B. Thomaszewski
-  - S. Coros
-  - T. Beeler
-  - C. Theobalt
+  - Yue Li
+  - Marc Habermann
+  - Bernhard Thomaszewski
+  - Stelian Coros
+  - Thabo Beeler
+  - Christian Theobalt
   venue: International Conference on 3D Vision (3DV), 2021
   year: 2021
   thumbnail: assets/images/publications/deepCloth.jpeg
@@ -680,10 +741,10 @@
 - id: a-harmonic-balance-approach-for-designing-compliant-mechanic
   title: A Harmonic Balance Approach for Designing Compliant Mechanical Systems with Nonlinear Periodic Motions
   authors:
-  - P. Tang
-  - J. Zehnder
-  - S. Coros
-  - B. Thomaszewski
+  - Pengbin Tang
+  - Jonas Zehnder
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2020)
   year: 2020
   thumbnail: assets/images/publications/HBM.jpg
@@ -696,12 +757,12 @@
 - id: add-analytically-differentiable-dynamics-for-multi-body-syst
   title: 'ADD: Analytically Differentiable Dynamics for Multi-Body Systems with Frictional Contact'
   authors:
-  - M. Geilinger
-  - D. Hahn
-  - J. Zehnder
-  - M. Bächer
-  - B. Thomaszewski
-  - S. Coros
+  - Moritz Geilinger
+  - David Hahn
+  - Jonas Zehnder
+  - Moritz Bächer
+  - Bernhard Thomaszewski
+  - Stelian Coros
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2020)
   year: 2020
   thumbnail: assets/images/publications/ADD.png
@@ -712,10 +773,10 @@
 - id: computational-design-of-skintight-clothing
   title: Computational Design of Skintight Clothing
   authors:
-  - J. Montes
-  - B. Thomaszewski
-  - S. Mudur
-  - T. Popa
+  - Juan Montes
+  - Bernhard Thomaszewski
+  - Sudhir Mudur
+  - Tiberiu Popa
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2020)
   year: 2020
   thumbnail: assets/images/publications/Skintight.jpg
@@ -727,10 +788,10 @@
 - id: robocut-hot-wire-cutting-with-robot-controlled-flexible-rods
   title: 'RoboCut: Hot-wire Cutting with Robot-controlled Flexible Rods'
   authors:
-  - S. Dünser
-  - R. Poranne
-  - B. Thomaszewski
-  - S. Coros
+  - Simon Dünser
+  - Roi Poranne
+  - Bernhard Thomaszewski
+  - Stelian Coros
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2020)
   year: 2020
   thumbnail: assets/images/publications/robocut.jpg
@@ -742,11 +803,11 @@
 - id: computational-design-of-balanced-open-link-planar-mechanisms
   title: Computational Design of Balanced Open Link Planar Mechanisms with Counterweights from User Sketches
   authors:
-  - T. Takahashi
-  - H. G. Okuno
-  - S. Sugano
-  - S. Coros
-  - B. Thomaszewski
+  - Takuto Takahashi
+  - Hiroshi G. Okuno
+  - Shigeki Sugano
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: IEEE International Conference on Intelligent Robots and Systems (IROS), 2020
   year: 2020
   thumbnail: assets/images/publications/Counterweights.png
@@ -757,10 +818,10 @@
 - id: extrusion-based-ceramics-printing-with-strictly-continuous-d
   title: Extrusion-Based Ceramics Printing with Strictly-Continuous Deposition
   authors:
-  - J. Hergel
-  - K. Hinz
-  - S. Lefebvre
-  - B. Thomaszewski
+  - Jean Hergel
+  - Kevin Hinz
+  - Sylvain Lefebvre
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2019)
   year: 2019
   thumbnail: assets/images/publications/CeramicsPrinting.png
@@ -772,12 +833,12 @@
 - id: computational-design-of-statically-balanced-planar-spring-me
   title: Computational Design of Statically Balanced Planar Spring Mechanisms
   authors:
-  - T. Takahashi
-  - J. Zehnder
-  - H. G. Okuno
-  - S. Sugano
-  - S. Coros
-  - B. Thomaszewski
+  - Takuto Takahashi
+  - Jonas Zehnder
+  - Hiroshi G. Okuno
+  - Shigeki Sugano
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: IEEE Robotics and Automation Letters (RA-L), 2019
   year: 2019
   thumbnail: assets/images/publications/StaticallyBalanced.png
@@ -789,9 +850,9 @@
 - id: a-second-order-advection-reflection-solver
   title: A Second-Order Advection-Reflection Solver
   authors:
-  - R. Narain
-  - J. Zehnder
-  - B. Thomaszewski
+  - Rahul Narain
+  - Jonas Zehnder
+  - Bernhard Thomaszewski
   venue: PACM-CGIT 2(2), July 2019
   year: 2019
   thumbnail: assets/images/publications/AdvectionReflection2.png
@@ -803,12 +864,12 @@
 - id: star-shaped-metrics-for-mechanical-metamaterial-design
   title: Star-Shaped Metrics for Mechanical Metamaterial Design
   authors:
-  - J. Martínez
-  - M. Skouras
-  - C. Schumacher
-  - S. Hornus
-  - S. Lefebvre
-  - B. Thomaszewski
+  - Jonàs Martínez
+  - Mélina Skouras
+  - Christian Schumacher
+  - Samuel Hornus
+  - Sylvain Lefebvre
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2019)
   year: 2019
   thumbnail: assets/images/publications/StarShaped.png
@@ -821,10 +882,10 @@
 - id: mechanical-characterization-of-structured-sheet-materials
   title: Mechanical Characterization of Structured Sheet Materials
   authors:
-  - C. Schumacher
-  - S. Marschner
-  - M. Gross
-  - B. Thomaszewski
+  - Christian Schumacher
+  - Steve Marschner
+  - Markus Gross
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2018)
   year: 2018
   thumbnail: assets/images/publications/StructuredSheets.png
@@ -837,11 +898,11 @@
 - id: skaterbots-optimization-based-design-and-motion-synthesis-fo
   title: 'Skaterbots: Optimization-based design and motion synthesis for robotic creatures with legs and wheels'
   authors:
-  - M. Geilinger
-  - R. Poranne
-  - R. Desai
-  - B. Thomaszewski
-  - S. Coros
+  - Moritz Geilinger
+  - Roi Poranne
+  - Ruta Desai
+  - Bernhard Thomaszewski
+  - Stelian Coros
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2018)
   year: 2018
   thumbnail: assets/images/publications/Skaterbots.PNG
@@ -853,9 +914,9 @@
 - id: an-advection-reflection-solver-for-detail-preserving-fluid-a
   title: An Advection-Reflection Solver for Detail-Preserving Fluid Animation
   authors:
-  - J. Zehnder
-  - R. Narain
-  - B. Thomaszewski
+  - Jonas Zehnder
+  - Rahul Narain
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2018)
   year: 2018
   thumbnail: assets/images/publications/AdvectionReflection.png
@@ -868,11 +929,11 @@
 - id: fepr-fast-energy-projection-for-real-time-simulation-of-defo
   title: 'FEPR: Fast Energy Projection for Real-Time Simulation of Deformable Objects'
   authors:
-  - D. Dinev
-  - T. Liu
-  - J. Li
-  - B. Thomaszewski
-  - L. Kavan
+  - Dimitar Dinev
+  - Tiantian Liu
+  - Jing Li
+  - Bernhard Thomaszewski
+  - Ladislav Kavan
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2018)
   year: 2018
   thumbnail: assets/images/publications/FEPR.jpg
@@ -884,10 +945,10 @@
 - id: haircontrol-a-tracking-solution-for-directable-hair-simulati
   title: 'HairControl: A Tracking Solution for Directable Hair Simulation'
   authors:
-  - A. Milliez
-  - R. Sumner
-  - M. Gross
-  - B. Thomaszewski
+  - Antoine Milliez
+  - Robert W. Sumner
+  - Markus Gross
+  - Bernhard Thomaszewski
   venue: ACM/Eurographics Symposium on Computer Animation (SCA 2018)
   year: 2018
   thumbnail: assets/images/publications/HairControl.png
@@ -900,10 +961,10 @@
 - id: metasilicone-design-and-fabrication-of-composite-silicone-wi
   title: 'MetaSilicone: Design and Fabrication of Composite Silicone with Desired Mechanical Properties'
   authors:
-  - J. Zehnder
-  - E. Knoop
-  - M. Bächer
-  - B. Thomaszewski
+  - Jonas Zehnder
+  - Espen Knoop
+  - Moritz Bächer
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2017)
   year: 2017
   thumbnail: assets/images/publications/MetaSilicone.png
@@ -916,12 +977,12 @@
 - id: a-computational-design-tool-for-compliant-mechanisms
   title: A Computational Design Tool for Compliant Mechanisms
   authors:
-  - V. Megaro
-  - J. Zehnder
-  - M. Bächer
-  - S. Coros
-  - M. Gross
-  - B. Thomaszewski
+  - Vittorio Megaro
+  - Jonas Zehnder
+  - Moritz Bächer
+  - Stelian Coros
+  - Markus Gross
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2017)
   year: 2017
   thumbnail: assets/images/publications/CompliantMechanisms.png
@@ -934,12 +995,12 @@
 - id: enriching-facial-blendshape-rigs-with-physical-simulation
   title: Enriching Facial Blendshape Rigs with Physical Simulation
   authors:
-  - Y. Kozlov
-  - D. Bradley
-  - M. Bächer
-  - B. Thomaszewski
-  - T. Beeler
-  - M. Gross
+  - Yeara Kozlov
+  - Derek Bradley
+  - Moritz Bächer
+  - Bernhard Thomaszewski
+  - Thabo Beeler
+  - Markus Gross
   venue: Computer Graphics Forum (Proc. Eurographics 2017)
   year: 2017
   thumbnail: assets/images/publications/Blendshapes.png
@@ -952,14 +1013,14 @@
 - id: designing-cable-driven-actuation-networks-for-kinematic-chai
   title: Designing Cable-Driven Actuation Networks for Kinematic Chains and Trees
   authors:
-  - V. Megaro
-  - E. Knoop
-  - A. Spielberg
+  - Vittorio Megaro
+  - Espen Knoop
+  - Andrew Spielberg
   - D.I.W. Levin
-  - W. Matusik
-  - M. Gross
-  - B. Thomaszewski
-  - M. Bächer
+  - Wojciech Matusik
+  - Markus Gross
+  - Bernhard Thomaszewski
+  - Moritz Bächer
   venue: ACM/Eurographics Symposium on Computer Animation (SCA) 2017
   year: 2017
   thumbnail: assets/images/publications/Cables.png
@@ -972,9 +1033,9 @@
 - id: designing-structurally-sound-ornamental-curve-networks
   title: Designing Structurally-Sound Ornamental Curve Networks
   authors:
-  - J. Zehnder
-  - S. Coros
-  - B. Thomaszewski
+  - Jonas Zehnder
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2016)
   year: 2016
   thumbnail: assets/images/publications/CurveNetworks.png
@@ -987,9 +1048,9 @@
 - id: stenciling-designing-structurally-sound-surfaces-with-decora
   title: 'Stenciling: Designing Structurally-Sound Surfaces with Decorative Patterns'
   authors:
-  - C. Schumacher
-  - B. Thomaszewski
-  - M. Gross
+  - Christian Schumacher
+  - Bernhard Thomaszewski
+  - Markus Gross
   venue: Symposium on Geometry Processing (SGP), 2016
   year: 2016
   thumbnail: assets/images/publications/stenciling.png
@@ -1001,13 +1062,13 @@
 - id: defsense-computational-design-of-customized-deformable-input
   title: 'DefSense: Computational Design of Customized Deformable Input Devices'
   authors:
-  - M. Bächer
-  - B. Hepp
-  - F. Pece
-  - P. G. Kry
-  - B. Bickel
-  - B. Thomaszewski
-  - O. Hilliges
+  - Moritz Bächer
+  - Benjamin Hepp
+  - Fabrizio Pece
+  - Paul G. Kry
+  - Bernd Bickel
+  - Bernhard Thomaszewski
+  - Otmar Hilliges
   venue: ACM SIGCHI 2016
   year: 2016
   thumbnail: assets/images/publications/DefSense.png
@@ -1020,10 +1081,10 @@
 - id: interactive-surface-design-with-interlocking-elements
   title: Interactive Surface Design with Interlocking Elements
   authors:
-  - M. Skouras
-  - S. Coros
-  - E. Grinspun
-  - B. Thomaszewski
+  - Mélina Skouras
+  - Stelian Coros
+  - Eitan Grinspun
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2015)
   year: 2015
   thumbnail: assets/images/publications/InterlockingElements.png
@@ -1036,12 +1097,12 @@
 - id: interactive-design-of-3d-printable-robotic-creatures
   title: Interactive Design of 3D-Printable Robotic Creatures
   authors:
-  - V. Megaro
-  - B. Thomaszewski
-  - M. Nitti
-  - O. Hilliges
-  - M. Gross
-  - S. Coros
+  - Vittorio Megaro
+  - Bernhard Thomaszewski
+  - Maurizio Nitti
+  - Otmar Hilliges
+  - Markus Gross
+  - Stelian Coros
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2015)
   year: 2015
   thumbnail: assets/images/publications/RobotDesigner.png
@@ -1054,9 +1115,9 @@
 - id: linkedit-interactive-linkage-editing-using-symbolic-kinemati
   title: 'LinkEdit: Interactive Linkage Editing using Symbolic Kinematics'
   authors:
-  - M. Bächer
-  - S. Coros
-  - B. Thomaszewski
+  - Moritz Bächer
+  - Stelian Coros
+  - Bernhard Thomaszewski
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2015)
   year: 2015
   thumbnail: assets/images/publications/LinkEdit.png
@@ -1069,13 +1130,13 @@
 - id: design-and-fabrication-of-flexible-rod-meshes
   title: Design and Fabrication of Flexible Rod Meshes
   authors:
-  - J. Perez
-  - B. Thomaszewski
-  - S. Coros
-  - B. Bickel
-  - J. A. Canabal
-  - R. Sumner
-  - M. A. Otaduy
+  - Jesús Pérez
+  - Bernhard Thomaszewski
+  - Stelian Coros
+  - Bernd Bickel
+  - José A. Canabal
+  - Robert W. Sumner
+  - Miguel A. Otaduy
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2015)
   year: 2015
   thumbnail: assets/images/publications/RodDesign.png
@@ -1088,12 +1149,12 @@
 - id: computational-design-of-walking-automata
   title: Computational Design of Walking Automata
   authors:
-  - G. Bharaj
-  - S. Coros
-  - B. Thomaszewski
-  - J. Tompkin
-  - B. Bickel
-  - H. Pfister
+  - Gaurav Bharaj
+  - Stelian Coros
+  - Bernhard Thomaszewski
+  - James Tompkin
+  - Bernd Bickel
+  - Hanspeter Pfister
   venue: ACM/Eurographics Symposium on Computer Animation (SCA), 2015
   year: 2015
   thumbnail: assets/images/publications/WalkingMachines.png
@@ -1104,13 +1165,13 @@
 - id: sketch-abstractions-for-character-posing
   title: Sketch Abstractions for Character Posing
   authors:
-  - F. Hahn
-  - F. Mutzel
-  - S. Coros
-  - B. Thomaszewski
-  - M. Nitti
-  - M. Gross
-  - R. Sumner
+  - Fabian Hahn
+  - Frederik Mutzel
+  - Stelian Coros
+  - Bernhard Thomaszewski
+  - Maurizio Nitti
+  - Markus Gross
+  - Robert W. Sumner
   venue: ACM/Eurographics Symposium on Computer Animation (SCA), 2015
   year: 2015
   thumbnail: assets/images/publications/SketchAbstractions.png
@@ -1121,12 +1182,12 @@
 - id: computational-design-of-linkage-based-characters
   title: Computational Design of Linkage-Based Characters
   authors:
-  - B. Thomaszewski
-  - S. Coros
-  - D. Gauge
-  - V. Megaro
-  - E. Grinspun
-  - M. Gross
+  - Bernhard Thomaszewski
+  - Stelian Coros
+  - Damien Gauge
+  - Vittorio Megaro
+  - Eitan Grinspun
+  - Markus Gross
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2014)
   year: 2014
   thumbnail: assets/images/publications/linkages.jpg
@@ -1138,13 +1199,13 @@
 - id: designing-inflatable-structures
   title: Designing Inflatable Structures
   authors:
-  - M. Skouras
-  - B. Thomaszewski
-  - P. Kaufmann
-  - A. Garg
-  - B. Bickel
-  - E. Grinspun
-  - M. Gross
+  - Mélina Skouras
+  - Bernhard Thomaszewski
+  - Peter Kaufmann
+  - Akash Garg
+  - Bernd Bickel
+  - Eitan Grinspun
+  - Markus Gross
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2014)
   year: 2014
   thumbnail: assets/images/publications/foilballoons.png
@@ -1157,14 +1218,14 @@
 - id: subspace-clothing-simulation-using-adaptive-basis
   title: Subspace Clothing Simulation Using Adaptive Basis
   authors:
-  - F. Hahn
-  - B. Thomaszewski
-  - S. Coros
-  - R. Sumner
-  - F. Cole
-  - M. Meyer
-  - T. DeRose
-  - M. Gross
+  - Fabian Hahn
+  - Bernhard Thomaszewski
+  - Stelian Coros
+  - Robert W. Sumner
+  - Forrester Cole
+  - Mark Meyer
+  - Tony DeRose
+  - Markus Gross
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2014)
   year: 2014
   thumbnail: assets/images/publications/subspaceCloth.jpg
@@ -1176,10 +1237,10 @@
 - id: interactive-design-of-modular-tensegrity-characters
   title: Interactive Design of Modular Tensegrity Characters
   authors:
-  - D. Gauge
-  - S. Coros
-  - S. Mani
-  - B. Thomaszewski
+  - Damien Gauge
+  - Stelian Coros
+  - Sandro Mani
+  - Bernhard Thomaszewski
   venue: ACM/Eurographics Symposium on Computer Animation (SCA), 2014
   year: 2014
   thumbnail: assets/images/publications/tensegrities.jpg
@@ -1191,12 +1252,12 @@
 - id: chacra-an-interactive-design-system-for-rapid-character-craf
   title: 'ChaCra: An Interactive Design System For Rapid Character Crafting'
   authors:
-  - V. Megaro
-  - B. Thomaszewski
-  - D. Gauge
-  - E. Grinspun
-  - S. Coros
-  - M. Gross
+  - Vittorio Megaro
+  - Bernhard Thomaszewski
+  - Damien Gauge
+  - Eitan Grinspun
+  - Stelian Coros
+  - Markus Gross
   venue: ACM/Eurographics Symposium on Computer Animation (SCA), 2014
   year: 2014
   thumbnail: assets/images/publications/chacra.jpg
@@ -1208,15 +1269,15 @@
 - id: modeling-and-estimation-of-internal-friction-in-cloth
   title: Modeling and Estimation of Internal Friction in Cloth
   authors:
-  - E. Miguel
-  - R. Tamstorf
-  - D. Bradley
-  - S. C. Schvartzman
-  - B. Thomaszewski
-  - B. Bickel
-  - W. Matusik
-  - S. Marschner
-  - M. Otaduy
+  - Eder Miguel
+  - Rasmus Tamstorf
+  - Derek Bradley
+  - Sara C. Schvartzman
+  - Bernhard Thomaszewski
+  - Bernd Bickel
+  - Wojciech Matusik
+  - Steve Marschner
+  - Miguel A. Otaduy
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH Asia 2013)
   year: 2013
   thumbnail: assets/images/publications/clothfriction.png
@@ -1229,11 +1290,11 @@
 - id: efficient-simulation-of-secondary-motion-in-rig-space
   title: Efficient Simulation of Secondary Motion in Rig-Space
   authors:
-  - F. Hahn
-  - B. Thomaszewski
-  - S. Coros
-  - R. Sumner
-  - M. Gross
+  - Fabian Hahn
+  - Bernhard Thomaszewski
+  - Stelian Coros
+  - Robert W. Sumner
+  - Markus Gross
   venue: ACM/Eurographics Symposium on Computer Animation (SCA), 2013
   year: 2013
   thumbnail: assets/images/publications/rsppp.png
@@ -1245,14 +1306,14 @@
 - id: computational-design-of-mechanical-characters
   title: Computational Design of Mechanical Characters
   authors:
-  - S. Coros
-  - B. Thomaszewski
-  - G. Noris
-  - S. Sueda
-  - M. Forberg
-  - R. Sumner
-  - W. Matusik
-  - B. Bickel
+  - Stelian Coros
+  - Bernhard Thomaszewski
+  - Gioacchino Noris
+  - Shinjiro Sueda
+  - Moira Forberg
+  - Robert W. Sumner
+  - Wojciech Matusik
+  - Bernd Bickel
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2013)
   year: 2013
   thumbnail: assets/images/publications/CyberTiger.png
@@ -1264,11 +1325,11 @@
 - id: computational-design-of-actuated-deformable-characters
   title: Computational Design of Actuated Deformable Characters
   authors:
-  - M. Skouras
-  - B. Thomaszewski
-  - S. Coros
-  - B. Bickel
-  - M. Gross
+  - Mélina Skouras
+  - Bernhard Thomaszewski
+  - Stelian Coros
+  - Bernd Bickel
+  - Markus Gross
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2013)
   year: 2013
   thumbnail: assets/images/publications/DeformableActuation.jpg
@@ -1280,12 +1341,12 @@
 - id: efficient-simulation-of-example-based-materials
   title: Efficient Simulation of Example-Based Materials
   authors:
-  - C. Schumacher
-  - B. Thomaszewski
-  - S. Coros
-  - S. Martin
-  - R. Sumner
-  - M. Gross
+  - Christian Schumacher
+  - Bernhard Thomaszewski
+  - Stelian Coros
+  - Sebastian Martin
+  - Robert W. Sumner
+  - Markus Gross
   venue: ACM/Eurographics Symposium on Computer Animation (SCA), 2012 (2nd Best Paper Award)
   year: 2012
   thumbnail: assets/images/publications/sleeve.png
@@ -1296,12 +1357,12 @@
 - id: deformable-objects-alive
   title: Deformable Objects Alive!
   authors:
-  - S. Coros
-  - S. Martin
-  - B. Thomaszewski
-  - C. Schumacher
-  - R. Sumner
-  - M. Gross
+  - Stelian Coros
+  - Sebastian Martin
+  - Bernhard Thomaszewski
+  - Christian Schumacher
+  - Robert W. Sumner
+  - Markus Gross
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2012)
   year: 2012
   thumbnail: assets/images/publications/defObjAlive-thumb.png
@@ -1312,12 +1373,12 @@
 - id: rig-space-physics
   title: Rig-Space Physics
   authors:
-  - F. Hahn
-  - S. Martin
-  - B. Thomaszewski
-  - R. Sumner
-  - S. Coros
-  - M. Gross
+  - Fabian Hahn
+  - Sebastian Martin
+  - Bernhard Thomaszewski
+  - Robert W. Sumner
+  - Stelian Coros
+  - Markus Gross
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2012)
   year: 2012
   thumbnail: assets/images/publications/rsp-thumb.png
@@ -1329,16 +1390,16 @@
 - id: physical-face-cloning
   title: Physical Face Cloning
   authors:
-  - B. Bickel
-  - P. Kaufmann
-  - M. Skouras
-  - B. Thomaszewski
-  - D. Bradley
-  - T. Beeler
-  - P. Jackson
-  - S. Marschner
-  - W. Matusik
-  - M. Gross
+  - Bernd Bickel
+  - Peter Kaufmann
+  - Mélina Skouras
+  - Bernhard Thomaszewski
+  - Derek Bradley
+  - Thabo Beeler
+  - Phil Jackson
+  - Steve Marschner
+  - Wojciech Matusik
+  - Markus Gross
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2012)
   year: 2012
   thumbnail: assets/images/publications/PFC.png
@@ -1351,10 +1412,10 @@
 - id: computational-design-of-rubber-balloons
   title: Computational Design of Rubber Balloons
   authors:
-  - M. Skouras
-  - B. Thomaszewski
-  - B. Bickel
-  - M. Gross
+  - Mélina Skouras
+  - Bernhard Thomaszewski
+  - Bernd Bickel
+  - Markus Gross
   venue: Computer Graphics Forum (Eurographics 2012), 31(2), 2012
   year: 2012
   thumbnail: assets/images/publications/BunnyGreen.jpg
@@ -1366,13 +1427,13 @@
 - id: data-driven-estimation-of-cloth-simulation-models
   title: Data-Driven Estimation of Cloth Simulation Models
   authors:
-  - E. Miguel
-  - D. Bradley
-  - B. Thomaszewski
-  - B. Bickel
-  - W. Matusik
-  - M. Otaduy
-  - S. Marschner
+  - Eder Miguel
+  - Derek Bradley
+  - Bernhard Thomaszewski
+  - Bernd Bickel
+  - Wojciech Matusik
+  - Miguel A. Otaduy
+  - Steve Marschner
   venue: Computer Graphics Forum (Eurographics 2012), 31(2), 2012
   year: 2012
   thumbnail: assets/images/publications/DDC.jpg
@@ -1385,10 +1446,10 @@
 - id: example-based-elastic-materials
   title: Example-Based Elastic Materials
   authors:
-  - S. Martin
-  - B. Thomaszewski
-  - E. Grinspun
-  - M. Gross
+  - Sebastian Martin
+  - Bernhard Thomaszewski
+  - Eitan Grinspun
+  - Markus Gross
   venue: ACM Transactions on Graphics (Proc. ACM SIGGRAPH 2011)
   year: 2011
   thumbnail: assets/images/publications/Mar11.png

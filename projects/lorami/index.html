@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LORAMI: Low-Rank Adaptation for Multi-Identity Physics-Based Face Rigs</title>
+  <meta name="author" content="Bernhard Thomaszewski">
+<meta name="description" content="Physics-based simulation can augment facial rigs with high-quality deformations, but at steep computational costs. While neural surrogates can substantially">
+  <!-- Google Scholar -->
+  <meta name="citation_title" content="LORAMI: Low-Rank Adaptation for Multi-Identity Physics-Based Face Rigs">
+<meta name="citation_author" content="Davide Corigliano">
+<meta name="citation_author" content="Daniel Peter">
+<meta name="citation_author" content="Barbara Solenthaler">
+<meta name="citation_author" content="Bernhard Thomaszewski">
+<meta name="citation_publication_date" content="2026">
+  <meta name="citation_journal_title" content="Computer Graphics Forum (Proc. ACM/EG SCA 2026)">
+  <meta name="citation_pdf_url" content="https://youtu.be/UCOfzeEpu2E">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Bernhard Thomaszewski">
+  <meta property="og:title" content="LORAMI: Low-Rank Adaptation for Multi-Identity Physics-Based Face Rigs">
+<meta property="og:description" content="Physics-based simulation can augment facial rigs with high-quality deformations, but at steep computational costs. While neural surrogates can substantially reduce computation time, existing methods">  <meta property="og:url" content="https://thomaszewski.com/projects/lorami/index.html">
+  <meta property="og:image" content="https://thomaszewski.com/assets/images/publications/lorami-teaser.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "LORAMI: Low-Rank Adaptation for Multi-Identity Physics-Based Face Rigs",
+    "author": [{"@type": "Person", "name": "Davide Corigliano"}, {"@type": "Person", "name": "Daniel Peter"}, {"@type": "Person", "name": "Barbara Solenthaler"}, {"@type": "Person", "name": "Bernhard Thomaszewski"}],
+    "datePublished": "2026",
+    "isPartOf": {"@type": "Periodical", "name": "Computer Graphics Forum (Proc. ACM/EG SCA 2026)"},
+    "url": "https://youtu.be/UCOfzeEpu2E",
+    "abstract": "Physics-based simulation can augment facial rigs with high-quality deformations, but at steep computational costs. While neural surrogates can substantially reduce computation time, existing methods do not generalize across identity variations and instead require expensive per-case retraining. In this work, we present LORAMI—a method for learning physics-based face rigs over a continuous space of identities using low-rank adaptation. LORAMI addresses the challenge of identity variation through a novel architecture that combines a shared neural surrogate with low-rank weight adaptations. Instead of training a dense model across identity space, we modulate a shared base network using low-rank factors. These factors are scaled by diagonal matrices predicted from identity parameters. This design enables efficient modeling of identity-dependent variations while preserving the generic deformation behavior of the underlying physics-based rig. Our experiments show that LORAMI achieves deformation accuracy on par with single-identity models and outperforms fully dense identity-conditioned networks. As a result, our method enables real-time physics-based facial animation with continuous identity control."  }
+  </script>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-container">
+      <p class="site-title"><a href="../../index.html">Bernhard Thomaszewski</a></p>
+      <nav class="site-nav">
+        <a href="../../index.html">Home</a>
+        <a href="../../publications.html">Publications</a>
+        <div class="nav-dropdown">
+          <a href="../../research/index.html">Research</a>
+          <div class="nav-dropdown-menu">
+            <a href="../../research/neural-simulation/index.html">Neural Simulation</a>
+            <a href="../../research/structured-materials/index.html">Structured Materials</a>
+            <a href="../../research/robotics/index.html">Robotics</a>
+            <a href="../../research/smart-simulation/index.html">Smart Simulation</a>
+            <a href="../../research/digital-humans-biomechanics/index.html">Digital Humans &amp; Biomechanics</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-container">
+
+      <section class="project-header">
+        <h1>LORAMI: Low-Rank Adaptation for Multi-Identity Physics-Based Face Rigs</h1>
+        <p class="pub-authors" style="display:flex; justify-content:center;">Davide Corigliano, Daniel Peter, Barbara Solenthaler, Bernhard Thomaszewski</p>
+        <p class="pub-venue" style="display:flex; justify-content:center;">Computer Graphics Forum (Proc. ACM/EG SCA 2026)</p>
+
+        <div class="project-links">
+          <a href="https://youtu.be/UCOfzeEpu2E">Paper (PDF)</a>
+<a href="../../assets/video/LORAMI_camera_ready_v2.mp4">Video</a><a href="assets/pdf/LORAMI_Supplemental.pdf">Supplemental</a>        </div>
+      </section>
+
+      <section class="project-teaser">
+        <img src="../../assets/images/publications/lorami-teaser.jpg" alt="LORAMI: Low-Rank Adaptation for Multi-Identity Physics-Based Face Rigs">
+      </section>
+
+
+      <section class="project-video">
+        <div class="video-wrapper">
+          <video controls src="../../assets/video/LORAMI_camera_ready_v2.mp4"></video>
+        </div>
+      </section>
+
+      <section class="project-abstract">
+        <h2>Abstract</h2>
+        <p>Physics-based simulation can augment facial rigs with high-quality deformations, but at steep computational costs. While neural surrogates can substantially reduce computation time, existing methods do not generalize across identity variations and instead require expensive per-case retraining. In this work, we present LORAMI—a method for learning physics-based face rigs over a continuous space of identities using low-rank adaptation. LORAMI addresses the challenge of identity variation through a novel architecture that combines a shared neural surrogate with low-rank weight adaptations. Instead of training a dense model across identity space, we modulate a shared base network using low-rank factors. These factors are scaled by diagonal matrices predicted from identity parameters. This design enables efficient modeling of identity-dependent variations while preserving the generic deformation behavior of the underlying physics-based rig. Our experiments show that LORAMI achieves deformation accuracy on par with single-identity models and outperforms fully dense identity-conditioned networks. As a result, our method enables real-time physics-based facial animation with continuous identity control.</p>
+      </section>
+
+      <section class="project-bibtex">
+        <h2>BibTeX</h2>
+        <div class="bibtex-wrapper">
+          <pre id="bibtex-text">@article{Corigliano2026LORAMI,
+  title   = {LORAMI: Low-Rank Adaptation for Multi-Identity Physics-Based Face Rigs},
+  author  = {D. Corigliano and D. Peter and B. Solenthaler and B. Thomaszewski},
+  journal = {Computer Graphics Forum (Proc. ACM/EG SCA 2026)},
+  year    = {2026}
+}</pre>
+          <button class="bibtex-copy-btn" onclick="copyBibtex(this)">Copy</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+  function copyBibtex(btn) {
+    var text = document.getElementById('bibtex-text').innerText;
+    navigator.clipboard.writeText(text).then(function() {
+      btn.textContent = 'Copied!';
+      setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+    });
+  }
+  </script>
+
+  <footer class="site-footer">
+    <div class="page-container">
+      <div class="footer-inner">
+        <a href="https://www.ethz.ch/" class="footer-logo"><img src="../../assets/images/ethz_logo_black.svg" alt="ETH Zürich"></a>
+        <div class="footer-info">
+          <p>Bernhard Thomaszewski &mdash; <a href="mailto:bthomasz@ethz.ch">bthomasz@ethz.ch</a></p>
+          <p><a href="https://www.ethz.ch/">ETH Zürich</a>, Department of Computer Science</p>
+          <p><a href="https://crl.ethz.ch/">Computational Robotics Lab</a></p>
+          <p>&copy; 2026 Bernhard Thomaszewski</p>
+        </div>
+        <a href="https://crl.ethz.ch/" class="footer-logo"><img src="../../assets/images/CRL-Logo.svg" alt="CRL"></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
